@@ -1,5 +1,25 @@
-#navegador{
-    background-color: brown;
+.navegador{
+    margin: 0.2em;
+        padding: 0.2em;
+        background-color: #00358e;
+        border-color: blue;
+        border-radius: 0.4rem;
+        
+        max-width: 100%;
+        max-height: 3rem;
+        border-style: solid;
+        border: red;
+    
+   
+    height:3rem;
+    max-width: 100%;
+}
+.header{
+padding: 1rem;
+margin: 1rem;
 
+}
+.iconoarg { width: 50%;
+    
 
 }

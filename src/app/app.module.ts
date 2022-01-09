@@ -6,8 +6,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { AcercadeComponent } from './components/acercade/acercade.component';
 import { BtnLapizComponent } from './components/btn-lapiz/btn-lapiz.component';
 import { AddTextComponent } from './components/add-text/add-text.component';
-
-
+//##
+ 
 @NgModule({
   declarations: [
     AppComponent,

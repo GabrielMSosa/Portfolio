@@ -3,6 +3,7 @@
   <div class="row">
       <div class="col-sm-11" > 
           <h1 class="tituloAcerca">Acerca de</h1>
+          
           <p id="textoacercade"> {{info}} </p>
       </div>
       
@@ -16,7 +17,8 @@
       </div>
       <div class="row">
         <div class="col-sm-11" > 
-          <app-add-text [showAddTask]="BtnClick"></app-add-text>
+          <app-add-text [showAddTask]="BtnClick"  
+          (texto)="updateInfo($event)" ></app-add-text>
         </div>
       </div>
 </div>

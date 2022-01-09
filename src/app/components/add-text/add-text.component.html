@@ -6,11 +6,11 @@ class="add-form"
  >
     <div class="form-control">
         <label for="text"></label>
-        <input 
+        <input #Entrada 
             type="text"
             id="text"
             placeholder="Agregue la informacion aca"
-           
+            
              />
   
     
@@ -24,7 +24,7 @@ class="add-form"
              data-toggle="button" 
              aria-pressed="false" 
              autocomplete="off"
-            (click)="enviarTexto()"
+            (click)="enviarTexto(Entrada.value)"
             >
                 Agregar
               </button>

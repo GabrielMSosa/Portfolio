@@ -10,8 +10,7 @@ import { NgModule } from '@angular/core';
 export class AddTextComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task>=new EventEmitter();
   @Input() showAddTask:boolean=false;
-
-  info: string = '';
+  @Output() texto= new EventEmitter<string>();
   //subscription:Subscription;
   
 
@@ -22,9 +21,11 @@ export class AddTextComponent implements OnInit {
     //this.subscription=this.taskService.onToggle()
     //.subscribe(value=>this.showAddTask=value);
     }
-    enviarTexto(){
-
-
+    enviarTexto(entrada:string) {
+      
+      this.texto.emit(entrada);
+ 
+      console.log(entrada);
     }
   ngOnInit(): void {
   

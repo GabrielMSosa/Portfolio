@@ -1,0 +1,29 @@
+.tituloAcerca{ 
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size:1rem;
+    color: rgba(7, 5, 41, 0.712);
+    font-weight:990;
+}
+p{
+    font-size:0.7rem;
+}
+col-sm-2 {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .fondoAD{
+    margin: 0.2em;
+    width:100%;
+    height:3rem;
+    background-color: #e7ddd6;
+    padding: 0.01rem;
+    border: 1rem solid #72380f;
+    border-radius: 0.4rem;     
+    border-style: solid;
+    border: rgba(255, 0, 0, 0.781)
+
+}

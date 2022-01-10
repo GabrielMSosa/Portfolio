@@ -11,5 +11,9 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  addNewTask(){
+    console.log("NuevaTarea!");
+
+  }
 
 }

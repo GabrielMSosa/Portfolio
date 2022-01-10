@@ -1,0 +1,30 @@
+.empresa{
+    font-weight: 600;
+    font-bold: bold;
+    font-family: serif;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.fechas{
+text-align: center;
+font-size: 0.8rem;
+font-family: verdana,sans-serif;
+line-height: 0.1rem;
+
+}
+
+.iconotrabajo{
+    height:5rem;
+    width:5rem;
+
+
+}
+
+
+.sector{
+ font-family: helvetica, arial;
+ font-weight: bold;
+ font-size:1.3rem;
+
+
+}

@@ -8,7 +8,7 @@ import { BtnLapizComponent } from './components/btn-lapiz/btn-lapiz.component';
 import { AddTextComponent } from './components/add-text/add-text.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ItemExpComponent } from './components/item-exp/item-exp.component';
-import { ButtonExpComponent } from './components/button-exp/button-exp.component';
+
 //##
  
 @NgModule({
@@ -20,8 +20,8 @@ import { ButtonExpComponent } from './components/button-exp/button-exp.component
     BtnLapizComponent,
     AddTextComponent,
     ExperienciaComponent,
-    ItemExpComponent,
-    ButtonExpComponent
+    ItemExpComponent
+
   
   ],
   imports: [

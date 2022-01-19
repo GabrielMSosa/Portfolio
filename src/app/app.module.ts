@@ -8,6 +8,7 @@ import { BtnLapizComponent } from './components/btn-lapiz/btn-lapiz.component';
 import { AddTextComponent } from './components/add-text/add-text.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ItemExpComponent } from './components/item-exp/item-exp.component';
+import {HttpClientModule}from "@angular/common/http"
 
 //##
  
@@ -25,7 +26,8 @@ import { ItemExpComponent } from './components/item-exp/item-exp.component';
   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

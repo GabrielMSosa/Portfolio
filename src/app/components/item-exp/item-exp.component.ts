@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
-
+import { TaskService } from 'src/app/service/task.service';
 
 @Component({
   selector: 'app-item-exp',
@@ -10,12 +10,21 @@ import { EXPE } from 'src/app/Experience';
 })
 export class ItemExpComponent implements OnInit {
   @Input() experiencias:EXPE = Experiencias[0];
+  @Input() newitem:boolean = false;
   
 
 
-  constructor() { }
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
   }
+  BorrarExperiencia(entrada:EXPE){}
+
+  EditarExperiencia(entrada:EXPE){}
+
+
+
 
 }

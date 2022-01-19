@@ -14,7 +14,11 @@
             </button>  
         </div>
     </div>
-    <app-item-exp></app-item-exp>
+    <app-item-exp  
+    *ngFor= "let recorre of EXPBD"
+    [experiencias]="recorre"
+    
+    [newitem]="AddItem" ></app-item-exp>
 
 </div>
 

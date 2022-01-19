@@ -7,7 +7,8 @@ export interface EXPE {
     deltaanio:string,
     Localidad:string,
     Provincias:string,
-    Pais:string
+    Pais:string,
+    UriImg:string
 
 
 }

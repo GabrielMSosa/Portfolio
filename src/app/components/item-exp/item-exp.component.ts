@@ -11,7 +11,7 @@ import { TaskService } from 'src/app/service/task.service';
 export class ItemExpComponent implements OnInit {
   @Input() experiencias:EXPE = Experiencias[0];
   @Input() newitem:boolean = false;
-  
+  Imagen:string ="";
 
 
   constructor(
@@ -19,10 +19,19 @@ export class ItemExpComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+   
   }
-  BorrarExperiencia(entrada:EXPE){}
 
-  EditarExperiencia(entrada:EXPE){}
+
+  BorrarExperiencia(entrada:EXPE){
+    console.log(this.experiencias.id);
+
+
+  }
+
+  EditarExperiencia(entrada:EXPE){
+    this.newitem=true;
+  }
 
 
 

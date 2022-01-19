@@ -8,7 +8,8 @@ import { BtnLapizComponent } from './components/btn-lapiz/btn-lapiz.component';
 import { AddTextComponent } from './components/add-text/add-text.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ItemExpComponent } from './components/item-exp/item-exp.component';
-import {HttpClientModule}from "@angular/common/http"
+import {HttpClientModule}from "@angular/common/http";
+import { NewExpComponent } from './components/new-exp/new-exp.component'
 
 //##
  
@@ -21,7 +22,8 @@ import {HttpClientModule}from "@angular/common/http"
     BtnLapizComponent,
     AddTextComponent,
     ExperienciaComponent,
-    ItemExpComponent
+    ItemExpComponent,
+    NewExpComponent
 
   
   ],

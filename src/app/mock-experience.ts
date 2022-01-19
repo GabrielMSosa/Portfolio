@@ -10,7 +10,8 @@ export const Experiencias:EXPE[]=[
     deltaanio:"4",
     Localidad:"Obera",
     Provincias:"Misiones",
-    Pais:"Argenina"
+    Pais:"Argenina",
+    UriImg:"./assets/Casino.jpg"
     },
     { id:1,
         trabajo:"Analista en Mercadolibre", 
@@ -20,7 +21,8 @@ export const Experiencias:EXPE[]=[
         deltaanio:"Actualidad",
         Localidad:"Obera",
         Provincias:"Misiones",
-        Pais:"Argenina"
+        Pais:"Argenina",
+        UriImg:"./assets/voolkiaIt.png"
     }
 ]
 

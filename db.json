@@ -23,18 +23,6 @@
       "Provincias": "Misiones",
       "Pais": "Argentina",
       "UriImg": "./assets/voolkiaIt.png"
-    },
-    {
-      "trabajo": "Ñoquis",
-      "empresa": "Ñoquis",
-      "FechaIni": 2019,
-      "FechaFin": 2022,
-      "deltaanio": "3",
-      "Localidad": "Obera",
-      "Provincias": "Misiones",
-      "Pais": "Argentina",
-      "UriImg": "faltaconfigurar",
-      "id": 2
     }
   ]
 }

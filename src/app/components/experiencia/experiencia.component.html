@@ -17,7 +17,7 @@
     <app-item-exp  
     *ngFor= "let recorre of EXPBD"
     [experiencias]="recorre"
-    
+    (DeleteExp)="DeleteExp(recorre)"
     [newitem]="AddItem" ></app-item-exp>
 
 </div>
@@ -25,5 +25,5 @@
 *ngIf="AddItem"
 (InExp)="AddExp($event)"
 ></app-new-exp> 
-
+<!-- Agregamos -->
 

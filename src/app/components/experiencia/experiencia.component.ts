@@ -27,5 +27,11 @@ export class ExperienciaComponent implements OnInit {
 
 
   }
+  DeleteExp(entrada:EXPE){
+    this.tareas.DeleteServiceExp(entrada).subscribe(()=>{
+      this.EXPBD=this.EXPBD.filter(t => t.id !==entrada.id)
+
+    })
+  }
 
 }

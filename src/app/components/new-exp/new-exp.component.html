@@ -61,16 +61,42 @@
         <div class="row">
             <div class="col-sm-4" >
                 <label>Provincia</label>
-                <input type="text" class="form-control" placeholder="ingrese Provincia o Estado">
+                <input
+                 type="text"
+                 class="form-control"
+                 placeholder="ingrese Provincia o Estado"
+                 [(ngModel)]="Provincias"
+                 >
             </div>
+            <p> {{Provincias}}</p>
+            <br />
+            <br/>
+
             <div class="col-sm-4" >
                 <label>Localidad</label>
-                <input type="text" class="form-control" placeholder="ingrese Localidad">
+                <input
+                 type="text"
+                 class="form-control"
+                 placeholder="ingrese Localidad"
+                 [(ngModel)]="Localidad"
+                 >
             </div>
+            <p> {{Localidad}}</p>
+            <br />
+            <br/>
+
             <div class="col-sm-4" >
                 <label>País</label>
-                <input type="text" class="form-control" placeholder="ingrese País">
+                <input
+                type="text"
+                class="form-control"
+                placeholder="ingrese País"
+                [(ngModel)]="Pais">
             </div>
+            <p> {{Pais}}</p>
+            <br />
+            <br/>
+
         </div>
         <br />
         <div class="row">

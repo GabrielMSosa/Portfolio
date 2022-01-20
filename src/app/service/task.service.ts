@@ -33,6 +33,9 @@ export class TaskService {
     
 
 }
+serviAddExp(ENTRADA:EXPE):Observable<EXPE>{
+  return this.http.post<EXPE>(this.APIuri,ENTRADA,httpOptions);
+}
 
 
 

@@ -22,5 +22,10 @@ export class ExperienciaComponent implements OnInit {
     this.AddItem=!this.AddItem;
     console.log(this.AddItem);
   }
+  AddExp(entrada:EXPE){
+      this.tareas.serviAddExp(entrada).subscribe((entrada)=>{this.EXPBD.push(entrada)});    
+
+
+  }
 
 }

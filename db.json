@@ -1,28 +1,40 @@
 {
-    "Experiences" : [
-        { "id":0,
-          "trabajo":"Mantenimiento en tragamonedas", 
-          "empresa":"CASINOS DE MISIONES S.A.",
-          "FechaIni":2017,
-          "FechaFin":2021,
-          "deltaanio":"4",
-          "Localidad":"Obera",
-          "Provincias":"Misiones",
-          "Pais":"Argentina",
-          "UriImg":"./assets/Casino.jpg"
-            },
-            { "id":1,
-              "trabajo":"Analista en Mercadolibre", 
-              "empresa":"Voolkia IT ",
-              "FechaIni":2021,
-              "FechaFin":2022,
-              "deltaanio":"Actualidad",
-              "Localidad":"Obera",
-              "Provincias":"Misiones",
-              "Pais":"Argentina",
-              "UriImg":"./assets/voolkiaIt.png"
-            }
-        
-
-    ]
+  "Experiences": [
+    {
+      "id": 0,
+      "trabajo": "Mantenimiento en tragamonedas",
+      "empresa": "CASINOS DE MISIONES S.A.",
+      "FechaIni": 2017,
+      "FechaFin": 2021,
+      "deltaanio": "4",
+      "Localidad": "Obera",
+      "Provincias": "Misiones",
+      "Pais": "Argentina",
+      "UriImg": "./assets/Casino.jpg"
+    },
+    {
+      "id": 1,
+      "trabajo": "Analista en Mercadolibre",
+      "empresa": "Voolkia IT ",
+      "FechaIni": 2021,
+      "FechaFin": 2022,
+      "deltaanio": "Actualidad",
+      "Localidad": "Obera",
+      "Provincias": "Misiones",
+      "Pais": "Argentina",
+      "UriImg": "./assets/voolkiaIt.png"
+    },
+    {
+      "trabajo": "Ñoquis",
+      "empresa": "Ñoquis",
+      "FechaIni": 2019,
+      "FechaFin": 2022,
+      "deltaanio": "3",
+      "Localidad": "Obera",
+      "Provincias": "Misiones",
+      "Pais": "Argentina",
+      "UriImg": "faltaconfigurar",
+      "id": 2
+    }
+  ]
 }

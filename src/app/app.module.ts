@@ -10,7 +10,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { ItemExpComponent } from './components/item-exp/item-exp.component';
 import {HttpClientModule}from "@angular/common/http";
 import { NewExpComponent } from './components/new-exp/new-exp.component'
-
+import { FormsModule } from '@angular/forms';
 //##
  
 @NgModule({
@@ -29,7 +29,8 @@ import { NewExpComponent } from './components/new-exp/new-exp.component'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

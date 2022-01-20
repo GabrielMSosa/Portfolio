@@ -30,7 +30,7 @@ export class ItemExpComponent implements OnInit {
   }
 
   EditarExperiencia(entrada:EXPE){
-    this.newitem=true;
+    this.newitem
   }
 
 

@@ -9,9 +9,27 @@
                 <br />
                 <br />
                 <label>Ingrese puesto de trabajo</label>
-                <input type="text" class="form-control" placeholder="ingrese puesto">
+                <input
+                 type="text"
+                 class="form-control"
+                 id="trabajo"
+                 name="trabajo"
+                 placeholder="ingrese puesto"
+                 [(ngModel)]="trabajo"
+                 >
+                 <p> {{trabajo}}</p>
+                 <br />
+                 <br/>
                 <label>Ingrese el nombre de la empresa</label>
-                <input type="text" class="form-control" placeholder="Nombre de empresa">
+                <input 
+                type="text"
+                class="form-control"
+                placeholder="Nombre de empresa"
+                [(ngModel)]="empresa"
+                >
+                <p> {{empresa}}</p>
+                 <br />
+                 <br/>
             </div>  
         </div>
         <div class="row">
@@ -19,15 +37,26 @@
                 <label>Fecha de Ingreso</label>
                 <input type="date" name="begin" 
                  placeholder="dd-mm-yyyy" value=""
-                 min="1991-01-01" max="2030-12-31">              
+                 min="1991-01-01" max="2030-12-31"
+                 [(ngModel)]="fechastr">              
             </div>
+            <p> {{fechastr}}</p>
+                 <br />
+                 <br/>
 
             <div class="col-sm-4" >
                 <label>Fecha de Fin</label>
                 <input type="date" name="begin" 
                  placeholder="dd-mm-yyyy" value=""
-                 min="1991-01-01" max="2030-12-31">                 
+                 min="1991-01-01" max="2030-12-31"
+                 [(ngModel)]="fechastr1"
+                 
+                 >           
+
             </div>
+            <p> {{fechastr1}}</p>
+            <br />
+            <br/>
         </div>
         <div class="row">
             <div class="col-sm-4" >
@@ -49,6 +78,8 @@
                 <p class="infoboton"> Recuerde verificar toda la información antes de confirmar </p>
             </div>
             <div class="col-sm-1" >
-                <button type="button" class="btn btn-success">Confirmar</button>
+                <button type="button" class="btn btn-success"
+                (click)="enviaExp()"
+                >Confirmar</button>
             </div>
          

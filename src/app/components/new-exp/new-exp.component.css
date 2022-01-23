@@ -9,7 +9,18 @@
     border: rgba(255, 0, 0, 0.781)
 
 }
+.bodyNewExp{
+
+    background-color: #f1c8f3;
+    border-radius: 0.4rem;  
+}
+
 .blockinput{
 font-size:0.5rem;
+
+}
+.Titnuevaexp{    font-family: "Open Sans";
+    text-align: center;
+    font-size:1rem;
 
 }

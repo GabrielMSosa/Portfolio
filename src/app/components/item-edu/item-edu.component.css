@@ -1,0 +1,41 @@
+.empresa{
+    font-weight: 600;    
+    font-family: serif;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.fechas{
+text-align: center;
+font-size: 0.8rem;
+font-family: verdana,sans-serif;
+line-height: 0.1rem;
+
+}
+
+.iconotrabajo{
+    height:5rem;
+    width:5rem;
+
+
+}
+
+
+.sector{
+ font-family: helvetica, arial;
+ font-weight: bold;
+ font-size:1.3rem;
+
+
+}
+
+.blockExp{
+    margin: 0.2em;
+    width:100%;
+    height:6rem;
+    background-color: #f4def5;
+    border-color: blue;
+    border-radius: 0.4rem;     
+    border-style: solid;
+    border: rgba(255, 0, 0, 0.781)
+
+}

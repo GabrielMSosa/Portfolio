@@ -1,0 +1,135 @@
+
+<div class="bodyNewExp">
+    <h2 class="Titnuevaexp">Nueva experiencia</h2>
+    <br />
+    <div class="row blockinput">
+      <div class="col-sm-2" ></div>
+      <div class="col-sm-10" >
+                             <label for="imageFile">Imagen de la institucion donde estudia o estudio:</label>
+                            <input type="file" id="imageFile" accept="image/*" multiple>
+        </div>
+    
+        </div>    
+           <br /> 
+            <div class="row blockinput">
+                <div class="col-sm-6" >
+                    <label>Ingrese el nombre de la Institucion</label>
+                    <input
+                    style="height: 1rem; font-size:0.5rem" 
+                     type="text"
+                     class="form-control"
+                     id="Institucion"
+                     name="Institucion"
+                     placeholder="ingrese puesto"
+                     [(ngModel)]="Institucion"
+                     >
+                     <small id="passwordHelpBlock" class="form-text text-muted">
+                      Ingrese el puesto que ocupaba en el Institucion que realizaba ej: Mantenimiento en el area electrica, etc..
+                    </small>
+                     <p> {{Institucion}}</p>
+                  </div>
+                  <div class="col-sm-6" >
+                     <label>Ingrese el nombre del titulo de lo que estudio</label>
+                    <input 
+                    style="height: 1rem; font-size:0.5rem" 
+                    type="text"
+                    class="form-control"
+                    placeholder="Nombre de Titulo"
+                    [(ngModel)]="Titulo"
+                    >
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                      Ingrese el nombre de la Titulo ej: PIRULO S.A. o nombre de la institucion UNAM ..etc.
+                    </small>
+                    <p> {{Titulo}}</p>
+                   </div>  
+            </div>
+            <div class="row blockinput">
+              <div class="col-sm-2" ></div>
+                <div class="col-sm-4" >
+                    <label>Fecha de Ingreso  </label>
+                    <input type="date" name="begin" 
+                     placeholder="dd-mm-yyyy" value=""
+                     min="1991-01-01" max="2030-12-31"
+                     [(ngModel)]="fechastr">              
+                     <p> {{fechastr}}</p>
+                    </div>
+                
+                <div class="col-sm-4" >
+                    <label>Fecha de Fin</label>
+                    <input type="date" name="begin" 
+                     placeholder="dd-mm-yyyy" value=""
+                     min="1991-01-01" max="2030-12-31"
+                     [(ngModel)]="fechastr1">
+                     <p> {{fechastr1}}</p>
+                    </div>
+                
+                </div>
+            <div class="row blockinput">
+                <div class="col-sm-4" >
+                    <label>Estado de su estudio</label>
+                    <input
+                    style="height: 1rem; font-size:0.5rem" 
+                     type="text"
+                     class="form-control"
+                     placeholder="ingrese Provincia o Estado"
+                     [(ngModel)]="Estado"
+                     >
+                     <p> {{Estado}}</p>
+                </div>
+
+                
+                </div>
+            
+    
+                  
+            <div class="row blockinput">
+                <div class="col-sm-8" >
+                    
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                      Recuerde verificar toda la información antes de confirmar
+                    </small>
+                  </div>
+                <div class="col-sm-1" >
+                    <button
+                    type="button"
+                    class="btn btn-success"
+                    (click)="enviaEdu()"
+                    style='width:5rem; height:1.4rem;font-size:0.5rem;'
+                    >Confirmar</button>
+                </div>
+              </div>
+            </div>
+    <!--
+    
+    <h1>Ingrese los campos de su nueva experiencia</h1>
+    
+    <input class="form-control blockinputm-control-s blockinputm" type="text" placeholder=".form-control blockinputm">
+    
+    <form class="form-floating">
+        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
+        <label for="floatingInputValue">Ingrese puesto de Institucion</label>
+      </form>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Ingrese puesto de Institucion</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="Titulo S.A.-S.R.L..etc">
+        <label for="floatingInput">Ingrese el nombre de la Titulo o institución</label>
+      </div>
+      
+    
+      <form>
+        <div class="form-row blockinput">
+          <div class="col-7">
+            <input type="text" class="form-control" placeholder="City">
+          </div>
+          <div class="col-2">
+            <input type="text" class="form-control" placeholder="State">
+          </div>
+          <div class="col-2">
+            <input type="text" class="form-control" placeholder="Zip">
+          </div>
+        </div>
+      </form>
+    -->

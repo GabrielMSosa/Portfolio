@@ -33,7 +33,11 @@ export class EducacionComponent implements OnInit {
 
     })
   }
+  AddEdu(entrada:EDU){
+    this.tareas.serviAddEdu(entrada).subscribe((entrada)=>{this.EDUBD.push(entrada)});    
 
+
+}
 
 
 

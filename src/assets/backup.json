@@ -1,28 +1,53 @@
 {
-    "Experiences" : [
-        { "id":0,
-          "trabajo":"Mantenimiento en tragamonedas", 
-          "empresa":"CASINO DE MISIONES S.A.",
-          "FechaIni":2017,
-          "FechaFin":2021,
-          "deltaanio":"4",
-          "Localidad":"Obera",
-          "Provincias":"Misiones",
-          "Pais":"Argentina",
-          "UriImg":"./assets/Casino.jpg"
-            },
-            { "id":1,
-              "trabajo":"Analista en Mercadolibre", 
-              "empresa":"Voolkia IT ",
-              "FechaIni":2021,
-              "FechaFin":2022,
-              "deltaanio":"Actualidad",
-              "Localidad":"Obera",
-              "Provincias":"Misiones",
-              "Pais":"Argentina",
-              "UriImg":"./assets/voolkiaIt.png"
-            }
-        
+  "Experiences": [
+    {
+      "id": 0,
+      "trabajo": "Mantenimiento en tragamonedas",
+      "empresa": "CASINOS DE MISIONES S.A.",
+      "FechaIni": 2017,
+      "FechaFin": 2021,
+      "deltaanio": "4",
+      "Localidad": "Obera",
+      "Provincias": "Misiones",
+      "Pais": "Argentina",
+      "UriImg": "./assets/Casino.jpg"
+    },
+    {
+      "id": 1,
+      "trabajo": "Analista en Mercadolibre",
+      "empresa": "Voolkia IT ",
+      "FechaIni": 2021,
+      "FechaFin": 2022,
+      "deltaanio": "Actualidad",
+      "Localidad": "Obera",
+      "Provincias": "Misiones",
+      "Pais": "Argentina",
+      "UriImg": "./assets/voolkiaIt.png"
+    }
+  ],
+  "Educacion":[
+    { "id":"0",
+      "Institucion":"Escuela de Comercio N°19", 
+      "Titulo":"Bachiller, Ciencias Naturales",
+      "FechaIni":2003,
+      "FechaFin":2009,
+      "Estado":"Graduado",
+      "UriImg":"./assets/comercio.PNG"},
+      { "id":"1",
+        "Institucion":"Universidad Nacional de Misiones", 
+        "Titulo":"Ingeniero Electronico",
+        "FechaIni":2009,
+        "FechaFin":2018,
+        "Estado":"Graduado",
+        "UriImg":"./assets/FIO.PNG"},
+        { "id":"2",
+          "Institucion":"INTI Argentina Programa", 
+          "Titulo":"Desarrollador Full Stacks",
+          "FechaIni":2021,
+          "FechaFin":2022,
+          "Estado":"Cursando",
+          "UriImg":"./assets/ArgPro.PNG"}]
+      
+      
 
-    ]
 }

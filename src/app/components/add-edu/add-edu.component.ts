@@ -2,7 +2,7 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { Educacion } from 'src/app/mock-Educacion';
 import { EDU } from 'src/app/Edu';
 import { EducacionService } from 'src/app/service/educacion.service';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-add-edu',
   templateUrl: './add-edu.component.html',
@@ -12,7 +12,8 @@ export class AddEduComponent implements OnInit {
 
   @Output() InExp:EventEmitter<EDU>=new EventEmitter(); 
    id?:number=0;
-   
+   estadox:string[]=["Graduado","Cursando"];
+   seleccion:string="";
    Institucion:string=""; 
    Titulo:string="";
    FechaIni:number=0;
@@ -35,7 +36,15 @@ export class AddEduComponent implements OnInit {
 
   ngOnInit(): void {
     
+
+
   }
+  onChange(){
+    //console.log(this.seleccion)
+    this.Estado=this.seleccion.toString();
+    console.log(this.Estado)
+  }
+
 
   enviaEdu(){
     this.valor = this.fechastr.split('-');
@@ -87,6 +96,8 @@ export class AddEduComponent implements OnInit {
           const {Institucion,Titulo,FechaIni,FechaFin,Estado,UriImg}=this;
           const NewEXPE= {Institucion,Titulo,FechaIni,FechaFin,Estado,UriImg};
           console.log(NewEXPE);
+          this.InExp.emit(NewEXPE);
+
             }
 
 }

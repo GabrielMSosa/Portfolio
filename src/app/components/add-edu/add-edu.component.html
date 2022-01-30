@@ -67,14 +67,24 @@
             <div class="row blockinput">
                 <div class="col-sm-4" >
                     <label>Estado de su estudio</label>
-                    <input
+                    <!--<input
                     style="height: 1rem; font-size:0.5rem" 
                      type="text"
                      class="form-control"
                      placeholder="ingrese Provincia o Estado"
                      [(ngModel)]="Estado"
-                     >
-                     <p> {{Estado}}</p>
+                     > -->
+                     <select 
+                     (change)="onChange()"
+                     [(ngModel)]="seleccion"
+                     class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option
+                                        
+                     *ngFor="let recorre of estadox"
+                     [value]="recorre"
+                      >{{recorre}} </option>
+                    </select> 
+                  
                 </div>
 
                 

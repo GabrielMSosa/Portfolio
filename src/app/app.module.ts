@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ItemEduComponent } from './components/item-edu/item-edu.component';
 import { AddEduComponent } from './components/add-edu/add-edu.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { SkillsItemComponent } from './components/skills-item/skills-item.component';
+import { SkillsAddComponent } from './components/skills-add/skills-add.component';
 //##
  
 @NgModule({
@@ -29,7 +32,10 @@ import { AddEduComponent } from './components/add-edu/add-edu.component';
     NewExpComponent,
     EducacionComponent,
     ItemEduComponent,
-    AddEduComponent
+    AddEduComponent,
+    SkillsComponent,
+    SkillsItemComponent,
+    SkillsAddComponent
 
   
   ],

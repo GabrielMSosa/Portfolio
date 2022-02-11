@@ -100,9 +100,5 @@ export class AddEduComponent implements OnInit {
 
             }
 
-}
-
-
-
-}
+}}
 

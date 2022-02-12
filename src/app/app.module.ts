@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import {Chart} from 'node_modules/chart.js';
 import { NavheaderComponent } from './components/navheader/navheader.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AcercadeComponent } from './components/acercade/acercade.component';
@@ -17,6 +18,7 @@ import { AddEduComponent } from './components/add-edu/add-edu.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillsItemComponent } from './components/skills-item/skills-item.component';
 import { SkillsAddComponent } from './components/skills-add/skills-add.component';
+import { NgChartsModule } from 'ng2-charts';
 //##
  
 @NgModule({
@@ -36,15 +38,16 @@ import { SkillsAddComponent } from './components/skills-add/skills-add.component
     SkillsComponent,
     SkillsItemComponent,
     SkillsAddComponent
-
-  
+    
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
-    FormsModule 
+    BrowserModule,
+    FormsModule,NgChartsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

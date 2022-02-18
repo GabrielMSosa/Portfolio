@@ -22,6 +22,7 @@ import { NgChartsModule } from 'ng2-charts';
 import{ AppRoutingModule } from './routing/app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { LogginComponent } from './components/loggin/loggin.component';
+import { CookieService } from 'ngx-cookie-service';
 //##
  
 @NgModule({
@@ -51,7 +52,7 @@ import { LogginComponent } from './components/loggin/loggin.component';
     AppRoutingModule
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

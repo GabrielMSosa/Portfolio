@@ -20,6 +20,8 @@ import { SkillsItemComponent } from './components/skills-item/skills-item.compon
 import { SkillsAddComponent } from './components/skills-add/skills-add.component';
 import { NgChartsModule } from 'ng2-charts';
 import{ AppRoutingModule } from './routing/app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { LogginComponent } from './components/loggin/loggin.component';
 //##
  
 @NgModule({
@@ -38,7 +40,9 @@ import{ AppRoutingModule } from './routing/app-routing.module';
     AddEduComponent,
     SkillsComponent,
     SkillsItemComponent,
-    SkillsAddComponent
+    SkillsAddComponent,
+    HomeComponent,
+    LogginComponent
   ],
   imports: [
     HttpClientModule,

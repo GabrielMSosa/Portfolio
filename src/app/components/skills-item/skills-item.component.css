@@ -3,3 +3,49 @@
     width:400px;
     height:400px;
 }
+/* Invisible texto */
+figcaption {
+    display:none; 
+    transition: all .5s;
+  }
+  /* Visible texto */
+  figure:hover > figcaption {
+    display:block;
+    transition: all .5s;
+  }
+  .TitIdio{
+    text-align:center;
+    font-size:1.9rem;
+
+
+  }
+  .Idiolvl{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.8rem
+
+  }
+
+  .idioma{
+    font-size: 2rem;
+
+
+  }
+  .colp{
+    background-color:#059624;
+    color: aliceblue;   
+}
+.colp2{
+
+  background-color:#0d3cbd;
+  color: aliceblue; 
+
+}
+
+.colu1{
+  padding:5px;
+  margin: 4px 0px;
+  
+
+
+}

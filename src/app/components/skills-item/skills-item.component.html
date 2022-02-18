@@ -1,34 +1,60 @@
-<input 
-[(ngModel)]="barra"
-(onChange)="updateGraph()"
-type="range" min="0" max="100" >
-<p>{{barra}}</p>
-<div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
-  </div>
+<div>
+  <h1 CLASS="TitIdio"> IDIOMAS </h1>
+    <div class="container">
+      <div class="row colu1">
+        <div class="col colp2">
+          <h4 class="idioma"> {{idioma1}} </h4>
+        </div>
+        <div class="col colp">
+          <p class="Idiolvl"> Lectura: {{tipoIdioma[1]}}</p>
+          <p class="Idiolvl"> Escritura: {{tipoIdioma[1]}}</p>
 
-  <div class="progress">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
-   
+        </div>
+        <div class="col colp">
+          <p class="Idiolvl"> +</p>
+          <p class="Idiolvl"> -</p>
 
-<div class="container py-5">
-  <div class="row">
-    <div class="col-4">
-      <canvas id="line_chart" width="400px" height="400px"></canvas>
-      <h3 class="text-center mt-3">Line Chart</h3>
+        </div>
+      </div>
+      <div class="row colu1">
+        <div class="col colp2">
+          <h4 class="idioma"> {{idioma2}} </h4>
+        </div>
+        <div class="col colp">
+          <p class="Idiolvl"> Lectura: {{tipoIdioma[3]}}</p>
+          <p class="Idiolvl"> Escritura: {{tipoIdioma[2]}}</p>
+        </div>
+        <div class="col colp">
+          <p class="Idiolvl"> +</p>
+          <p class="Idiolvl"> -</p>
+
+        </div>
+       </div>
     </div>
-    <div class="col-4">
-      <canvas id="bar_chart" width="400px" height="400px"></canvas>
-      <h3 class="text-center mt-3">Bar Chart</h3>
+
+
     </div>
-    <div class="col-4">
-    
-    </div>
-  </div>
+
+
+
+<button (click)="SubirBD()"> Subir a la BD </button>
+<input #file type="file" accept='image/*' (change)="EventFile(file.files)" />
+
+<img [src]="imgURL" height="200" *ngIf="imgURL">
+<img [src]="ArchGuardar.imagen" height="100" *ngIf="ArchGuardar.imagen"  >
+<p> {{imgURL}}</p>
+<p> {{ArchGuardar.imagen}}</p>
+
+<button (click)="MostrardatosBD()"> MOstrar INFO</button>
+<div *ngIf="mostrar">
+<p *ngFor="let recorre of archiGETBD"> {{recorre.imagen}}, {{recorre.nombre}}, {{recorre.id}} </p>
+<p> {{archiGETBD.length}}</p>
+<img *ngFor="let recorre of archiGETBD" [src]="recorre.imagen" height="50" >
 </div>
 
-<h3>Angular 7 Image Preview before Upload:</h3>
-<span style="color:red;" *ngIf="message">{{message}}</span>
-<input #file type="file" accept='image/*' (change)="preview(file.files)" />
-<img [src]="imgURL" height="200" *ngIf="imgURL">
+
+
+<figure>
+  <img src="http://oi41.tinypic.com/30mmgbd.jpg" alt="Smiley face" width="42" height="42" />
+  <figcaption>Tu texto</figcaption>
+</figure>

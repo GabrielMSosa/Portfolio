@@ -2,7 +2,8 @@ import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
 import { TaskService } from 'src/app/service/task.service';
-
+import { LoginserviceService } from 'src/app/service/loginservice.service';
+import{ CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-item-exp',
   templateUrl: './item-exp.component.html',
@@ -13,14 +14,22 @@ export class ItemExpComponent implements OnInit {
   @Input() newitem:boolean = false;
   @Output() DeleteExp: EventEmitter<EXPE>=new EventEmitter;
   Imagen:string ="";
+  flag:boolean = false;
 
 
-  constructor(
+  constructor(private cookies:CookieService
     
   ) { }
 
   ngOnInit(): void {
-   
+   if(this.cookies.get("token")!=="") {
+      this.flag=true;
+
+   }
+   else  {
+    this.flag=false;
+   }
+
   }
 
 

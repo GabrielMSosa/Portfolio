@@ -5,7 +5,8 @@
             <h1 class="expeHeader"> Educación </h1>
         </div>
         <div class="col-sm-1" > 
-            <button
+            <button 
+            *ngIf="flag==false"
             (click)="addNewTask()"         
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="Black" class="bi bi-plus-square" viewBox="0 0 16 16">

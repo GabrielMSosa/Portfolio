@@ -2,7 +2,8 @@ import { Component, OnInit,Output,EventEmitter} from '@angular/core';
 import { Educacion } from 'src/app/mock-Educacion';
 import { EDU } from 'src/app/Edu';
 import { EducacionService } from 'src/app/service/educacion.service';
-
+import { LoginserviceService } from 'src/app/service/loginservice.service';
+import{ CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
@@ -11,10 +12,20 @@ import { EducacionService } from 'src/app/service/educacion.service';
 export class EducacionComponent implements OnInit {
   AddItem:boolean = false;
   EDUBD:EDU[] =[];
-  constructor(private tareas:EducacionService) { }
+  flag:boolean = false;
+  constructor(private tareas:EducacionService, private Auth:LoginserviceService,private cookies:CookieService) { }
 
   ngOnInit(): void {
     this.tareas.getServiceEdus().subscribe((EDUBD)=>{this.EDUBD=EDUBD});
+    if(this.cookies.get("token")===""){
+      this.flag=true;
+
+    }
+    else{
+      this.flag=false;
+    }
+
+  
   }
   addNewTask(){
     console.log("NuevaTarea!");

@@ -28,11 +28,12 @@
 
        </div>
        <div class="col-sm-2"> 
-         
-          <a routerLink="/login" class="boton-personalizado-4">Loggin</a>
           
+          <a *ngIf="User==false" routerLink="/login" class="boton-personalizado-4">Loggin</a>
+          <a *ngIf="User==true" routerLink="/" class="boton-personalizado-4" (click)="CerrarSesion()" > Logout</a>
+                    
 
-       </div>
+       </div> 
 
 
 

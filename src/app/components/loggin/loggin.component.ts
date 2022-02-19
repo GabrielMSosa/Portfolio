@@ -29,14 +29,15 @@ export class LogginComponent implements OnInit {
     const user={email:this.email,password:this.password};
     console.log(this.email);
     console.log(this.password);
-    this.UserSer.LoginServi(user).subscribe(data=>{console.log(data);
+    this.UserSer.LoginServi(user).subscribe(
+    data=>{
+    console.log(data);
     this.UserSer.setTokenService(data.token); //seteo el token.
     this.MiRouter.navigateByUrl("/");
     },
     error => {
-      console.log(error); //con esto vemos los errores
-    }
-    ); //obtenemos el token que nos da el servicicio
+      console.log(error); //conesto vemos los errores
+    }); //obtenemos el token que nos da el servicicio
     //que apunta a la api.
     /*******************************
      *  meter el email **eve.holt@reqres.in y la contraeña que quieras

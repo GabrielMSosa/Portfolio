@@ -23,6 +23,7 @@ import{ AppRoutingModule } from './routing/app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { LogginComponent } from './components/loggin/loggin.component';
 import { CookieService } from 'ngx-cookie-service';
+import { Skills1Component } from './components/skills1/skills1.component';
 //##
  
 @NgModule({
@@ -43,7 +44,8 @@ import { CookieService } from 'ngx-cookie-service';
     SkillsItemComponent,
     SkillsAddComponent,
     HomeComponent,
-    LogginComponent
+    LogginComponent,
+    Skills1Component
   ],
   imports: [
     HttpClientModule,

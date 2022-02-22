@@ -4,7 +4,7 @@ import { Subject,Observable, of } from 'rxjs';// permite que sea un servicio asi
 //y la idea que el servicio funcione cuando sea necesario no que siempre se ejecute 
 import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
-import{ CookieService } from "ngx-cookie-service";
+
 const httpOptions={
   headers : new HttpHeaders({
     'Content-type': 'application/json'  })

@@ -11,7 +11,7 @@ import{ CookieService } from "ngx-cookie-service";
 })
 export class ExperienciaComponent implements OnInit {
  AddItem:boolean = false;
- EXPBD:EXPE[] =[];
+EXPBD:EXPE[] =[];
  flag:boolean = false;
   constructor(private tareas:TaskService,private cookies:CookieService,private Auth: LoginserviceService) { }
 

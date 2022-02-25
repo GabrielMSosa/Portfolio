@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
 import {SubirimgService } from 'src/app/service/subirimg.service';
 import {ARCH} from 'src/app/ARCH';
+import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
+import {SKILL} from "src/app/SKILL";
+import {SkillServiceService} from "../../service/skill-service.service";
+
 
 @Component({
   selector: 'app-skills1',
@@ -26,10 +29,13 @@ export class Skills1Component implements OnInit {
  imgURL: any;
  public message:string="";
  age: string="";
+ skillBD:SKILL[]=[];
  
-  constructor() { }
+  constructor(private servi:SkillServiceService) { }
 
   ngOnInit(): void {
+    this.servi.GetSkillService().subscribe((skillBD)=>{this.skillBD = skillBD});
+
   }
 
 }

@@ -38,7 +38,7 @@ export const skills:SKILL[]=[
     id_prog:3,
     lenguaje:"TypeScript",
     info:"Manejo en aplicaciones WEB Frontend.",
-    UrlImg:"https://drive.google.com/uc?id=1baaU3mEQoE4Ps_fe9DOktI02gL6U_9W9&export=download"
+    UrlImg:"https://drive.google.com/uc?id=1jrjaOBr6EXk9mL9lddUBiUihYIRoib29&export=download"
     
 },
 {id_idoma:4,
@@ -68,5 +68,5 @@ export const skills:SKILL[]=[
     lenguaje:"MySQL",
     info:"Diseño de Base de datos y realizando ABM.",
     UrlImg:"https://drive.google.com/uc?id=1YPl4o1XPm-o1jOwcAvsSOKrrddVUOgVT&export=download"
-},
+}
 ]

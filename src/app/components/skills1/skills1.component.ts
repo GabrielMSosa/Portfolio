@@ -38,4 +38,5 @@ export class Skills1Component implements OnInit {
 
   }
 
+  BorrarSkill(ENTRADA:SKILL){}
 }

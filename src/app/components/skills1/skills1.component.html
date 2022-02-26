@@ -39,23 +39,17 @@
       <div>
   <!-- LENGUAJES DE PROGRAMACION para iterrar vamo-->      
         <h1 class="TitIdio"> LENGUAJES DE PROGRAMACION</h1>
-          <div class="container">            
-            <div class="row colu1">
-              <div class="col-sm-4" >
-               <app-leng-prog
-               *ngFor="let recorre of skillBD "
-               [SkillInput1]="recorre"
-               >
-               
-
-               
-              </app-leng-prog>
-            </div>
-            </div>
-          </div>
-       
+        <div class="container">        
           
-
-
+              <app-leng-prog
+                *ngFor="let recorre of skillBD "
+                [SkillInput1]="recorre"
+                (DeleteSKILL)="BorrarSkill(recorre)"
+              >
+              </app-leng-prog>
+          
+        </div>
+       
+         
 
   

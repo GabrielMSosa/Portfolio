@@ -1,45 +1,55 @@
 <div>
-    <h1 class="TitIdio"> IDIOMAS </h1>
-      <div class="container">
+
+
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-11" > 
+        <h1 class="TitIdio"> IDIOMAS </h1>
+      
+        <app-idioma
+        *ngFor="let i of IdiomaBD"
+        (DeleteIDIO)="BorrarIdio(i)"
+         [IdioInput]="i"        
+        >
+            
+        </app-idioma>
         
-        <div class="row colu1">
-          <div class="col-sm-4 colu1" > 
-            <h4 class="idioma"> {{idioma1}} </h4>
-          </div>
-          <div class="col-sm-6 colu1" > 
-            <p class="Idiolvl"> Lectura: {{tipoIdioma[1]}}</p>
-            <p class="Idiolvl"> Escritura: {{tipoIdioma[1]}}</p>
-  
-          </div>
-          <div class="col-sm-2 colu1" > 
-            <p class="Idiolvl"> +</p>
-            <p class="Idiolvl"> -</p>
-            </div>
-        </div>
-        <div class="row colu1">
-          <div class="col-sm-4 colu1" >
-            <h4 class="idioma"> {{idioma2}} </h4>
-          </div>
-          <div class="col-sm-6 colu1" > 
-            <p class="Idiolvl"> Lectura: {{tipoIdioma[3]}}</p>
-            <p class="Idiolvl"> Escritura: {{tipoIdioma[2]}}</p>
-          </div>
-          <div class="col-sm-2 colu1" > 
-            <p class="Idiolvl"> +</p>
-            <p class="Idiolvl"> -</p>
-  
-          </div>
-         </div>
       </div>
-  
-  
+      <div class="col-sm-1" > 
+        <button
+        *ngIf="flag==false"
+        (click)="addNewLang()"         
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="Black" class="bi bi-plus-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+        </button>  
+    </div>
+
+    
+      
+  <!-- LENGUAJES DE PROGRAMACION para iterrar vamo-->      
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-11" > 
+        <h1 class="TitIdio"> LENGUAJES DE PROGRAMACION</h1>
+        </div>
+        <div class="col-sm-1" > 
+          <button
+          *ngIf="flag==false"
+          (click)="addNewTSkill()"         
+          >
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="Black" class="bi bi-plus-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg>
+          </button>  
       </div>
 
-      
-      <div>
-  <!-- LENGUAJES DE PROGRAMACION para iterrar vamo-->      
-        <h1 class="TitIdio"> LENGUAJES DE PROGRAMACION</h1>
-        <div class="container">        
+
+
+
           
               <app-leng-prog
                 *ngFor="let recorre of skillBD "
@@ -50,6 +60,6 @@
           
         </div>
        
-         
+</div>
 
   

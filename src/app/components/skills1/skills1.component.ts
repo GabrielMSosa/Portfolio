@@ -3,8 +3,9 @@ import {ARCH} from 'src/app/ARCH';
 import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 import {SKILL} from "src/app/SKILL";
 import {SkillServiceService} from "../../service/skill-service.service";
-
-
+import {IDIO} from "src/app/IDIO";
+import { LoginserviceService } from 'src/app/service/loginservice.service';
+import{ CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-skills1',
   templateUrl: './skills1.component.html',
@@ -15,11 +16,7 @@ export class Skills1Component implements OnInit {
   public ArchGuardar: ARCH= { id:0,
   nombre:"", 
   imagen:""};//inicializo
-  idioma1:string="Ingles"; 
-  idioma2:string="Portugues";
-  tipoIdioma : string[]= ['Bajo','Intermedio','Avanzado','Muy Avanzado','Bilingue'];
-
-  public mostrar:boolean = false;
+    public mostrar:boolean = false;
 
   public archiGETBD:ARCH[]=[];
   public Lastimg:number=0;
@@ -30,13 +27,33 @@ export class Skills1Component implements OnInit {
  public message:string="";
  age: string="";
  skillBD:SKILL[]=[];
- 
-  constructor(private servi:SkillServiceService) { }
+ IdiomaBD:IDIO[]=[]; 
+ flag:boolean = false;
+  constructor(private servi:SkillServiceService,private cookies:CookieService) { }
 
   ngOnInit(): void {
     this.servi.GetSkillService().subscribe((skillBD)=>{this.skillBD = skillBD});
+    this.servi.GetIdiomaService().subscribe((IdiomaBD)=>{this.IdiomaBD = IdiomaBD});
+    if(this.cookies.get("token")===""){
+      this.flag=true;
+
+    }
+    else{
+      this.flag=false;
+    }
 
   }
 
-  BorrarSkill(ENTRADA:SKILL){}
+  BorrarSkill(ENTRADA:SKILL){
+this.servi.DeleteSkillServi(ENTRADA).subscribe(()=>{
+this.skillBD=this.skillBD.filter(t=>t.id!==ENTRADA.id);
+}) }
+
+BorrarIdio(entrada:IDIO){}
+
+
+addNewTSkill(){} 
+
+addNewLang(){}
+
 }

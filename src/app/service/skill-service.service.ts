@@ -35,6 +35,11 @@ return this.http.get<IDIO[]>(this.APIurl1);
 
 }
 
+serviAddIdioma(ENTRADA:IDIO):Observable<IDIO>{
+  return this.http.post<IDIO>(this.APIurl1,ENTRADA,httpOptions);
+}
+
+
 
 
 }

@@ -107,6 +107,18 @@
       "idioma": "Portugues",
       "nivel_lectura": "Muy avanzado",
       "nivel_escritura": "Avanzado"
+    },
+    {
+      "idioma": "Chino",
+      "nivel_lectura": "Basico",
+      "nivel_escritura": "Avanzado",
+      "id": 2
+    },
+    {
+      "idioma": "Hindi",
+      "nivel_lectura": "Avanzado",
+      "nivel_escritura": "Bilingue",
+      "id": 3
     }
   ],
   "Imagen": [

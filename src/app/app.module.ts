@@ -26,6 +26,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Skills1Component } from './components/skills1/skills1.component';
 import { LengProgComponent } from './components/leng-prog/leng-prog.component';
 import { IdiomaComponent } from './components/idioma/idioma.component';
+import { AddLangComponent } from './components/add-lang/add-lang.component';
 //##
  
 @NgModule({
@@ -49,7 +50,8 @@ import { IdiomaComponent } from './components/idioma/idioma.component';
     LogginComponent,
     Skills1Component,
     LengProgComponent,
-    IdiomaComponent
+    IdiomaComponent,
+    AddLangComponent
   ],
   imports: [
     HttpClientModule,

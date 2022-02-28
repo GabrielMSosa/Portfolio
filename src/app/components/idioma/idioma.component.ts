@@ -12,7 +12,7 @@ import{ CookieService } from "ngx-cookie-service";
 export class IdiomaComponent implements OnInit {
 
   @Input() IdioInput:IDIO=Idiomas[0];
-  @Input() newitem:boolean = false;
+  @Input() newitem1:boolean = false;
   @Output() DeleteIDIO: EventEmitter<IDIO>=new EventEmitter;
   Imagen:string ="";
   flag:boolean = false; // CON ESTE ES PARA VALIDAR EL TOKEN
@@ -21,6 +21,7 @@ export class IdiomaComponent implements OnInit {
   
 
   ngOnInit(): void {
+    console.log("bandera"+ this.newitem1)
 
     if(this.cookies.get("token")!=="") {
       this.flag=true;
@@ -37,6 +38,9 @@ export class IdiomaComponent implements OnInit {
     this.DeleteIDIO.emit(entrada);
 
   }
-    EditarIDIO(entrada:IDIO){}
+    EditarIDIO(entrada:IDIO){
+
+      this.newitem1
+    }
 
 }

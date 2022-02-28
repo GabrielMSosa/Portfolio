@@ -1,0 +1,34 @@
+
+<div
+*ngIf="newitem===false"
+ class="bodyNewExp">
+    <h2 class="Titnuevaexp">Nuevo Idioma</h2>
+    <br/>
+    <label>Seleccionar Idioma</label>
+    <select [(ngModel)]="idioma">
+      <option *ngFor="let c of IdioOpc" [ngValue]="c">{{c}}</option>
+    </select>
+    <p> {{idioma}}</p>
+    
+    <br/>
+    <label>Seleccionar nivel de lectura</label>
+    <select [(ngModel)]="nivel_lectura">
+      <option *ngFor="let c of Opciones" [ngValue]="c">{{c}}</option>
+    </select>
+    <p> {{nivel_lectura}}</p>
+
+    <br/>
+    <label>Seleccionar nivel de escritura</label>
+    <select [(ngModel)]="nivel_escritura">
+      <option *ngFor="let c of Opciones" [ngValue]="c">{{c}}</option>
+    </select>
+    <p> {{nivel_escritura}}</p>
+
+    <button
+    type="button"
+    class="btn btn-success"
+    (click)="enviaExp()"
+    style='width:5rem; height:1.4rem;font-size:0.5rem;'
+    >Confirmar</button>
+
+</div>

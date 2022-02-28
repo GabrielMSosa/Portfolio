@@ -12,11 +12,13 @@ import{ CookieService } from "ngx-cookie-service";
   styleUrls: ['./skills1.component.css']
 })
 export class Skills1Component implements OnInit {
+  
   public Archivos: any =[];
   public ArchGuardar: ARCH= { id:0,
   nombre:"", 
   imagen:""};//inicializo
     public mostrar:boolean = false;
+    AddItem:boolean = false;
 
   public archiGETBD:ARCH[]=[];
   public Lastimg:number=0;
@@ -42,6 +44,7 @@ export class Skills1Component implements OnInit {
       this.flag=false;
     }
 
+    console.log("bandera de habilitacion"+this.AddItem);
   }
 
   BorrarSkill(ENTRADA:SKILL){
@@ -54,6 +57,21 @@ BorrarIdio(entrada:IDIO){}
 
 addNewTSkill(){} 
 
-addNewLang(){}
+addNewLang(){
+console.log("NuevaTarea!");
+this.AddItem=!this.AddItem;
+console.log("bandera de habilitacion"+this.AddItem);
+this.flag=false;
+if(this.cookies.get("token")===""){
+  this.flag=true;
+}
 
+
+}
+
+addLang(entrada:IDIO){
+  this.servi.serviAddIdioma(entrada).subscribe((entrada)=>{this.IdiomaBD.push(entrada)});    
+
+
+}
 }

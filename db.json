@@ -98,27 +98,15 @@
   "Idioma": [
     {
       "id": 0,
-      "idioma": "Ingles",
-      "nivel_lectura": "Intermedio",
-      "nivel_escritura": "Intermedio"
+      "idioma": "Portugués",
+      "nivel_lectura": "Bilingue",
+      "nivel_escritura": "Muy avanzado"
     },
     {
       "id": 1,
-      "idioma": "Portugues",
+      "idioma": "Inglés",
       "nivel_lectura": "Muy avanzado",
-      "nivel_escritura": "Avanzado"
-    },
-    {
-      "idioma": "Chino",
-      "nivel_lectura": "Basico",
-      "nivel_escritura": "Avanzado",
-      "id": 2
-    },
-    {
-      "idioma": "Hindi",
-      "nivel_lectura": "Avanzado",
-      "nivel_escritura": "Bilingue",
-      "id": 3
+      "nivel_escritura": "Basico"
     }
   ],
   "Imagen": [

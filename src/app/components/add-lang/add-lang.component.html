@@ -1,29 +1,38 @@
 
+ 
+
+
 <div
 *ngIf="newitem===false"
  class="bodyNewExp">
     <h2 class="Titnuevaexp">Nuevo Idioma</h2>
     <br/>
-    <label>Seleccionar Idioma</label>
+    <label *ngIf="flagedit===false">Seleccionar Idioma</label>
+    <label *ngIf="flagedit===true">Editar Idioma {{datoedit.idioma}} </label>
+
     <select [(ngModel)]="idioma">
       <option *ngFor="let c of IdioOpc" [ngValue]="c">{{c}}</option>
     </select>
     <p> {{idioma}}</p>
     
     <br/>
-    <label>Seleccionar nivel de lectura</label>
+    <label *ngIf="flagedit===false">Seleccionar nivel de lectura</label>
+    <label *ngIf="flagedit===true">Editar Idioma {{datoedit.idioma}} opcion nivel de lectura.</label>
     <select [(ngModel)]="nivel_lectura">
       <option *ngFor="let c of Opciones" [ngValue]="c">{{c}}</option>
     </select>
     <p> {{nivel_lectura}}</p>
 
     <br/>
-    <label>Seleccionar nivel de escritura</label>
+    <label *ngIf="flagedit===false">Seleccionar nivel de escritura</label>
+    <label *ngIf="flagedit===true">Seleccionar {{datoedit.idioma}} opcion nivel de escritura.</label>
     <select [(ngModel)]="nivel_escritura">
       <option *ngFor="let c of Opciones" [ngValue]="c">{{c}}</option>
     </select>
     <p> {{nivel_escritura}}</p>
 
+    <br />
+    
     <button
     type="button"
     class="btn btn-success"

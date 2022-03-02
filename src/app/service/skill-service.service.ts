@@ -23,10 +23,21 @@ console.log("Se ejecuta GetSkillService():Observable<Skill>");
 return this.http.get<SKILL[]>(this.APIurl);
 
 }
+
+PutIdiomaServi(entrada:IDIO):Observable<IDIO>{
+const url=`${this.APIurl1}/${entrada.id}`;
+ return this.http.put<IDIO>(url,entrada);
+ 
+}
+
 DeleteSkillServi(entrada:SKILL):Observable<SKILL> {
   const url= `${this.APIurl}/${entrada.id}`;
   return this.http.delete<SKILL>(url);
 
+}
+DeleteIdioServi(entrada:IDIO):Observable<IDIO> {
+  const url= `${this.APIurl1}/${entrada.id}`;
+  return this.http.delete<IDIO>(url);
 }
 GetIdiomaService():Observable<IDIO[]>{
   console.log("Se ejecuta GetIdiomaService():Observable<IDIO[]>{");

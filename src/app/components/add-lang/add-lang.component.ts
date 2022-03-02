@@ -12,7 +12,17 @@ import { EXPE } from 'src/app/Experience';
 })
 export class AddLangComponent implements OnInit {
   @Output() InIdio:EventEmitter<IDIO>=new EventEmitter(); 
+  @Output() newEdit:EventEmitter<boolean> = new EventEmitter(false);
   @Input() newitem:boolean = false;
+  @Input() flagedit:boolean = false;
+  @Input() datoedit:IDIO={
+    idioma:"",
+    
+    nivel_lectura:"",
+    nivel_escritura:""
+
+  };
+
    id?:number=0;
    idioma:string="";
    nivel_lectura: string="";
@@ -49,13 +59,23 @@ export class AddLangComponent implements OnInit {
 
     
 
-if(this.error==true){
+if(this.error==true&&this.flagedit==false){
 alert(this.mensaje)
 this.mensaje="";
 }
 
 if (this.error==false){
-  
+
+if(this.flagedit==true){
+  this.datoedit.idioma=this.idioma;
+  this.datoedit.nivel_escritura=this.nivel_escritura;
+  this.datoedit.nivel_lectura=this.nivel_lectura;
+  this.newEdit.emit(true);
+  this.InIdio.emit(this.datoedit);  
+
+}
+
+else{  
 const {idioma,nivel_lectura,nivel_escritura}=this;
 const NewSKILL= {idioma,nivel_lectura,nivel_escritura};
 console.log(NewSKILL);
@@ -68,4 +88,4 @@ this.newitem=true;
 
 
 }
-}
+ }}

@@ -12,7 +12,7 @@ import{ CookieService } from "ngx-cookie-service";
   styleUrls: ['./skills1.component.css']
 })
 export class Skills1Component implements OnInit {
-  
+  flageditskill:boolean = false;//si es true viene de add prog para editar una ubicacion del json de la db
   flageditidio:boolean = false; //si es true viene de add leng para editar una ubicacion del json de la db
   public Archivos: any =[];
   public ArchGuardar: ARCH= { id:0,
@@ -20,7 +20,7 @@ export class Skills1Component implements OnInit {
   imagen:""};//inicializo
     public mostrar:boolean = false;
     AddItem:boolean = false;
-
+    AddItem1:boolean = false;
   public archiGETBD:ARCH[]=[];
   public Lastimg:number=0;
  barra:string = "";
@@ -40,7 +40,13 @@ export class Skills1Component implements OnInit {
 
   };
   editar:boolean = false;
-  
+  editar1:boolean = false;
+  ParaEnviar1:SKILL ={
+    lenguaje: "",
+    info: "",
+    UrlImg: ""
+  }
+
  
   constructor(private servi:SkillServiceService,private cookies:CookieService) { }
 
@@ -71,6 +77,14 @@ BorrarIdio(entrada:IDIO){
   })
 
 }
+SendEdit1(entrada:SKILL){
+
+  console.log("FUNCION SEND EDIT")
+  this.ParaEnviar1=entrada;
+  this.editar1=true;
+  this.AddItem1=!this.AddItem1;
+
+}
 
 SendEdit(entrada:IDIO){
   console.log("FUNCION SEND EDIT")
@@ -80,7 +94,16 @@ SendEdit(entrada:IDIO){
 
 }
 
-addNewTSkill(){} 
+addNewTSkill(){
+  console.log("NuevaTarea!");
+this.AddItem1=!this.AddItem1;
+console.log("bandera de habilitacion"+this.AddItem);
+this.flag=false;
+this.editar=false;
+if(this.cookies.get("token")===""){
+  this.flag=true;
+}
+} 
 
 addNewLang(){
 console.log("NuevaTarea!");
@@ -92,6 +115,12 @@ if(this.cookies.get("token")===""){
   this.flag=true;
 }
 }
+
+Addprog(entrada:SKILL){
+
+  
+}
+
 
 addLang(entrada:IDIO){
   if(this.flageditidio==false){
@@ -113,6 +142,9 @@ addLang(entrada:IDIO){
     
   }
   
+}
+AddEditProg(){
+  this.flageditskill=true
 }
 addEditLeng(){
   this.flageditidio=true;

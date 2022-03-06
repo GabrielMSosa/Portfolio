@@ -3,7 +3,9 @@
     <!-- <img src ="https://drive.google.com/uc?id=**TUIDAQUI**&export=download">
     para obtener el link de la imagen.
     -->
-<div class="row">
+    
+    <div  *ngIf="newitem2==false">
+    <div class="row">
     
     <div class="col-sm-2" > 
         <img [src] ="SkillInput1.UrlImg" [title]="SkillInput1.lenguaje" style="width:2rem">
@@ -27,4 +29,5 @@
             </svg>
         </button>
     </div>
+</div>
 </div>

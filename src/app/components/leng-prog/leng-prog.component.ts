@@ -12,7 +12,9 @@ import{ CookieService } from "ngx-cookie-service";
 export class LengProgComponent implements OnInit {
 @Input() SkillInput1:SKILL=skills[0];
 @Input() newitem:boolean = false;
+@Input() newitem2:boolean = false;
 @Output() DeleteSKILL: EventEmitter<SKILL>=new EventEmitter;
+@Output() EditSkill:EventEmitter<SKILL>=new EventEmitter;
 Imagen:string ="";
 flag:boolean = false; // CON ESTE ES PARA VALIDAR EL TOKEN
 //"How are you?".slice(8, 11); slice se usa para mostrar solo el string desde el caracter 8 al 11
@@ -36,6 +38,7 @@ this.DeleteSKILL.emit(algo);
   }
 
   EditarSkill(algo:SKILL){
+    this.EditSkill.emit(algo);
 console.log("Funcion editar");
 
 

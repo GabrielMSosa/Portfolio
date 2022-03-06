@@ -49,7 +49,15 @@ return this.http.get<IDIO[]>(this.APIurl1);
 serviAddIdioma(ENTRADA:IDIO):Observable<IDIO>{
   return this.http.post<IDIO>(this.APIurl1,ENTRADA,httpOptions);
 }
-
+serviAddSkill(ENTRADA:SKILL):Observable<SKILL> {
+  return this.http.post<SKILL>(this.APIurl,ENTRADA,httpOptions);
+}
+PutSkillServi(entrada:SKILL):Observable<SKILL> {
+  const url=`${this.APIurl}/${entrada.id}`;
+   return this.http.put<SKILL>(url,entrada);
+   
+  }
+  
 
 
 

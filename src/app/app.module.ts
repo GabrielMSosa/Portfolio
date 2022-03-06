@@ -27,6 +27,7 @@ import { Skills1Component } from './components/skills1/skills1.component';
 import { LengProgComponent } from './components/leng-prog/leng-prog.component';
 import { IdiomaComponent } from './components/idioma/idioma.component';
 import { AddLangComponent } from './components/add-lang/add-lang.component';
+import { AddProgComponent } from './components/add-prog/add-prog.component';
 //##
  
 @NgModule({
@@ -51,7 +52,8 @@ import { AddLangComponent } from './components/add-lang/add-lang.component';
     Skills1Component,
     LengProgComponent,
     IdiomaComponent,
-    AddLangComponent
+    AddLangComponent,
+    AddProgComponent
   ],
   imports: [
     HttpClientModule,

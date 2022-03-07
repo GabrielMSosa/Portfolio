@@ -64,16 +64,11 @@
     }
   ],
   "Skills": [
-    {"id":0,
-        "lenguaje":"C++",
-        "info":"POO manejo de estructuras,clases,listas.",
-        "UrlImg":"https://drive.google.com/uc?id=1hTagXoQbU5xEeYMwgNLnOLs2dLBBSxLx&export=download"
-    },
     {
-      "id": 1,
-      "lenguaje": "C#",
-      "info": "POO manejo basico en aplicaciones sencillas de WCP y WPF en .NET.",
-      "UrlImg": "https://drive.google.com/uc?id=1EKibav10DAqDNlpXdLKzYjEK6pY9iQyg&export=download"
+      "id": 0,
+      "lenguaje": "C++",
+      "info": "POO manejo de estructuras,clases,listas.",
+      "UrlImg": "https://drive.google.com/uc?id=1hTagXoQbU5xEeYMwgNLnOLs2dLBBSxLx&export=download"
     },
     {
       "id": 2,
@@ -103,15 +98,15 @@
   "Idioma": [
     {
       "id": 0,
-      "idioma": "Ingles",
-      "nivel_lectura": "Intermedio",
-      "nivel_escritura": "Intermedio"
+      "idioma": "Portugués",
+      "nivel_lectura": "Bilingue",
+      "nivel_escritura": "Muy avanzado"
     },
     {
       "id": 1,
-      "idioma": "Portugues",
+      "idioma": "Inglés",
       "nivel_lectura": "Muy avanzado",
-      "nivel_escritura": "Avanzado"
+      "nivel_escritura": "Basico"
     }
   ],
   "Imagen": [

@@ -117,7 +117,24 @@ if(this.cookies.get("token")===""){
 }
 
 Addprog(entrada:SKILL){
+  if(this.flageditskill==false){
+    console.log("nuevo Skill");
+  this.servi.serviAddSkill(entrada).subscribe((entrada)=>{this.skillBD.push(entrada)});    
+  this.AddItem1=!this.AddItem1;  
+}
+  else{
 
+    this.servi.PutSkillServi(entrada).subscribe(()=>{
+      this.skillBD=this.skillBD.filter(t=>t.id!==entrada.id);
+      this.servi.GetSkillService().subscribe((skillBD)=>{this.skillBD = skillBD});
+    //resulta que si no pongo el get aca cuando hago el put no me aparece en el template
+    // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
+    
+    })
+    console.log("Para editar nuevo componente");
+    this.AddItem1=!this.AddItem1;  
+    
+  }
   
 }
 

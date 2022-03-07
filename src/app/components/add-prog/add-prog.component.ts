@@ -31,7 +31,9 @@ export class AddProgComponent implements OnInit {
     lenguaje:string="";
     info:string="";
     UrlImg:string="";
-  
+    tokenGo:string="";
+    linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
+
   id?:number=0;
   error: boolean=false;
   mensaje: string="";
@@ -41,6 +43,8 @@ export class AddProgComponent implements OnInit {
   }
 
   enviaSkill(){
+this.UrlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
+
     if(this.lenguaje.length===0){
       this.error=true;
       this.mensaje+= "-Ingrese el campo de lenguaje \n";  }

@@ -56,10 +56,10 @@
     {
       "Institucion": "asdf",
       "Titulo": "asdf",
-      "FechaIni": 2022,
-      "FechaFin": 2022,
+      "FechaIni": 1991,
+      "FechaFin": 2029,
       "Estado": "Graduado",
-      "UriImg": "",
+      "UriImg": "https://drive.google.com/uc?id=asdf&export=download",
       "id": "dLGhj1d"
     }
   ],

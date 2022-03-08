@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 import { Educacion } from 'src/app/mock-Educacion';
 import { EDU } from 'src/app/Edu';
 import { EducacionService } from 'src/app/service/educacion.service';
@@ -30,7 +30,21 @@ export class AddEduComponent implements OnInit {
     anio1:number=0;
     mensaje:string="";
     error:boolean=false;
-
+//----------------------------------------------------------------
+@Input() flagedit:boolean = false;
+    linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
+    @Output() newEditItem:EventEmitter<boolean> = new EventEmitter(false);
+    @Input() newitem:boolean = false;
+     
+    @Input() datoedit:EDU ={
+      Institucion:"", 
+      Titulo:"",
+      FechaIni:0,
+      FechaFin:0,
+      Estado:"",
+      UriImg:""  
+    };
+    UriImge:string = "";
 
     constructor() { }
 
@@ -47,6 +61,7 @@ export class AddEduComponent implements OnInit {
 
 
   enviaEdu(){
+    this.UriImg=this.linkaux[0]+this.UriImge+this.linkaux[1]
     this.valor = this.fechastr.split('-');
     this.valor1 = this.fechastr1.split('-');
     this.FechaIni= Number(this.valor[0]); //casting de string a number
@@ -86,18 +101,41 @@ export class AddEduComponent implements OnInit {
             this.error=true;
             this.mensaje+= "-Ingrese el campo de Estado \n";  }
       
-        if(this.error==true){
-          alert(this.mensaje)
-          this.mensaje="";
-        }
+                      
+            if(this.error==true&&this.flagedit==false){
+              alert(this.mensaje)
+              this.mensaje="";
+            }
+    
+            if (this.error==false){
+              if(this.flagedit==true){
+                this.datoedit.Institucion=this.Institucion;
+                this.datoedit.Titulo=this.Titulo;
+                this.datoedit.FechaIni=this.FechaIni;
+                this.datoedit.FechaFin=this.FechaFin;
+                this.datoedit.Estado=this.Estado;
+                this.datoedit.UriImg=this.UriImg;
+                this.newEditItem.emit(true);
+                this.InExp.emit(this.datoedit);  
+                
+                
+                
+                
+                
+                
+                
 
-        if (this.error==false){
-          
+
+
+              }
+      
+          else{
           const {Institucion,Titulo,FechaIni,FechaFin,Estado,UriImg}=this;
           const NewEXPE= {Institucion,Titulo,FechaIni,FechaFin,Estado,UriImg};
           console.log(NewEXPE);
           this.InExp.emit(NewEXPE);
-
+          this.newitem=true;
+              }
             }
 
 }}

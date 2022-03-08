@@ -5,16 +5,33 @@
     <div class="row blockinput">
       <div class="col-sm-2" ></div>
       <div class="col-sm-10" >
-                             <label for="imageFile">Imagen de la institucion donde estudia o estudio:</label>
-                            <input type="file" id="imageFile" accept="image/*" multiple>
+                             <label *ngIf="flagedit===false" for="imageFile">Token de la imagen donde estudia o estudio:</label>
+                             <label *ngIf="flagedit===true" for="imageFile">Token de la imagen {{datoedit.UriImg}} de la institucion donde estudia o estudio:</label>
+                             <input
+                             style="height: 1rem; font-size:0.5rem" 
+                              type="text"
+                              class="form-control"
+                              id="Institucion"
+                              name="token drive"
+                              placeholder="Ingrese el token del archivo"
+                              [(ngModel)]="UriImge"
+                              >
+                        
         </div>
     
+
+        
+
+
+
+
         </div>    
            <br /> 
             <div class="row blockinput">
                 <div class="col-sm-6" >
-                    <label>Ingrese el nombre de la Institucion</label>
-                    <input
+                    <label *ngIf="flagedit===false">Ingrese el nombre de la Institucion</label>
+                    <label *ngIf="flagedit===true">Ingrese el nombre de la  Institucion {{datoedit.Institucion}}</label>
+                   <input
                     style="height: 1rem; font-size:0.5rem" 
                      type="text"
                      class="form-control"
@@ -29,7 +46,8 @@
                      <p> {{Institucion}}</p>
                   </div>
                   <div class="col-sm-6" >
-                     <label>Ingrese el nombre del titulo de lo que estudio</label>
+                     <label *ngIf="flagedit===false">Ingrese el nombre del titulo de lo que estudio</label>
+                     <label *ngIf="flagedit===true">Ingrese el nombre del titulo  de lo que estudio {{datoedit.Titulo}}</label>
                     <input 
                     style="height: 1rem; font-size:0.5rem" 
                     type="text"
@@ -46,7 +64,8 @@
             <div class="row blockinput">
               <div class="col-sm-2" ></div>
                 <div class="col-sm-4" >
-                    <label>Fecha de Ingreso  </label>
+                    <label *ngIf="flagedit===false">Fecha de Ingreso  </label>
+                    <label *ngIf="flagedit===true">Fecha de Ingreso {{datoedit.FechaIni}}  </label >
                     <input type="date" name="begin" 
                      placeholder="dd-mm-yyyy" value=""
                      min="1991-01-01" max="2030-12-31"
@@ -55,18 +74,21 @@
                     </div>
                 
                 <div class="col-sm-4" >
-                    <label>Fecha de Fin</label>
+                    <label *ngIf="flagedit===false">Fecha de Fin</label>
+                    <label *ngIf="flagedit===true">Fecha de Fin {{datoedit.FechaFin}}
+                      </label >
                     <input type="date" name="begin" 
                      placeholder="dd-mm-yyyy" value=""
                      min="1991-01-01" max="2030-12-31"
                      [(ngModel)]="fechastr1">
-                     <p> {{fechastr1}}</p>
+                     <p> {{fechastr1}}</p> 
                     </div>
                 
                 </div>
             <div class="row blockinput">
                 <div class="col-sm-4" >
-                    <label>Estado de su estudio</label>
+                    <label *ngIf="flagedit===false">Estado de su estudio</label>
+                    <label *ngIf="flagedit===true">Estado de su estudio {{datoedit.Estado}}</ label>
                     <!--<input
                     style="height: 1rem; font-size:0.5rem" 
                      type="text"
@@ -117,15 +139,18 @@
     
     <form class="form-floating">
         <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
-        <label for="floatingInputValue">Ingrese puesto de Institucion</label>
+        <label *ngIf="flagedit===false" for="floatingInputValue">Ingrese puesto de Institucion</label>
+        <label *ngIf="flagedit===true" for="floatingInputValue">Ingrese  puesto de Institucion</label>
       </form>
       <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Ingrese puesto de Institucion</label>
+        <label *ngIf="flagedit===false" for="floatingInput">Ingrese puesto de Institucion</label>
+        <label *ngIf="flagedit===true" for="floatingInput">Ingrese  puesto de Institucion</label>
       </div>
       <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="Titulo S.A.-S.R.L..etc">
-        <label for="floatingInput">Ingrese el nombre de la Titulo o institución</label>
+        <label *ngIf="flagedit===false" for="floatingInput">Ingrese el nombre de la Titulo o institución</label>
+        <label *ngIf="flagedit===true" for="floatingInput">Ingrese  el nombre de la Titulo o institución</label>
       </div>
       
     

@@ -14,6 +14,12 @@ export class ItemEduComponent implements OnInit {
   @Output() DeleteExp: EventEmitter<EDU>=new EventEmitter;
   Imagen:string ="";
   flag:boolean = false;
+  flaglocal:boolean = false;
+  @Output() newitem2:EventEmitter< boolean> =new EventEmitter(false);
+  @Output() EditItem:EventEmitter<EDU>=new EventEmitter;
+  
+
+
   constructor(private cookies:CookieService) { }
 
   ngOnInit(): void {
@@ -28,7 +34,13 @@ export class ItemEduComponent implements OnInit {
 
   }
   EditarExperiencia(input1:EDU){
-    this.newitem
+
+    this.flaglocal=!this.flaglocal;
+  
+    console.log("funcion editar");
+    this.EditItem.emit(input1); 
+
+
   }
   BorrarExperiencia(input1:EDU){
     console.log(this.educacion.id);

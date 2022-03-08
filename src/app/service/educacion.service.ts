@@ -39,9 +39,14 @@ return this.http.post<EDU>(this.APIuri,ENTRADA,httpOptions);
 
 DeleteServiceEdu(entrada:EDU):Observable<EDU>{
 const url= `${this.APIuri}/${entrada.id}`
-return this.http.delete<EDU>(url);
+return this.http.delete<EDU>(url);}
 
-
+PutEduServi(entrada:EDU):Observable<EDU>{
+  const url= `${this.APIuri}/${entrada.id}`;
+  return this.http.put<EDU>(url,entrada);
 
 }
+
+
+
 } 

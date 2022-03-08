@@ -13,6 +13,18 @@ export class EducacionComponent implements OnInit {
   AddItem:boolean = false;
   EDUBD:EDU[] =[];
   flag:boolean = false;
+  flageditItem:boolean =false;
+  editar:boolean = false;
+  ParaEnviar:EDU ={
+    Institucion:"", 
+    Titulo:"",
+    FechaIni:0,
+    FechaFin:0,
+    Estado:"",
+    UriImg:""  
+  };
+  
+  
   constructor(private tareas:EducacionService, private Auth:LoginserviceService,private cookies:CookieService) { }
 
   ngOnInit(): void {
@@ -31,11 +43,11 @@ export class EducacionComponent implements OnInit {
     console.log("NuevaTarea!");
     this.AddItem=!this.AddItem;
     console.log(this.AddItem);
-  }
-  AddExp(entrada:EDU){
-      this.tareas.serviAddEdu(entrada).subscribe((entrada)=>{this.EDUBD.push(entrada)});    
+    this.flag=false;
+    if(this.cookies.get("token")===""){
+      this.flag=true;
 
-
+    }
   }
   
   DeleteEdu(entrada:EDU){
@@ -45,11 +57,38 @@ export class EducacionComponent implements OnInit {
     })
   }
   AddEdu(entrada:EDU){
-    this.tareas.serviAddEdu(entrada).subscribe((entrada)=>{this.EDUBD.push(entrada)});    
-
+    
+    if(this.flageditItem==false){
+      console.log("nuevo Skill");
+      this.tareas.serviAddEdu(entrada).subscribe((entrada)=>{this.EDUBD.push(entrada)});    
+    this.AddItem=!this.AddItem;  
+  }
+    else{
+  
+      this.tareas.PutEduServi(entrada).subscribe(()=>{
+        this.EDUBD=this.EDUBD.filter(t=>t.id!==entrada.id);
+        this.tareas.getServiceEdus().subscribe((EDUBD)=>{this.EDUBD=EDUBD});
+      //resulta que si no pongo el get aca cuando hago el put no me aparece en el template
+      // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
+      
+      })
+      console.log("Para editar nuevo componente");
+      this.AddItem=!this.AddItem;  
+      
+    }
+   
 
 }
+SendEdit(recorre:EDU){
+  console.log("FUNCION SEND EDIT")
+  this.ParaEnviar=recorre;
+  this.editar=true;
+  this.AddItem=!this.AddItem;
+}
 
+AddEditItem(){
+  this.flageditItem=true;
+}
 
 
 

@@ -20,11 +20,17 @@
     *ngFor= "let recorre of EDUBD"
     [educacion]="recorre"
     (DeleteExp)="DeleteEdu(recorre)"
-    [newitem]="AddItem" ></app-item-edu>
-
+    [newitem]="AddItem"
+    (EditItem)="SendEdit(recorre)"
+    
+    ></app-item-edu>
+    
 </div>
 
 <app-add-edu
 *ngIf="AddItem"
 (InExp)="AddEdu($event)"
+(newEditItem)="AddEditItem()"
+[datoedit]="ParaEnviar"
+[flagedit]="editar"
 ></app-add-edu> 

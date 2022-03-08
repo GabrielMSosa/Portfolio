@@ -1,19 +1,43 @@
-
+    
+     
+     
+   
+ 
+    
+    
+     
+ 
+    
 <div class="bodyNewExp">
 <h2 class="Titnuevaexp">Nueva experiencia</h2>
 <br />
 <div class="row blockinput">
   <div class="col-sm-2" ></div>
   <div class="col-sm-10" >
-                         <label for="imageFile">Imagen de empresa en que trabaja/jó:</label>
-                        <input type="file" id="imageFile" accept="image/*" multiple>
+                         <label *ngIf="flagedit===false"  >Imagen de empresa en que trabaja/jó:</label >
+                          <label *ngIf="flagedit===true" > Imagen de empresa  {{datoedit.UriImg}} :</label >
+
+                         <input
+                         style="height: 1rem; font-size:0.5rem" 
+                          type="text"
+                          class="form-control"
+                          id="trabajo"
+                          name="Uriimg"
+                          placeholder="ingese el token de la imagen"
+                          [(ngModel)]="UriImge"
+                         >
+                       
+
+
+
     </div>
 
     </div>    
        <br /> 
         <div class="row blockinput">
             <div class="col-sm-6" >
-                <label>Ingrese puesto de trabajo</label>
+                <label *ngIf="flagedit===false" >Ingrese puesto de trabajo</label >
+                  <label *ngIf="flagedit===true" >Edite el puesto {{datoedit.trabajo}} </label >
                 <input
                 style="height: 1rem; font-size:0.5rem" 
                  type="text"
@@ -29,7 +53,8 @@
                  <p> {{trabajo}}</p>
               </div>
               <div class="col-sm-6" >
-                 <label>Ingrese el nombre de la empresa</label>
+                 <label *ngIf="flagedit===false" >Ingrese el nombre de la empresa</label >
+                  <label *ngIf="flagedit===true" >Edite el campo {{datoedit.empresa}} </label >
                 <input 
                 style="height: 1rem; font-size:0.5rem" 
                 type="text"
@@ -46,7 +71,8 @@
         <div class="row blockinput">
           <div class="col-sm-2" ></div>
             <div class="col-sm-4" >
-                <label>Fecha de Ingreso  </label>
+                <label *ngIf="flagedit===false" >Fecha de Ingreso  </label >
+                  <label *ngIf="flagedit===true" > edite la Fecha de Ingreso {{datoedit.FechaIni}} </label >
                 <input type="date" name="begin" 
                  placeholder="dd-mm-yyyy" value=""
                  min="1991-01-01" max="2030-12-31"
@@ -55,7 +81,8 @@
                 </div>
             
             <div class="col-sm-4" >
-                <label>Fecha de Fin</label>
+                <label *ngIf="flagedit===false" >Fecha de Fin</label >
+                  <label *ngIf="flagedit===true" >Fecha de Fin     {{datoedit.FechaFin}}</label >
                 <input type="date" name="begin" 
                  placeholder="dd-mm-yyyy" value=""
                  min="1991-01-01" max="2030-12-31"
@@ -66,7 +93,8 @@
             </div>
         <div class="row blockinput">
             <div class="col-sm-4" >
-                <label>Provincia</label>
+                <label *ngIf="flagedit===false" >Provincia</label >
+                  <label *ngIf="flagedit===true" >Provincia {{datoedit.Provincias}} </label >
                 <input
                 style="height: 1rem; font-size:0.5rem" 
                  type="text"
@@ -78,7 +106,8 @@
             </div>
             
             <div class="col-sm-4" >
-                <label>Localidad</label>
+                <label *ngIf="flagedit===false" >Localidad</label >
+                  <label *ngIf="flagedit===true" >Edite el campo  {{datoedit.Localidad}} </label >
                 <input
                 style="height: 1rem; font-size:0.5rem" 
                  type="text"
@@ -90,7 +119,8 @@
             </div>
             
             <div class="col-sm-4" >
-                <label>País</label>
+                <label *ngIf="flagedit===false" >País</label >
+                  <label *ngIf="flagedit===true" >País     {{datoedit.Pais}}</label >
                 <input
                 style="height: 1rem; font-size:0.5rem" 
                 type="text"
@@ -129,15 +159,18 @@
 
 <form class="form-floating">
     <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
-    <label for="floatingInputValue">Ingrese puesto de trabajo</label>
+    <label  for="floatingInputValue">Ingrese puesto de trabajo</label >
+      <label  for="floatingInputValue">true puesto de trabajo</label >
   </form>
   <div class="form-floating mb-3">
     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-    <label for="floatingInput">Ingrese puesto de trabajo</label>
+    <label  for="floatingInput">Ingrese puesto de trabajo</label >
+      <label  for="floatingInput">true puesto de trabajo</label >
   </div>
   <div class="form-floating mb-3">
     <input type="email" class="form-control" id="floatingInput" placeholder="Empresa S.A.-S.R.L..etc">
-    <label for="floatingInput">Ingrese el nombre de la empresa o institución</label>
+    <label  for="floatingInput">Ingrese el nombre de la empresa o institución</label >
+      <label  for="floatingInput">true el nombre de la empresa o institución</label >
   </div>
   
 

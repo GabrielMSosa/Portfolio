@@ -3,6 +3,7 @@ import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
 import { TaskService } from 'src/app/service/task.service';
 
+
 @Component({
   selector: 'app-new-exp',
   templateUrl: './new-exp.component.html',
@@ -19,7 +20,8 @@ export class NewExpComponent implements OnInit {
     Localidad:string=""
     Provincias:string="";
     Pais:string="";
-    UriImg:string="faltaconfigurar";
+    UriImge:string="";
+    UriImg:string="";
     fechastr:string="";
     fechastr1:string="";
     year1:string="";
@@ -30,6 +32,27 @@ export class NewExpComponent implements OnInit {
     anio1:number=0;
     mensaje:string="";
     error:boolean=false;
+    @Input() flagedit:boolean = false;
+    linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
+    @Output() newEditItem:EventEmitter<boolean> = new EventEmitter(false);
+    @Input() newitem:boolean = false;
+    
+    @Input() datoedit:EXPE ={
+      trabajo:"", 
+      empresa:"",
+      FechaIni:0,
+      FechaFin:0,
+      deltaanio:"",
+      Localidad:"",
+      Provincias:"",
+      Pais:"",
+      UriImg:""
+     };
+
+     
+
+  
+
 
 
     constructor() { }
@@ -39,6 +62,8 @@ export class NewExpComponent implements OnInit {
   }
 
   enviaExp(){
+
+    this.UriImg=this.linkaux[0]+this.UriImge+this.linkaux[1]
     this.valor = this.fechastr.split('-');
     this.valor1 = this.fechastr1.split('-');
     this.FechaIni= Number(this.valor[0]); //casting de string a number
@@ -84,17 +109,46 @@ export class NewExpComponent implements OnInit {
               this.error=true;
               this.mensaje+= "-Ingrese el campo de Pais \n";  }
               
-        if(this.error==true){
+        if(this.error==true&&this.flagedit==false){
           alert(this.mensaje)
           this.mensaje="";
         }
 
         if (this.error==false){
-          this.deltaanio=(this.FechaFin - this.FechaIni).toString();
+          
+  if(this.flagedit==true){
+    this.deltaanio=(this.FechaFin - this.FechaIni).toString();
           const {trabajo,empresa,FechaIni,FechaFin,deltaanio,Localidad,Provincias,Pais,UriImg}=this;
-          const NewEXPE= {trabajo,empresa,FechaIni,FechaFin,deltaanio,Localidad,Provincias,Pais,UriImg};
-          console.log(NewEXPE);
-          this.InExp.emit(NewEXPE);
+      
+    this.datoedit.trabajo=this.trabajo;
+    this.datoedit.empresa=this.empresa;
+    this.datoedit.FechaIni=this.FechaIni;
+    this.datoedit.FechaFin=this.FechaFin;
+    this.datoedit.deltaanio=this.deltaanio;
+    this.datoedit.Localidad=this.Localidad;
+    this.datoedit.Provincias=this.Provincias;
+    this.datoedit.Pais=this.Pais;
+    this.datoedit.UriImg=this.UriImg;
+    this.newEditItem.emit(true);
+    this.InExp.emit(this.datoedit);  
+  
+  }
+  
+  else{  
+    this.deltaanio=(this.FechaFin - this.FechaIni).toString();
+    const {trabajo,empresa,FechaIni,FechaFin,deltaanio,Localidad,Provincias,Pais,UriImg}=this;
+    const NewEXPE= {trabajo,empresa,FechaIni,FechaFin,deltaanio,Localidad,Provincias,Pais,UriImg};
+    console.log(NewEXPE);
+    this.InExp.emit(NewEXPE);
+  this.newitem=true;
+   }
+  
+
+
+
+
+
+        
 
         }
 

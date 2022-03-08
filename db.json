@@ -2,15 +2,15 @@
   "Experiences": [
     {
       "id": 0,
-      "trabajo": "Mantenimiento en tragamonedas",
-      "empresa": "CASINOS DE MISIONES S.A.",
-      "FechaIni": 2017,
-      "FechaFin": 2021,
-      "deltaanio": "4",
-      "Localidad": "Obera",
-      "Provincias": "Misiones",
+      "trabajo": "typescript",
+      "empresa": "pirulito",
+      "FechaIni": 2022,
+      "FechaFin": 2022,
+      "deltaanio": "0",
+      "Localidad": "Campo Grande",
+      "Provincias": "Oberá",
       "Pais": "Argentina",
-      "UriImg": "./assets/Casino.jpg"
+      "UriImg": "https://drive.google.com/uc?id=1jrjaOBr6EXk9mL9lddUBiUihYIRoib29&export=download"
     },
     {
       "id": 1,

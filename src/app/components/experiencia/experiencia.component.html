@@ -21,12 +21,18 @@
     *ngFor= "let recorre of EXPBD"
     [experiencias]="recorre"
     (DeleteExp)="DeleteExp(recorre)"
-    [newitem]="AddItem" ></app-item-exp>
+    [newitem]="AddItem"     
+    (EditItem)="SendEdit(recorre)"
+    ></app-item-exp>
 
 </div>
 <app-new-exp
 *ngIf="AddItem"
 (InExp)="AddExp($event)"
+(newEditItem)="AddEditItem()"
+[datoedit]="ParaEnviar"
+[flagedit]="editar"
+
 ></app-new-exp> 
 <!-- Agregamos -->
 

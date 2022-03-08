@@ -11,8 +11,24 @@ import{ CookieService } from "ngx-cookie-service";
 })
 export class ExperienciaComponent implements OnInit {
  AddItem:boolean = false;
+ flageditItem:boolean =false;
 EXPBD:EXPE[] =[];
  flag:boolean = false;
+ editar:boolean = false;
+ ParaEnviar:EXPE ={
+  trabajo:"", 
+  empresa:"",
+  FechaIni:0,
+  FechaFin:0,
+  deltaanio:"",
+  Localidad:"",
+  Provincias:"",
+  Pais:"",
+  UriImg:""
+ };
+
+
+
   constructor(private tareas:TaskService,private cookies:CookieService,private Auth: LoginserviceService) { }
 
   ngOnInit(): void {
@@ -36,8 +52,41 @@ EXPBD:EXPE[] =[];
 
     }
   }
+
+  SendEdit(recorre:EXPE){
+    console.log("FUNCION SEND EDIT")
+    this.ParaEnviar=recorre;
+    this.editar=true;
+    this.AddItem=!this.AddItem;
+  }
+  AddEditItem(){
+    this.flageditItem=true
+  }
+
+  
   AddExp(entrada:EXPE){
+      if(this.flageditItem==false){
+        console.log("nuevo Skill");
       this.tareas.serviAddExp(entrada).subscribe((entrada)=>{this.EXPBD.push(entrada)});    
+      this.AddItem=!this.AddItem;  
+    }
+      else{
+    
+        this.tareas.PutExpServi(entrada).subscribe(()=>{
+          this.EXPBD=this.EXPBD.filter(t=>t.id!==entrada.id);
+          this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD = EXPBD});
+        //resulta que si no pongo el get aca cuando hago el put no me aparece en el template
+        // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
+        
+        })
+        console.log("Para editar nuevo componente");
+        this.AddItem=!this.AddItem;  
+        
+      }
+     
+
+
+
 
 
   }

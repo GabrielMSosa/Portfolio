@@ -4,6 +4,7 @@ import { EXPE } from 'src/app/Experience';
 import { TaskService } from 'src/app/service/task.service';
 import { LoginserviceService } from 'src/app/service/loginservice.service';
 import{ CookieService } from "ngx-cookie-service";
+import { throwIfEmpty } from 'rxjs';
 @Component({
   selector: 'app-item-exp',
   templateUrl: './item-exp.component.html',
@@ -12,6 +13,9 @@ import{ CookieService } from "ngx-cookie-service";
 export class ItemExpComponent implements OnInit {
   @Input() experiencias:EXPE = Experiencias[0];
   @Input() newitem:boolean = false;
+  flaglocal:boolean = false;
+  @Output() newitem2:EventEmitter< boolean> =new EventEmitter(false);
+  @Output() EditItem:EventEmitter<EXPE>=new EventEmitter;
   @Output() DeleteExp: EventEmitter<EXPE>=new EventEmitter;
   Imagen:string ="";
   flag:boolean = false;
@@ -40,7 +44,11 @@ export class ItemExpComponent implements OnInit {
   }
 
   EditarExperiencia(entrada:EXPE){
-    this.newitem
+     
+  this.flaglocal=!this.flaglocal;
+  
+  console.log("funcion editar");
+  this.EditItem.emit(entrada); 
   }
 
 

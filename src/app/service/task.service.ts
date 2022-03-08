@@ -34,6 +34,13 @@ export class TaskService {
     
 
 }
+PutExpServi(entrada:EXPE):Observable<EXPE>{
+  const url= `${this.APIuri}/${entrada.id}`
+  
+ return this.http.put<EXPE>(url,entrada);
+
+}
+
 serviAddExp(ENTRADA:EXPE):Observable<EXPE>{
   return this.http.post<EXPE>(this.APIuri,ENTRADA,httpOptions);
 }

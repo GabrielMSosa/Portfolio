@@ -3,6 +3,7 @@ import { Educacion } from 'src/app/mock-Educacion';
 import { EDU } from 'src/app/Edu';
 import { EducacionService } from 'src/app/service/educacion.service';
 import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-add-edu',
   templateUrl: './add-edu.component.html',
@@ -20,16 +21,16 @@ export class AddEduComponent implements OnInit {
    FechaFin:number=0;
    Estado:string="";
    UriImg:string="";
-    fechastr:string="";
-    fechastr1:string="";
-    year1:string="";
-    year:string="";
-    valor:string[]=[];
-    valor1:string[]=[];
-    anio:number=0;
-    anio1:number=0;
-    mensaje:string="";
-    error:boolean=false;
+   fechastr:string="";
+   fechastr1:string="";
+   year1:string="";
+   year:string="";
+   valor:string[]=[];
+   valor1:string[]=[];
+   anio:number=0;
+   anio1:number=0;
+   mensaje:string="";
+   error:boolean=false;
 //----------------------------------------------------------------
 @Input() flagedit:boolean = false;
     linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
@@ -105,8 +106,10 @@ export class AddEduComponent implements OnInit {
             if(this.error==true&&this.flagedit==false){
               alert(this.mensaje)
               this.mensaje="";
-            }
-    
+            } 
+              
+
+            
             if (this.error==false){
               if(this.flagedit==true){
                 this.datoedit.Institucion=this.Institucion;

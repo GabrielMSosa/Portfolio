@@ -2,15 +2,15 @@
   "Experiences": [
     {
       "id": 0,
-      "trabajo": "Mantenimiento en tragamonedas",
-      "empresa": "CASINOS DE MISIONES S.A.",
-      "FechaIni": 2017,
-      "FechaFin": 2021,
-      "deltaanio": "4",
-      "Localidad": "Obera",
-      "Provincias": "Misiones",
+      "trabajo": "typescript",
+      "empresa": "pirulito",
+      "FechaIni": 2022,
+      "FechaFin": 2022,
+      "deltaanio": "0",
+      "Localidad": "Campo Grande",
+      "Provincias": "Oberá",
       "Pais": "Argentina",
-      "UriImg": "./assets/Casino.jpg"
+      "UriImg": "https://drive.google.com/uc?id=1jrjaOBr6EXk9mL9lddUBiUihYIRoib29&export=download"
     },
     {
       "id": 1,
@@ -52,22 +52,13 @@
       "FechaFin": 2022,
       "Estado": "Cursando",
       "UriImg": "./assets/ArgPro.PNG"
-    },
-    {
-      "Institucion": "asdf",
-      "Titulo": "asdf",
-      "FechaIni": 2022,
-      "FechaFin": 2022,
-      "Estado": "Graduado",
-      "UriImg": "",
-      "id": "dLGhj1d"
     }
   ],
   "Skills": [
     {
       "id": 0,
       "lenguaje": "C++",
-      "info": "POO manejo de estructuras,clases,listas.",
+      "info": "algo de info",
       "UrlImg": "https://drive.google.com/uc?id=1hTagXoQbU5xEeYMwgNLnOLs2dLBBSxLx&export=download"
     },
     {
@@ -94,6 +85,17 @@
       "info": "Diseño de Base de datos y realizando ABM.",
       "UrlImg": "https://drive.google.com/uc?id=1gLQ8ZzxY199Mr8BrTZcFu7B8oIloJFbG&export=download"
     }
+  ],
+  "Users":[
+        {"id":0,
+        "Nombre":"Gabriel Matias",
+        "Apellido":"Sosa",
+        "Telefono":"+5493755261740",
+        "email":"sosagabriel79@gmail.com",
+        "Edad":"31",
+        "Acercademi":"Me encanta innovar, generar nuevas metodologias para mejorar procedimientos y siempre seguir aprendiendo ",
+        "UrlImg":""}
+
   ],
   "Idioma": [
     {

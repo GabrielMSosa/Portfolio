@@ -59,7 +59,7 @@ EXPBD:EXPE[] =[];
     this.editar=true;
     this.AddItem=!this.AddItem;
   }
-  AddEditItem(){
+  AddEditItem(){ 
     this.flageditItem=true
   }
 

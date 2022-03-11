@@ -27,3 +27,23 @@ col-sm-2 {
     border: rgba(255, 0, 0, 0.781)
 
 }
+.perfil{
+    width:5rem;
+    height:5rem;
+    position: relative;
+    bottom: 5rem;
+    border-radius: 3rem;
+
+}
+.infopersonal{
+
+    position: relative;
+    bottom: 5rem;
+    line-height: 100% ; 
+}
+.dato{
+    font-size:0.4rem;
+    line-height: 100% ;  
+
+
+}

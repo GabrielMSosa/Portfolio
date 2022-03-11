@@ -52,15 +52,6 @@
       "FechaFin": 2022,
       "Estado": "Cursando",
       "UriImg": "./assets/ArgPro.PNG"
-    },
-    {
-      "Institucion": "asdf",
-      "Titulo": "asdf",
-      "FechaIni": 1991,
-      "FechaFin": 2029,
-      "Estado": "Graduado",
-      "UriImg": "https://drive.google.com/uc?id=asdf&export=download",
-      "id": "dLGhj1d"
     }
   ],
   "Skills": [
@@ -94,6 +85,17 @@
       "info": "Diseño de Base de datos y realizando ABM.",
       "UrlImg": "https://drive.google.com/uc?id=1gLQ8ZzxY199Mr8BrTZcFu7B8oIloJFbG&export=download"
     }
+  ],
+  "Users":[
+        {"id":0,
+        "Nombre":"Gabriel Matias",
+        "Apellido":"Sosa",
+        "Telefono":"+5493755261740",
+        "email":"sosagabriel79@gmail.com",
+        "Edad":"31",
+        "Acercademi":"Me encanta innovar, generar nuevas metodologias para mejorar procedimientos y siempre seguir aprendiendo ",
+        "UrlImg":"https://drive.google.com/uc?id=1SV2lNnz2bJb5gKYnzlGuA4tgmJmHDRYf&export=download"}
+
   ],
   "Idioma": [
     {

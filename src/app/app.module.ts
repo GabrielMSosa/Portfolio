@@ -28,6 +28,7 @@ import { LengProgComponent } from './components/leng-prog/leng-prog.component';
 import { IdiomaComponent } from './components/idioma/idioma.component';
 import { AddLangComponent } from './components/add-lang/add-lang.component';
 import { AddProgComponent } from './components/add-prog/add-prog.component';
+import { BtnEditLapizComponent } from './components/btn-edit-lapiz/btn-edit-lapiz.component';
 //##
  
 @NgModule({
@@ -53,7 +54,8 @@ import { AddProgComponent } from './components/add-prog/add-prog.component';
     LengProgComponent,
     IdiomaComponent,
     AddLangComponent,
-    AddProgComponent
+    AddProgComponent,
+    BtnEditLapizComponent
   ],
   imports: [
     HttpClientModule,

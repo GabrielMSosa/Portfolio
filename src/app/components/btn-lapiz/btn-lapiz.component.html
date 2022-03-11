@@ -1,10 +1,22 @@
 <div class="fondoAD">
 <div class="container">
   <div class="row">
-      <div class="col-sm-11" > 
+      <div class="col-sm-3" >
+        <img [src]="Users.UrlImg" class="perfil">
+        <div class="infopersonal">
+        <h3 class="dato">{{Users.Apellido}}, {{Users.Nombre}}</h3>
+        <p class="dato"> e-mail:{{Users.email}} 
+         tel:{{Users.Telefono}} 
+         <br>Edad: {{Users.Edad}} </p>
+      </div>
+
+
+      </div>
+    
+      <div class="col-sm-8" > 
           <h1 class="tituloAcerca">Acerca de</h1>
           
-          <p id="textoacercade"> {{info}} </p>
+          <p class="dato" id="textoacercade"> {{Users.Acercademi}} </p>
       </div>
       
       <div class="col-sm-1" > 

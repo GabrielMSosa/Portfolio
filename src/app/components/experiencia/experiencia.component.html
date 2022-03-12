@@ -17,6 +17,7 @@
             </button>  
         </div>
     </div>
+</div>
     <app-item-exp  
     *ngFor= "let recorre of EXPBD"
     [experiencias]="recorre"
@@ -25,7 +26,7 @@
     (EditItem)="SendEdit(recorre)"
     ></app-item-exp>
 
-</div>
+
 <app-new-exp
 *ngIf="AddItem"
 (InExp)="AddExp($event)"

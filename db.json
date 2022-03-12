@@ -1,17 +1,22 @@
 {
   "Experiences": [
-    {
-      "id": 0,
-      "trabajo": "typescript",
-      "empresa": "pirulito",
-      "FechaIni": 2022,
-      "FechaFin": 2022,
-      "deltaanio": "0",
-      "Localidad": "Campo Grande",
-      "Provincias": "Oberá",
-      "Pais": "Argentina",
-      "UriImg": "https://drive.google.com/uc?id=1jrjaOBr6EXk9mL9lddUBiUihYIRoib29&export=download"
-    },
+    
+     {  "id": 0,
+       "trabajo":"Mantenimiento en tragamonedas", 
+      "empresa":"CASINOS DE MISIONES S.A.",
+      "FechaIni":2017,
+      "FechaFin":2021,
+      "deltaanio":"4",
+      "Localidad":"Obera",
+      "Provincias":"Misiones",
+      "Pais":"Argenina",
+      "UriImg":"https://drive.google.com/uc?id=1Amxg2KtDEIrzYRlMZkDnh1WZKRwi1PiJ&export=download"
+
+
+     } ,
+
+
+
     {
       "id": 1,
       "trabajo": "Analista en Mercadolibre",
@@ -88,8 +93,8 @@
   ],
   "Users":[
         {"id":0,
-        "Nombre":"Gabriel Matias",
-        "Apellido":"Sosa",
+        "Nombre":"GABRIEL MATIAS",
+        "Apellido":"SOSA",
         "Telefono":"+5493755261740",
         "email":"sosagabriel79@gmail.com",
         "Edad":"31",

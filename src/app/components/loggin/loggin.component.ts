@@ -3,6 +3,7 @@ import { LoginserviceService } from 'src/app/service/loginservice.service';
 import {Router} from "@angular/router";
 
 @Component({
+  
   selector: 'app-loggin',
   templateUrl: './loggin.component.html',
   styleUrls: ['./loggin.component.css']

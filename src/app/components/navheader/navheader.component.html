@@ -1,3 +1,5 @@
+
+<!--
 <div class="container navegador">
   <div class="row">
       <div class="col-sm-6" > 
@@ -39,6 +41,39 @@
 
   </div>
 </div>
+
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Argentina Programa</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="https://www.linkedin.com/in/gabriel-sosa-5953a5161/">
+          <span class="fa fa-linkedin"> </span>
+        </a></li>
+        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a
+            *ngIf="User==false"
+             routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a
+            *ngIf="User==true" 
+            routerLink="/"
+            (click)="CerrarSesion()"
+            >
+            <span class="glyphicon glyphicon-log-out">
+
+            </span> Loggout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
 
 
 

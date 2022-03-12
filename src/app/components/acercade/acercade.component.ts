@@ -26,4 +26,7 @@ export class AcercadeComponent implements OnInit {
 
   }
 
-}
+  IraEdit(){
+  
+
+}}

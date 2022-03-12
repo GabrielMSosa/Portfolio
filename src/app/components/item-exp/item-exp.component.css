@@ -1,20 +1,21 @@
 .empresa{
     font-weight: 600;    
     font-family: serif;
-    font-size: 0.9rem;
+
     font-style: italic;
 }
 .fechas{
 text-align: center;
-font-size: 0.8rem;
+
 font-family: verdana,sans-serif;
-line-height: 0.1rem;
+
 
 }
 
+
 .iconotrabajo{
-    height:5rem;
-    width:5rem;
+    max-width:13rem ;
+    max-height:13rem;
 
 
 }
@@ -23,7 +24,7 @@ line-height: 0.1rem;
 .sector{
  font-family: helvetica, arial;
  font-weight: bold;
- font-size:1.3rem;
+ 
 
 
 }
@@ -38,4 +39,7 @@ line-height: 0.1rem;
     border-style: solid;
     border: rgba(255, 0, 0, 0.781)
 
+}
+.glyphicon{
+    color: white;
 }

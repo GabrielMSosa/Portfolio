@@ -13,7 +13,7 @@ import{ CookieService } from "ngx-cookie-service";
 export class HeaderComponent implements OnInit {
   USERBD:USER[] =[];
   constructor(private servicio:UserServiceService) { }
-
+  
   ngOnInit(): void {
     this.servicio.GetUserService().subscribe((USERBD)=>{this.USERBD=USERBD});
   }

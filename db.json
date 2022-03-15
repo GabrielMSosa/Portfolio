@@ -1,22 +1,17 @@
 {
   "Experiences": [
-    
-     {  "id": 0,
-       "trabajo":"Mantenimiento en tragamonedas", 
-      "empresa":"CASINOS DE MISIONES S.A.",
-      "FechaIni":2017,
-      "FechaFin":2021,
-      "deltaanio":"4",
-      "Localidad":"Obera",
-      "Provincias":"Misiones",
-      "Pais":"Argenina",
-      "UriImg":"https://drive.google.com/uc?id=1Amxg2KtDEIrzYRlMZkDnh1WZKRwi1PiJ&export=download"
-
-
-     } ,
-
-
-
+    {
+      "id": 0,
+      "trabajo": "Mantenimiento en tragamonedas",
+      "empresa": "CASINOS DE MISIONES S.A.",
+      "FechaIni": 2017,
+      "FechaFin": 2021,
+      "deltaanio": "4",
+      "Localidad": "Obera",
+      "Provincias": "Misiones",
+      "Pais": "Argenina",
+      "UriImg": "https://drive.google.com/uc?id=1Amxg2KtDEIrzYRlMZkDnh1WZKRwi1PiJ&export=download"
+    },
     {
       "id": 1,
       "trabajo": "Analista en Mercadolibre",
@@ -28,6 +23,18 @@
       "Provincias": "Misiones",
       "Pais": "Argentina",
       "UriImg": "./assets/voolkiaIt.png"
+    },
+    {
+      "trabajo": "asfd",
+      "empresa": "asdf",
+      "FechaIni": 1993,
+      "FechaFin": 2028,
+      "deltaanio": "35",
+      "Localidad": "asdf",
+      "Provincias": "asdf",
+      "Pais": "asdf",
+      "UriImg": "https://drive.google.com/uc?id=&export=download",
+      "id": 2
     }
   ],
   "Educacion": [
@@ -91,21 +98,22 @@
       "UrlImg": "https://drive.google.com/uc?id=1gLQ8ZzxY199Mr8BrTZcFu7B8oIloJFbG&export=download"
     }
   ],
-  "Users":[
-        {"id":0,
-        "Nombre":"GABRIEL MATIAS",
-        "Apellido":"SOSA",
-        "Telefono":"+5493755261740",
-        "email":"sosagabriel79@gmail.com",
-        "Edad":"31",
-        "Acercademi":"Me encanta innovar, generar nuevas metodologias para mejorar procedimientos y siempre seguir aprendiendo ",
-        "UrlImg":"https://drive.google.com/uc?id=1SV2lNnz2bJb5gKYnzlGuA4tgmJmHDRYf&export=download"}
-
+  "Users": [
+    {
+      "id": 0,
+      "Nombre": "GABRIEL MATIAS",
+      "Apellido": "SOSA",
+      "Telefono": "+5493755261740",
+      "email": "sosagabriel79@gmail.com",
+      "Edad": "31",
+      "Acercademi": "Me encanta innovar, generar nuevas metodologias para mejorar procedimientos y siempre seguir aprendiendo ",
+      "UrlImg": "https://drive.google.com/uc?id=1SV2lNnz2bJb5gKYnzlGuA4tgmJmHDRYf&export=download"
+    }
   ],
   "Idioma": [
     {
       "id": 0,
-      "idioma": "Portugués",
+      "idioma": "Chino",
       "nivel_lectura": "Bilingue",
       "nivel_escritura": "Muy avanzado"
     },

@@ -16,7 +16,10 @@
             </button>  
         </div>
     </div>
-    <app-item-edu  
+    
+</div>
+
+<app-item-edu  
     *ngFor= "let recorre of EDUBD"
     [educacion]="recorre"
     (DeleteExp)="DeleteEdu(recorre)"
@@ -25,7 +28,6 @@
     
     ></app-item-edu>
     
-</div>
 
 <app-add-edu
 *ngIf="AddItem"

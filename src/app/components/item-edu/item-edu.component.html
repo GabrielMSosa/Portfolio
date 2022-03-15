@@ -1,12 +1,10 @@
 
-    <div 
-    *ngIf="newitem===false"  
-    class="row blockExp"
-    >
 
     <!-- *ngIf="newitem===false"   con esto vamos a hacer que desaparezca las experiencia
     y aparezca el menu de agregar educacion-->
-        <div class="col-sm-2" > 
+
+<!--
+    <div class="col-sm-2" > 
             <img class="iconotrabajo" [src]="educacion.UriImg" alt="argPrograma">       
         </div>  
         
@@ -35,4 +33,64 @@
 
         </div>
     </div>
+
+
+-->
+
+<!-- nuevo item edu-->
+
+
+    <section *ngIf="newitem===false"  class="container custom-section">
+        <div class="row">
+          <div
+            class="card text-white bg-dark col-md "
+            data-aos="fade-up"
+            data-aos-offset="400"
+            data-aos-duration="500"
+          >
+            
+          <img class="icono" [src]="educacion.UriImg" alt="argPrograma">          
+          </div>
+          <div class="cb card text-white bg-dark col-md-8">
+            
+              <div class="card-header"></div>
+              <div class="card-body">
+                  
+              <h3 class="empresa card-title"> {{educacion.Titulo}} </h3>
+              <h4 class="sector card-title">{{educacion.Institucion}} </h4>
+              
+            
+            <p class="card-text" > {{educacion.FechaIni}} - {{educacion.FechaFin}}- {{educacion.Estado}} </p>
+            
+  
+          </div>
+        </div>
+        
+          <div class="cb card text-white bg-dark col-md">
+            
+            <div class="card-header"></div>
+            <div class="card-body">
+              <br>
+              <br>
+              <a href="#" 
+              (click)="EditarExperiencia(educacion)"        
+               *ngIf="flag==false"
+              >
+      <span class="glyphicon glyphicon-pencil"></span>
+              </a>
+  
+            <br>
+              <a href="#" 
+              *ngIf="flag==false"
+              (click)="BorrarExperiencia(educacion)"
+          >
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+            </div>
+              
+          </div>
+     
+        </div>
+      </section>
+
 

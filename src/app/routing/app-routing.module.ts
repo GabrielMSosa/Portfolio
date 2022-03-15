@@ -17,6 +17,7 @@ import { AddEduComponent } from '../components/add-edu/add-edu.component';
 import { SkillsComponent } from '../components/skills/skills.component';
 import { SkillsItemComponent } from '../components/skills-item/skills-item.component';
 import { SkillsAddComponent } from '../components/skills-add/skills-add.component';
+import{ Skills1Component} from '../components/skills1/skills1.component';
 import { HomeComponent } from '../components/home/home.component';
 import { LogginComponent } from '../components/loggin/loggin.component';
 const routes:Routes=[

@@ -1,3 +1,5 @@
+
+<!--
 <div class="fondoAD">
 <div class="container">
   <div class="row">
@@ -37,9 +39,57 @@
 </div>
 </div>
 
-
+-->
  
+
+<section *ngIf="newitem===false"  class="container custom-section">
+  <div class="row bloque">
+    <div
+      class="cb card text-white bg-dark col-md "
+      data-aos="fade-up"
+      data-aos-offset="400"
+      data-aos-duration="500"
+    >
+    <div class="card-header"></div>
+    <div class="card-body">
+    <h3 class="card-title empresa" >Datos Personales:</h3>
+    <p class="card-text empresa" > e-mail:{{Users.email}} <br>
+    tel:{{Users.Telefono}} </p>
+  <p class="card-text empresa" >Edad: {{Users.Edad}}</p>  
+      
+    </div>
+  </div>
+    <div class="cb card text-white bg-dark col-md-8">
+      <div class="card-header"></div>
+      <div class="card-body">
+        <h3 class="card-title empresa">Acerca de mi:</h3>
+      <p class="card-text sector" >  {{Users.Acercademi}} </p>   
+     
+    </div>
+     </div>
+  
+    <div class="cb card text-white bg-dark col-md">
+      
+      <div class="card-header"></div>
+      <div class="card-body">
+        <br>
+        <br>
+        <a href="#" 
+        *ngIf="flag==true"
+        (click)="On1Click()"        
+        >
+        <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+
+        <br>
     
+         </div>
+        
+    </div>
+
+  </div>
+</section>
+
   
 
   

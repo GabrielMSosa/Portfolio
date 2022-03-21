@@ -5,6 +5,11 @@ body {
     margin: 0; /*Elimnina el margin que le añade por defecto el navegador a nuestro body*/
     background: lightgray;
   }
+
+
+ 
+  
+
   
   .empresa{
     font-weight: 600;    
@@ -60,6 +65,9 @@ font-family: verdana,sans-serif;
     text-align: center;
     font-size:6rem;
 }
+
+
+
 
 
 

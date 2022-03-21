@@ -23,18 +23,6 @@
       "Provincias": "Misiones",
       "Pais": "Argentina",
       "UriImg": "./assets/voolkiaIt.png"
-    },
-    {
-      "trabajo": "asfd",
-      "empresa": "asdf",
-      "FechaIni": 1993,
-      "FechaFin": 2028,
-      "deltaanio": "35",
-      "Localidad": "asdf",
-      "Provincias": "asdf",
-      "Pais": "asdf",
-      "UriImg": "https://drive.google.com/uc?id=&export=download",
-      "id": 2
     }
   ],
   "Educacion": [
@@ -67,12 +55,6 @@
     }
   ],
   "Skills": [
-    {
-      "id": 0,
-      "lenguaje": "C++",
-      "info": "algo de info",
-      "UrlImg": "https://drive.google.com/uc?id=1hTagXoQbU5xEeYMwgNLnOLs2dLBBSxLx&export=download"
-    },
     {
       "id": 2,
       "lenguaje": "HTML,Css,JavaScript",

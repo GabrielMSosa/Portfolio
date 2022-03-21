@@ -59,25 +59,36 @@
       "id": 2,
       "lenguaje": "HTML,Css,JavaScript",
       "info": "Manejo en aplicaciones WEB en el Frontend y en el backend",
+      "nivel": "10%",
       "UrlImg": "https://drive.google.com/uc?id=1mcUI1dyNwAM88aF6ZsnHjES405ZG4Mk4&export=download"
     },
     {
       "id": 3,
       "lenguaje": "TypeScript",
       "info": "Manejo en aplicaciones WEB Frontend.",
+      "nivel": "30%",
       "UrlImg": "https://drive.google.com/uc?id=1jrjaOBr6EXk9mL9lddUBiUihYIRoib29&export=download"
     },
     {
       "id": 4,
       "lenguaje": "Python",
       "info": "Conocimiento medio realizando script de simulaciones y para procesar imagenes.",
+      "nivel": "80%",
       "UrlImg": "https://drive.google.com/uc?id=1YPl4o1XPm-o1jOwcAvsSOKrrddVUOgVT&export=download"
     },
     {
       "id": 5,
       "lenguaje": "MySQL",
       "info": "Diseño de Base de datos y realizando ABM.",
+      "nivel": "60%",
       "UrlImg": "https://drive.google.com/uc?id=1gLQ8ZzxY199Mr8BrTZcFu7B8oIloJFbG&export=download"
+    },
+    {
+      "lenguaje": "asdf",
+      "info": "asdf",
+      "nivel": "45%",
+      "UrlImg": "https://drive.google.com/uc?id=asdf&export=download",
+      "id": 6
     }
   ],
   "Users": [

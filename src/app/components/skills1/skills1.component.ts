@@ -32,6 +32,7 @@ export class Skills1Component implements OnInit {
  skillBD:SKILL[]=[];
  IdiomaBD:IDIO[]=[]; 
  flag:boolean = false;
+ barra2:string="10%";
  
   ParaEnviar:IDIO={
     idioma:"",
@@ -44,6 +45,7 @@ export class Skills1Component implements OnInit {
   ParaEnviar1:SKILL ={
     lenguaje: "",
     info: "",
+    nivel:"",
     UrlImg: ""
   }
 

@@ -60,6 +60,36 @@
                     </small>
                      <p> {{info}}</p>
                   </div>
+                  <div class="col-sm-6" >         
+                    
+                     
+                    <div class="form-group purple-border">
+                      <label *ngIf="flagedit1==false" for="exampleFormControlTextarea4">Ingrese Informacion del nuevo nivle.</label>
+                      <label *ngIf="flagedit1==true" for="exampleFormControlTextarea4">Ingrese Informacion del nivel de Programación.</label>
+                      <textarea class="form-control"
+                      type="number"
+                      class="form-control"
+                      min="0"
+                      max="100"
+                      id="nivel"
+                      name="nivel"
+                      placeholder="ingrese informacion del nivel de programacion."
+                      [(ngModel)]="nivel"             
+                       id="exampleFormControlTextarea4" rows="3"></textarea>
+                    </div>
+                  
+
+                   <small id="passwordHelpBlock" class="form-text text-muted">
+                    Marque el nivel que cconsidera que sabe del  lenguaje
+                  </small>
+                   <p> {{nivel}}</p>
+                </div>
+
+
+
+
+
+
 
                   </div>
 

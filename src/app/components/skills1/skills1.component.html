@@ -191,9 +191,9 @@ class="col-md-4">
           <h3 class="heading">{{(recorre.info)}}</h3>
           <div class="mt-5">
               <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 58" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': recorre.nivel  }"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <div class="mt-3"> <span class="text1">nivel de conocimiento <span class="text2">del 100 %</span></span> </div>
+              <div class="mt-3"> <span class="text1">nivel de conocimiento <span class="text2">del {{recorre.nivel}}</span></span> </div>
           </div>
       </div>
   </div>

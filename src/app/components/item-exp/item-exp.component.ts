@@ -26,7 +26,7 @@ export class ItemExpComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("expedecomponente"+this.experiencias.empresa)
+    console.log("Componente item exp");
    if(this.cookies.get("token")!=="") {
       this.flag=true;
 

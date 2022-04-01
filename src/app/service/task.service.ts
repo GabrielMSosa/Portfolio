@@ -20,6 +20,7 @@ export class TaskService {
   private APIuriget ='http://localhost:8080/experiencias/traertodo';
   private APIuriPost='http://localhost:8080/experiencias';
   private APIuriDelete='http://localhost:8080/experiencias/borrar';
+  private APIuriPut='http://localhost:8080/experiencias/editar/{id}';
   constructor( private http: HttpClient) { } 
 
 
@@ -38,7 +39,7 @@ export class TaskService {
 
 }
 PutExpServi(entrada:EXPE):Observable<EXPE>{
-  const url= `${this.APIuriDelete}/${entrada.id}`
+  const url= `${this.APIuriPut}/${entrada.id}`
   
  return this.http.put<EXPE>(url,entrada);
 

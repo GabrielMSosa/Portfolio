@@ -1,10 +1,10 @@
 export interface USER{
     id?:number;
-    Nombre:string;
-    Apellido:string;
-    Telefono:string;
+    nombre:string;
+    apellido:string;
+    telefono:string;
     email:string;
-    Edad:string;
-    Acercademi:string;
-    UrlImg:string;
+    edad:string;
+    acercademi:string;
+    urlImg:string;
     }

@@ -18,13 +18,13 @@ EXPBD:EXPE[] =[];
  ParaEnviar:EXPE ={
   trabajo:"", 
   empresa:"",
-  FechaIni:0,
-  FechaFin:0,
+  fechaIni:0,
+  fechaFin:0,
   deltaanio:"",
-  Localidad:"",
-  Provincias:"",
-  Pais:"",
-  UriImg:""
+  localidad:"",
+  provincias:"",
+  pais:"",
+  uriImg:""
  };
 
 
@@ -33,6 +33,8 @@ EXPBD:EXPE[] =[];
 
   ngOnInit(): void {
     this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD=EXPBD});
+    console.log(this.EXPBD[0]);
+
     if(this.cookies.get("token")===""){
       this.flag=true;
 

@@ -14,14 +14,14 @@ export class NewExpComponent implements OnInit {
    id?:number=0;
     trabajo:string="";
     empresa:string="";
-    FechaIni:number=0;
-    FechaFin:number=0;
+    fechaIni:number=0;
+    fechaFin:number=0;
     deltaanio:string="";
-    Localidad:string=""
-    Provincias:string="";
-    Pais:string="";
-    UriImge:string="";
-    UriImg:string="";
+    localidad:string=""
+    provincias:string="";
+    pais:string="";
+    uriImge:string="";
+    uriImg:string="";
     fechastr:string="";
     fechastr1:string="";
     year1:string="";
@@ -40,13 +40,13 @@ export class NewExpComponent implements OnInit {
     @Input() datoedit:EXPE ={
       trabajo:"", 
       empresa:"",
-      FechaIni:0,
-      FechaFin:0,
+      fechaIni:0,
+      fechaFin:0,
       deltaanio:"",
-      Localidad:"",
-      Provincias:"",
-      Pais:"",
-      UriImg:""
+      localidad:"",
+      provincias:"",
+      pais:"",
+      uriImg:""
      };
 
      
@@ -63,14 +63,14 @@ export class NewExpComponent implements OnInit {
 
   enviaExp(){
 
-    this.UriImg=this.linkaux[0]+this.UriImge+this.linkaux[1]
+    this.uriImg=this.linkaux[0]+this.uriImge+this.linkaux[1]
     this.valor = this.fechastr.split('-');
     this.valor1 = this.fechastr1.split('-');
-    this.FechaIni= Number(this.valor[0]); //casting de string a number
-    this.FechaFin = Number(this.valor1[0]);
+    this.fechaIni= Number(this.valor[0]); //casting de string a number
+    this.fechaFin = Number(this.valor1[0]);
     
 
-    if(this.FechaFin<this.FechaIni){
+    if(this.fechaFin<this.fechaIni){
       this.error=true;
       this.mensaje+= "-La fecha de Fin no puede ser menor que la de inicio \n"; 
 
@@ -99,13 +99,13 @@ export class NewExpComponent implements OnInit {
           this.error=true;
           this.mensaje+= "-Ingrese el campo de la Fecha de Fin \n";  }
   
-      if(this.Localidad.length===0){
+      if(this.localidad.length===0){
             this.error=true;
             this.mensaje+= "-Ingrese el campo de Localidad \n";  }
-      if(this.Provincias.length===0){
+      if(this.provincias.length===0){
               this.error=true;
               this.mensaje+= "-Ingrese el campo de Provincias \n";  }
-      if(this.Pais.length===0){
+      if(this.pais.length===0){
               this.error=true;
               this.mensaje+= "-Ingrese el campo de Pais \n";  }
               
@@ -117,27 +117,27 @@ export class NewExpComponent implements OnInit {
         if (this.error==false){
           
   if(this.flagedit==true){
-    this.deltaanio=(this.FechaFin - this.FechaIni).toString();
-          const {trabajo,empresa,FechaIni,FechaFin,deltaanio,Localidad,Provincias,Pais,UriImg}=this;
+    this.deltaanio=(this.fechaFin - this.fechaIni).toString();
+          const {trabajo,empresa,fechaIni,fechaFin,deltaanio,localidad,provincias,pais,uriImg}=this;
       
     this.datoedit.trabajo=this.trabajo;
     this.datoedit.empresa=this.empresa;
-    this.datoedit.FechaIni=this.FechaIni;
-    this.datoedit.FechaFin=this.FechaFin;
+    this.datoedit.fechaIni=this.fechaIni;
+    this.datoedit.fechaFin=this.fechaFin;
     this.datoedit.deltaanio=this.deltaanio;
-    this.datoedit.Localidad=this.Localidad;
-    this.datoedit.Provincias=this.Provincias;
-    this.datoedit.Pais=this.Pais;
-    this.datoedit.UriImg=this.UriImg;
+    this.datoedit.localidad=this.localidad;
+    this.datoedit.provincias=this.provincias;
+    this.datoedit.pais=this.pais;
+    this.datoedit.uriImg=this.uriImg;
     this.newEditItem.emit(true);
     this.InExp.emit(this.datoedit);  
   
   }
   
   else{  
-    this.deltaanio=(this.FechaFin - this.FechaIni).toString();
-    const {trabajo,empresa,FechaIni,FechaFin,deltaanio,Localidad,Provincias,Pais,UriImg}=this;
-    const NewEXPE= {trabajo,empresa,FechaIni,FechaFin,deltaanio,Localidad,Provincias,Pais,UriImg};
+    this.deltaanio=(this.fechaFin - this.fechaIni).toString();
+    const {trabajo,empresa,fechaIni,fechaFin,deltaanio,localidad,provincias,pais,uriImg}=this;
+    const NewEXPE= {trabajo,empresa,fechaIni,fechaFin,deltaanio,localidad,provincias,pais,uriImg};
     console.log(NewEXPE);
     this.InExp.emit(NewEXPE);
   this.newitem=true;

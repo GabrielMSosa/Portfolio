@@ -15,7 +15,7 @@ const httpOptions={
 export class EducacionService {
   private showAddTask:boolean=false;
   private subject=new Subject<any>(); //para escuchar evento del template 
-  private APIuri ='http://localhost:5001/Educacion'
+  private APIuri ='http://localhost:3000/Educacion'
 
   constructor( private http: HttpClient) { }
 

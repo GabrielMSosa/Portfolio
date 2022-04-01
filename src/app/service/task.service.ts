@@ -17,8 +17,9 @@ const httpOptions={
 export class TaskService {
   private showAddTask:boolean=false;
   private subject=new Subject<any>(); //para escuchar evento del template 
-  private APIuri ='http://localhost:5001/Experiences'
-
+  private APIuriget ='http://localhost:8080/experiencias/traertodo';
+  private APIuriPost='http://localhost:8080/experiencias';
+  private APIuriDelete='http://localhost:8080/experiencias/borrar';
   constructor( private http: HttpClient) { } 
 
 
@@ -30,23 +31,25 @@ export class TaskService {
   getExps():Observable<EXPE[]>{
   console.log("entramos en el servcio getExps");
 
-  return this.http.get<EXPE[]>(this.APIuri)
+   return  this.http.get<EXPE[]>(this.APIuriget);
+
     
+
 
 }
 PutExpServi(entrada:EXPE):Observable<EXPE>{
-  const url= `${this.APIuri}/${entrada.id}`
+  const url= `${this.APIuriDelete}/${entrada.id}`
   
  return this.http.put<EXPE>(url,entrada);
 
 }
 
 serviAddExp(ENTRADA:EXPE):Observable<EXPE>{
-  return this.http.post<EXPE>(this.APIuri,ENTRADA,httpOptions);
+  return this.http.post<EXPE>(this.APIuriDelete,ENTRADA,httpOptions);
 }
 
 DeleteServiceExp(entrada:EXPE):Observable<EXPE>{
-  const url= `${this.APIuri}/${entrada.id}`
+  const url= `${this.APIuriDelete}/${entrada.id}`
   return this.http.delete<EXPE>(url);
 
 

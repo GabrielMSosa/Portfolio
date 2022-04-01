@@ -14,8 +14,8 @@ const httpOptions={
 })
 export class SkillServiceService {
 private subje=new Subject<any>();
-private APIurl="http://localhost:5001/Skills"
-private APIurl1="http://localhost:5001/Idioma"
+private APIurl="http://localhost:3000/Skills"
+private APIurl1="http://localhost:3000/Idioma"
   constructor(private http:HttpClient) { }
 
 GetSkillService():Observable<SKILL[]> {

@@ -16,7 +16,7 @@ const httpOptions={
   providedIn: 'root'
 })
 export class UserServiceService {
-  private uriApi="http://localhost:5001/Users"
+  private uriApi="http://localhost:3000/Users"
   constructor(private http:HttpClient) { }
 
   GetUserService():Observable<USER[]> {

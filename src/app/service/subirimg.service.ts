@@ -13,7 +13,7 @@ const httpOptions={
 })
 export class SubirimgService {
   private subject=new Subject<any>(); //para escuchar evento del template 
-  private APIuri ='http://localhost:5001/Imagen'
+  private APIuri ='http://localhost:3000/Imagen'
 
   constructor(private http: HttpClient) { } 
 

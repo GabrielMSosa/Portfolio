@@ -5,24 +5,24 @@ export const Experiencias:EXPE[]=[
     { id:1,
     trabajo:"Mantenimiento en tragamonedas", 
     empresa:"CASINO DE MISIONES S.A.",
-    FechaIni:2017,
-    FechaFin:2021,
+    fechaIni:2017,
+    fechaFin:2021,
     deltaanio:"4",
-    Localidad:"Obera",
-    Provincias:"Misiones",
-    Pais:"Argenina",
-    UriImg:"./assets/Casino.jpg"
+    localidad:"Obera",
+    provincias:"Misiones",
+    pais:"Argenina",
+    uriImg:"./assets/Casino.jpg"
     },
     { id:1,
         trabajo:"Analista en Mercadolibre", 
         empresa:"Voolkia IT ",
-        FechaIni:2021,
-        FechaFin:2022,
+        fechaIni:2021,
+        fechaFin:2022,
         deltaanio:"Actualidad",
-        Localidad:"Obera",
-        Provincias:"Misiones",
-        Pais:"Argenina",
-        UriImg:"./assets/voolkiaIt.png"
+        localidad:"Obera",
+        provincias:"Misiones",
+        pais:"Argenina",
+        uriImg:"./assets/voolkiaIt.png"
     }
 ]
 

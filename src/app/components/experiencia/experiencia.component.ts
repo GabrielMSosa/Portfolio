@@ -12,19 +12,20 @@ import{ CookieService } from "ngx-cookie-service";
 export class ExperienciaComponent implements OnInit {
  AddItem:boolean = false;
  flageditItem:boolean =false;
-EXPBD:EXPE[] =[];
+ EXPBD:EXPE[] =[];
  flag:boolean = false;
  editar:boolean = false;
  ParaEnviar:EXPE ={
   trabajo:"", 
   empresa:"",
-  fechaIni:0,
-  fechaFin:0,
   deltaanio:"",
+  fechaIni:0,
+  uriImg:"",
+  pais:"",
   localidad:"",
   provincias:"",
-  pais:"",
-  uriImg:""
+  fechaFin:0
+  
  };
 
 
@@ -32,8 +33,13 @@ EXPBD:EXPE[] =[];
   constructor(private tareas:TaskService,private cookies:CookieService,private Auth: LoginserviceService) { }
 
   ngOnInit(): void {
-    this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD=EXPBD});
-    console.log(this.EXPBD[0]);
+    this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD=EXPBD
+      console.log("Datos de la api"+this.EXPBD[1].empresa);
+
+      console.log("Datos de la api"+this.EXPBD[0].empresa)
+    
+    });
+    
 
     if(this.cookies.get("token")===""){
       this.flag=true;

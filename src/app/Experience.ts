@@ -3,12 +3,11 @@ export interface EXPE {
     trabajo:string, 
     empresa:string,
     deltaanio:string,
-    fechaIni:number,
-    fechaFin:number,    
-    provincias:string,
+    fechaIni:number,    
+    uriImg:string,
     pais:string,
     localidad:string,
-    uriImg:string
-
+    provincias:string,
+    fechaFin:number    
 
 }

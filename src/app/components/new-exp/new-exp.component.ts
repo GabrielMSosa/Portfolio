@@ -39,14 +39,14 @@ export class NewExpComponent implements OnInit {
     
     @Input() datoedit:EXPE ={
       trabajo:"", 
-      empresa:"",
-      fechaIni:0,
-      fechaFin:0,
+      empresa:"",          
       deltaanio:"",
+      fechaIni:0,
+      uriImg:"",
+      pais:"",      
       localidad:"",
       provincias:"",
-      pais:"",
-      uriImg:""
+      fechaFin:0
      };
 
      
@@ -136,8 +136,8 @@ export class NewExpComponent implements OnInit {
   
   else{  
     this.deltaanio=(this.fechaFin - this.fechaIni).toString();
-    const {trabajo,empresa,fechaIni,fechaFin,deltaanio,localidad,provincias,pais,uriImg}=this;
-    const NewEXPE= {trabajo,empresa,fechaIni,fechaFin,deltaanio,localidad,provincias,pais,uriImg};
+    const {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin}=this;
+    const NewEXPE= {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin};
     console.log(NewEXPE);
     this.InExp.emit(NewEXPE);
   this.newitem=true;

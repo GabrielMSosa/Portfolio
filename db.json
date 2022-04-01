@@ -4,25 +4,25 @@
       "id": 0,
       "trabajo": "Mantenimiento en tragamonedas",
       "empresa": "CASINOS DE MISIONES S.A.",
-      "FechaIni": 2017,
-      "FechaFin": 2021,
+      "fechaIni": 2017,
+      "fechaFin": 2021,
       "deltaanio": "4",
-      "Localidad": "Obera",
-      "Provincias": "Misiones",
-      "Pais": "Argenina",
-      "UriImg": "https://drive.google.com/uc?id=1Amxg2KtDEIrzYRlMZkDnh1WZKRwi1PiJ&export=download"
+      "localidad": "Obera",
+      "provincias": "Misiones",
+      "pais": "Argenina",
+      "uriImg": "https://drive.google.com/uc?id=1Amxg2KtDEIrzYRlMZkDnh1WZKRwi1PiJ&export=download"
     },
     {
       "id": 1,
       "trabajo": "Analista en Mercadolibre",
       "empresa": "Voolkia IT ",
-      "FechaIni": 2021,
-      "FechaFin": 2022,
+      "fechaIni": 2021,
+      "fechaFin": 2022,
       "deltaanio": "Actualidad",
-      "Localidad": "Obera",
-      "Provincias": "Misiones",
-      "Pais": "Argentina",
-      "UriImg": "./assets/voolkiaIt.png"
+      "localidad": "Obera",
+      "provincias": "Misiones",
+      "pais": "Argentina",
+      "uriImg": "./assets/voolkiaIt.png"
     }
   ],
   "Educacion": [

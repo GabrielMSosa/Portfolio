@@ -46,7 +46,7 @@ export class Skills1Component implements OnInit {
     lenguaje: "",
     info: "",
     nivel:"",
-    UrlImg: ""
+    urlImg: ""
   }
 
  

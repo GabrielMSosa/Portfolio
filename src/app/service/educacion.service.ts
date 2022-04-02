@@ -15,8 +15,10 @@ const httpOptions={
 export class EducacionService {
   private showAddTask:boolean=false;
   private subject=new Subject<any>(); //para escuchar evento del template 
-  private APIuri ='http://localhost:3000/Educacion'
-
+  private APIuriget ='http://localhost:8080/educacion/traertodo'
+  private APIuripost='http://localhost:8080/educacion';
+  private APIuriput ='http://localhost:8080/educacion/editar/';
+  private APIuridelete='http://localhost:8080/educacion/borrar';
   constructor( private http: HttpClient) { }
 
 
@@ -29,20 +31,20 @@ onToggle():Observable<any> {
 getServiceEdus():Observable<EDU[]>{
 console.log("entramos en el servcio getExps");
 
-return this.http.get<EDU[]>(this.APIuri)
+return this.http.get<EDU[]>(this.APIuriget)
   
 
 }
 serviAddEdu(ENTRADA:EDU):Observable<EDU>{
-return this.http.post<EDU>(this.APIuri,ENTRADA,httpOptions);
+return this.http.post<EDU>(this.APIuripost,ENTRADA,httpOptions);
 }
 
 DeleteServiceEdu(entrada:EDU):Observable<EDU>{
-const url= `${this.APIuri}/${entrada.id}`
+const url= `${this.APIuridelete}/${entrada.id}`
 return this.http.delete<EDU>(url);}
 
 PutEduServi(entrada:EDU):Observable<EDU>{
-  const url= `${this.APIuri}/${entrada.id}`;
+  const url= `${this.APIuriput}/${entrada.id}`;
   return this.http.put<EDU>(url,entrada);
 
 }

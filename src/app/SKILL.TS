@@ -4,5 +4,6 @@ id?:number;
 lenguaje:string;
 info:string;
 nivel:string;
-UrlImg:string;
+urlImg:string;
 }
+

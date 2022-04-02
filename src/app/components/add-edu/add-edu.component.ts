@@ -15,12 +15,12 @@ export class AddEduComponent implements OnInit {
    id?:number=0;
    estadox:string[]=["Graduado","Cursando"];
    seleccion:string="";
-   Institucion:string=""; 
-   Titulo:string="";
-   FechaIni:number=0;
-   FechaFin:number=0;
-   Estado:string="";
-   UriImg:string="";
+   institucion:string=""; 
+   titulo:string="";
+   fechaIni:number=0;
+   fechaFin:number=0;
+   estado:string="";
+   uriImg:string="";
    fechastr:string="";
    fechastr1:string="";
    year1:string="";
@@ -38,14 +38,14 @@ export class AddEduComponent implements OnInit {
     @Input() newitem:boolean = false;
      
     @Input() datoedit:EDU ={
-      Institucion:"", 
-      Titulo:"",
-      FechaIni:0,
-      FechaFin:0,
-      Estado:"",
-      UriImg:""  
+      institucion:"", 
+      titulo:"",
+      fechaIni:0,
+      fechaFin:0,
+      estado:"",
+      uriImg:""  
     };
-    UriImge:string = "";
+    uriImge:string = "";
 
     constructor() { }
 
@@ -56,20 +56,20 @@ export class AddEduComponent implements OnInit {
   }
   onChange(){
     //console.log(this.seleccion)
-    this.Estado=this.seleccion.toString();
-    console.log(this.Estado)
+    this.estado=this.seleccion.toString();
+    console.log(this.estado)
   }
 
 
   enviaEdu(){
-    this.UriImg=this.linkaux[0]+this.UriImge+this.linkaux[1]
+    this.uriImg=this.linkaux[0]+this.uriImge+this.linkaux[1]
     this.valor = this.fechastr.split('-');
     this.valor1 = this.fechastr1.split('-');
-    this.FechaIni= Number(this.valor[0]); //casting de string a number
-    this.FechaFin = Number(this.valor1[0]);
+    this.fechaIni= Number(this.valor[0]); //casting de string a number
+    this.fechaFin = Number(this.valor1[0]);
     
 
-    if(this.FechaFin<this.FechaIni){
+    if(this.fechaFin<this.fechaIni){
       this.error=true;
       this.mensaje+= "-La fecha de Fin no puede ser menor que la de inicio \n"; 
 
@@ -82,10 +82,10 @@ export class AddEduComponent implements OnInit {
     console.log(this.valor1[0])
     console.log(this.anio1- this.anio);
     // vamos a validar que ningun campo estee vacio
-  if(this.Institucion.length===0){
+  if(this.institucion.length===0){
     this.error=true;
     this.mensaje+= "-Ingrese el campo de Institucion \n";  }
-  if(this.Titulo.length===0){
+  if(this.titulo.length===0){
       this.error=true;
       this.mensaje+= "-Ingrese el campo de Titulo \n";  }
     
@@ -98,7 +98,7 @@ export class AddEduComponent implements OnInit {
           this.error=true;
           this.mensaje+= "-Ingrese el campo de la Fecha de Fin \n";  }
   
-      if(this.Estado.length===0){
+      if(this.estado.length===0){
             this.error=true;
             this.mensaje+= "-Ingrese el campo de Estado \n";  }
       
@@ -112,12 +112,12 @@ export class AddEduComponent implements OnInit {
             
             if (this.error==false){
               if(this.flagedit==true){
-                this.datoedit.Institucion=this.Institucion;
-                this.datoedit.Titulo=this.Titulo;
-                this.datoedit.FechaIni=this.FechaIni;
-                this.datoedit.FechaFin=this.FechaFin;
-                this.datoedit.Estado=this.Estado;
-                this.datoedit.UriImg=this.UriImg;
+                this.datoedit.institucion=this.institucion;
+                this.datoedit.titulo=this.titulo;
+                this.datoedit.fechaIni=this.fechaIni;
+                this.datoedit.fechaFin=this.fechaFin;
+                this.datoedit.estado=this.estado;
+                this.datoedit.uriImg=this.uriImg;
                 this.newEditItem.emit(true);
                 this.InExp.emit(this.datoedit);  
                 
@@ -133,8 +133,8 @@ export class AddEduComponent implements OnInit {
               }
       
           else{
-          const {Institucion,Titulo,FechaIni,FechaFin,Estado,UriImg}=this;
-          const NewEXPE= {Institucion,Titulo,FechaIni,FechaFin,Estado,UriImg};
+          const {institucion,titulo,fechaIni,fechaFin,estado,uriImg}=this;
+          const NewEXPE= {institucion,titulo,fechaIni,fechaFin,estado,uriImg};
           console.log(NewEXPE);
           this.InExp.emit(NewEXPE);
           this.newitem=true;

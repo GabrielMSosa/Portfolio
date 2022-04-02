@@ -20,7 +20,7 @@ export class AddProgComponent implements OnInit {
     lenguaje:"",
     info:"",
     nivel:"",
-    UrlImg:""
+    urlImg:""
     
   };
 /*export interface SKILL{
@@ -32,7 +32,7 @@ export class AddProgComponent implements OnInit {
     */
     lenguaje:string="";
     info:string="";
-    UrlImg:string="";
+    urlImg:string="";
     nivel:string="";
     tokenGo:string="";
     linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
@@ -46,7 +46,7 @@ export class AddProgComponent implements OnInit {
   }
 
   enviaSkill(){
-this.UrlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
+this.urlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
 
     if(this.lenguaje.length===0){
       this.error=true;
@@ -71,7 +71,7 @@ this.UrlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
     this.nivel=this.nivel+"%";
     this.datoedit1.lenguaje=this.lenguaje;
     this.datoedit1.info=this.info;
-    this.datoedit1.UrlImg=this.UrlImg;
+    this.datoedit1.urlImg=this.urlImg;
     this.datoedit1.nivel=this.nivel;
     this.newEditSkill.emit(true);
     this.inSkill.emit(this.datoedit1);  
@@ -79,8 +79,8 @@ this.UrlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
   }
   
   else{  this.nivel=this.nivel+"%";
-  const {lenguaje,info,nivel,UrlImg}=this;
-  const NewSKILL= {lenguaje,info,nivel,UrlImg};
+  const {lenguaje,info,nivel,urlImg}=this;
+  const NewSKILL= {lenguaje,info,nivel,urlImg};
   console.log(NewSKILL);
   this.inSkill.emit(NewSKILL);
   this.newitem=true;

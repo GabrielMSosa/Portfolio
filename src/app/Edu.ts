@@ -1,9 +1,9 @@
 export interface EDU {
     id?:number,
-    Institucion:string, 
-    Titulo:string,
-    FechaIni:number,
-    FechaFin:number,
-    Estado:string,
-    UriImg:string
+    institucion:string, 
+    titulo:string,
+    fechaIni:number,
+    fechaFin:number,
+    estado:string,
+    uriImg:string
     }

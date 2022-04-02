@@ -16,12 +16,12 @@ export class EducacionComponent implements OnInit {
   flageditItem:boolean =false;
   editar:boolean = false;
   ParaEnviar:EDU ={
-    Institucion:"", 
-    Titulo:"",
-    FechaIni:0,
-    FechaFin:0,
-    Estado:"",
-    UriImg:""  
+    institucion:"", 
+    titulo:"",
+    fechaIni:0,
+    fechaFin:0,
+    estado:"",
+    uriImg:""  
   };
   
   

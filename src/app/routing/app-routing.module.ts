@@ -20,12 +20,15 @@ import { SkillsAddComponent } from '../components/skills-add/skills-add.componen
 import{ Skills1Component} from '../components/skills1/skills1.component';
 import { HomeComponent } from '../components/home/home.component';
 import { LogginComponent } from '../components/loggin/loggin.component';
+import { ServiGuardGuard } from '../service/servi-guard.guard';
 const routes:Routes=[
-{path:'',component:HomeComponent},
-{path:'login', component:LogginComponent}
+{path:'portfolio',component:HomeComponent,canActivate:[ServiGuardGuard] }, //,canActivate:[ServiGuardGuard]
+{path:'login', component:LogginComponent},
+{path:'',redirectTo:'login',pathMatch:'full'}
 
 ];
 
+//elultimo path es para que cuando vayamos a barra auto maticamente nos mande al login
 @NgModule({
   declarations: [],
   imports: [

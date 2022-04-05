@@ -23,7 +23,8 @@
     </form>
   </div>
    -->
-  
+
+   <!--
     <div class="container mt-5">
   <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -62,4 +63,62 @@
 
 
 
+ VAMOS HACER EL LOGGIN DE LA MASTER CLASS -->
+
+<!-- vamos a en lazar el formgruop del componente al template con  [formGroup]="form"  
+hacemos un div por cada campo a cargar 
+
+[ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched }" 
+con la clase de arriba hacemos que nuestro recuadro quede verde cuando esta okk y en rojo cuando esta mal
+
+
+
+-->
+
+<h1> Iniciar Sesion</h1>
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="m-5">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" 
+    [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched }"
+    formControlName="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <div *ngIf="Email?.errors && Email?.touched">
+        <p *ngIf="Email?.hasError('required')" class="text-danger"> 
+          El email es requerido.
+        
+        </p>
+        <p *ngIf="Email?.hasError('email')" class="text-danger"> 
+        El formato del email debe ser valido.
+        
+        </p>
+    
+    
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Contraseña</label>
+    <input type="password"
+    [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched }" 
+    
+    formControlName="password"  class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <div *ngIf="Password?.errors && Password?.touched" >
+      <p *ngIf="Password?.hasError('required') " class="text-danger">
+        La contraseña es requerida.
+      </p>
+    
+      <p *ngIf="Password?.hasError('minlength')"  class="text-danger"> 
+        La contraseña debe ser de 6 o mas.
+      </p>
+    
+    
+    </div>
+
+
+
+
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
 

@@ -53,9 +53,9 @@
     <div class="card-header"></div>
     <div class="card-body">
     <h3 class="card-title empresa" >Datos Personales:</h3>
-    <p class="card-text empresa" > e-mail:{{Users.email}} <br>
-    tel:{{Users.telefono}} </p>
-  <p class="card-text empresa" >Edad: {{Users.edad}}</p>  
+    <p class="card-text empresa" > e-mail:{{Users[0].email}} <br>
+    tel:{{Users[0].telefono}} </p>
+  <p class="card-text empresa" >Edad: {{Users[0].edad}}</p>  
       
     </div>
   </div>
@@ -63,7 +63,7 @@
       <div class="card-header"></div>
       <div class="card-body">
         <h3 class="card-title empresa">Acerca de mi:</h3>
-      <p class="card-text sector" >  {{Users.acercademi}} </p>   
+      <p class="card-text sector" >  {{Users[0].acercademi}} </p>   
      
     </div>
      </div>

@@ -3,6 +3,7 @@ import { USER} from 'src/app/USER';
 import { Users } from 'src/app/mock-user';
 import { LoginserviceService } from 'src/app/service/loginservice.service';
 import{ CookieService } from "ngx-cookie-service";
+import { UserServiceService } from 'src/app/service/user-service.service';
 
 @Component({
   selector: 'app-btn-lapiz',
@@ -10,17 +11,18 @@ import{ CookieService } from "ngx-cookie-service";
   styleUrls: ['./btn-lapiz.component.css']
 })
 export class BtnLapizComponent implements OnInit {
-  @Input() Users:USER = Users[0];
+ Users:USER[] =[];
   @Input() newitem:boolean = false;
   @Output() DeleteExp: EventEmitter<USER>=new EventEmitter;
   Imagen:string ="";
+
   flag:boolean = false;
   flaglocal:boolean = false;
   @Output() newitem2:EventEmitter< boolean> =new EventEmitter(false);
   @Output() EditItem:EventEmitter<USER>=new EventEmitter;
   BtnClick:boolean = false;
   info:string = "Aca va informacion personal mia";
-  constructor() { }
+  constructor(private cookies:CookieService,private serviUser:UserServiceService) { }
 /*
 id:0,
         Nombre:"Gabriel Matias",
@@ -35,7 +37,26 @@ id:0,
 
 
   ngOnInit(): void {
+  this.serviUser.GetUserService().subscribe((Users) => {
+      if(Users[0].email==undefined) {Users[0].email="";
+
+      }
+    this.Users=Users
   
+  });
+
+    console.log(this.Users[0].email);
+    if(this.cookies.get("token")===""){
+      this.flag=true;
+
+    }
+    else{
+      this.flag=false;
+    }
+    console.log("valor  de flag"+this.flag);
+    console.log("valor de cookies:"+this.cookies.get("token"));
+
+
   }
   On1Click(){
 this.BtnClick=!this.BtnClick;

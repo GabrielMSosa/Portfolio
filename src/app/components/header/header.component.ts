@@ -15,7 +15,10 @@ export class HeaderComponent implements OnInit {
   constructor(private servicio:UserServiceService) { }
   
   ngOnInit(): void {
-    this.servicio.GetUserService().subscribe((USERBD)=>{this.USERBD=USERBD});
+    this.servicio.GetUserService().subscribe((USERBD)=>{
+      if(USERBD[0].apellido===undefined){USERBD[0].apellido="";}
+      
+      this.USERBD=USERBD});
   }
 
 }

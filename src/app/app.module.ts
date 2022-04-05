@@ -11,7 +11,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { ItemExpComponent } from './components/item-exp/item-exp.component';
 import {HttpClientModule}from "@angular/common/http";
 import { NewExpComponent } from './components/new-exp/new-exp.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ItemEduComponent } from './components/item-edu/item-edu.component';
 import { AddEduComponent } from './components/add-edu/add-edu.component';
@@ -63,8 +63,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     BrowserModule,
     FormsModule,NgChartsModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+    AppRoutingModule
     
   ],
   providers: [CookieService],

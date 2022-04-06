@@ -20,8 +20,9 @@ import { SkillsAddComponent } from '../components/skills-add/skills-add.componen
 import{ Skills1Component} from '../components/skills1/skills1.component';
 import { HomeComponent } from '../components/home/home.component';
 import { LogginComponent } from '../components/loggin/loggin.component';
+import { GuardGuard } from '../service/guard.guard';
 const routes:Routes=[
-{path:'portfolio',component:HomeComponent},
+{path:'portfolio',component:HomeComponent,canActivate:[GuardGuard]},
 {path:'login', component:LogginComponent},
 {path:'',redirectTo:'login',pathMatch:'full' }
 

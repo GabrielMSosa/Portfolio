@@ -21,8 +21,9 @@ import{ Skills1Component} from '../components/skills1/skills1.component';
 import { HomeComponent } from '../components/home/home.component';
 import { LogginComponent } from '../components/loggin/loggin.component';
 const routes:Routes=[
-{path:'',component:HomeComponent},
-{path:'login', component:LogginComponent}
+{path:'portfolio',component:HomeComponent},
+{path:'login', component:LogginComponent},
+{path:'',redirectTo:'login',pathMatch:'full' }
 
 ];
 

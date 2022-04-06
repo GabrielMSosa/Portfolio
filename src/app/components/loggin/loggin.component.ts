@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginserviceService } from 'src/app/service/loginservice.service';
 import {Router} from "@angular/router";
-
+import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 @Component({
   
   selector: 'app-loggin',
@@ -9,11 +9,20 @@ import {Router} from "@angular/router";
   styleUrls: ['./loggin.component.css']
 })
 export class LogginComponent implements OnInit {
-
+  form:FormGroup;
   email: string="";
   password: string="";
-
-  constructor(private UserSer:LoginserviceService, public MiRouter : Router) {
+  deviceInfo:any;
+  constructor(private formBuilder: FormBuilder,private UserSer:LoginserviceService, public MiRouter : Router) {
+    this.form=this.formBuilder.group({
+        email:['',[Validators.required,Validators.email]],   
+        password:['',[Validators.required,Validators.minLength(8)]] 
+        /* deviceInfo: this.formBuilder.group({
+            deviceId:["123412341234"],
+          deviceType:["DEVICE_TYPE_ANDROID"],
+             notificationToken:["12341234werewrtw1234"] })*/
+            })
+      
     //Mirouter router aca inyectamos en el constructor el router para que despues que hagamos clik en el router
     // en login y el token sea valido pueda ingresar a home 
 
@@ -34,7 +43,7 @@ export class LogginComponent implements OnInit {
     data=>{
     console.log(data);
     this.UserSer.setTokenService(data.token); //seteo el token.
-    this.MiRouter.navigateByUrl("/");
+    this.MiRouter.navigateByUrl("portfolio");
     },
     error => {
       console.log(error); //conesto vemos los errores
@@ -44,5 +53,19 @@ export class LogginComponent implements OnInit {
      *  meter el email **eve.holt@reqres.in y la contraeña que quieras
      */
   }
+
+
+get Email(){
+
+  return this.form.get('email');
+}
+
+
+
+get Password(){
+
+  return this.form.get('password');
+}
+
 
 }

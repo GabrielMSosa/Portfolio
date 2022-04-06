@@ -72,7 +72,9 @@
         
   
     <label for="exampleInputEmail1">email </label>
-    <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email"
+    [ngClass]="{'is-invalid': Email?.errors && (Email?.touched), 'is-valid':!Email?.errors && Email?.touched}"
+    formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
   
   <div *ngIf="Email?.errors && Email?.touched">
 
@@ -92,7 +94,9 @@
      <div class="mb-3">
   
     <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" formControlName="password" id="exampleInputPassword"class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" 
+    [ngClass]="{'is-invalid': Password?.errors && (Password?.touched), 'is-valid':!Password?.errors && Password?.touched}"
+    formControlName="password" id="exampleInputPassword"class="form-control" id="exampleInputPassword1" placeholder="Password">
     <div *ngIf="Password?.errors && Password?.touched">
 
       <p *ngIf="Password?.hasError('required')" class="text-danger">

@@ -2,7 +2,7 @@ import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 import { Educacion } from 'src/app/mock-Educacion';
 import { EDU } from 'src/app/Edu';
 import { EducacionService } from 'src/app/service/educacion.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-edu',
@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./add-edu.component.css']
 })
 export class AddEduComponent implements OnInit {
-
+  
+   
   @Output() InExp:EventEmitter<EDU>=new EventEmitter(); 
    id?:number=0;
    estadox:string[]=["Graduado","Cursando"];
@@ -31,6 +32,11 @@ export class AddEduComponent implements OnInit {
    anio1:number=0;
    mensaje:string="";
    error:boolean=false;
+   email:string="";
+   password:string="";
+
+   form:FormGroup;
+
 //----------------------------------------------------------------
 @Input() flagedit:boolean = false;
     linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
@@ -47,7 +53,28 @@ export class AddEduComponent implements OnInit {
     };
     uriImge:string = "";
 
-    constructor() { }
+    constructor( private formBuilder: FormBuilder) 
+    {this.form=this.formBuilder.group({
+      email:['',[Validators.required,Validators.email]],   
+      password:['',[Validators.required,Validators.minLength(8)]],
+      institucion:['',[Validators.required,Validators.minLength(9)]],
+      titulo:['',[Validators.required,Validators.minLength(10)]],
+      fechastr1:['',[Validators.required,Validators.minLength(4)]],
+      fechastr :['',[Validators.required,Validators.minLength(4)]],
+      estado:['',Validators.required],
+      uriImg:['',[Validators.required,Validators.minLength(9)]]  
+    })
+      
+      /* deviceInfo: this.formBuilder.group({
+          deviceId:["123412341234"],
+        deviceType:["DEVICE_TYPE_ANDROID"],
+           notificationToken:["12341234werewrtw1234"] })*/
+          
+
+
+
+
+     }
 
   ngOnInit(): void {
     
@@ -120,16 +147,6 @@ export class AddEduComponent implements OnInit {
                 this.datoedit.uriImg=this.uriImg;
                 this.newEditItem.emit(true);
                 this.InExp.emit(this.datoedit);  
-                
-                
-                
-                
-                
-                
-                
-
-
-
               }
       
           else{
@@ -141,5 +158,44 @@ export class AddEduComponent implements OnInit {
               }
             }
 
-}}
+}
+
+
+get Email(){
+
+  return this.form.get('email');
+}
+
+
+
+get Password(){
+
+  return this.form.get('password');
+}
+
+ get Institucion(){
+   return this.form.get('institucion');
+ }
+ get Titulo(){
+   return this.form.get('titulo');
+ }
+ get Fechastr1(){
+   return this.form.get('fechastr1');
+ }
+ get Fechastr(){
+   return this.form.get('fechastr');
+ }
+ get Estado(){
+   return this.form.get('estado');
+ }
+ get UriImg(){
+   return this.form.get('uriImg');
+ }
+
+
+
+
+
+
+}
 

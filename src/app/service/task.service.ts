@@ -20,7 +20,7 @@ export class TaskService {
   private APIuriget ='http://localhost:8080/experiencias/traertodo';
   private APIuriPost='http://localhost:8080/experiencias';
   private APIuriDelete='http://localhost:8080/experiencias/borrar';
-  private APIuriPut='http://localhost:8080/experiencias/editar/{id}';
+  private APIuriPut='http://localhost:8080/experiencias/editar';
   constructor( private http: HttpClient) { } 
 
 
@@ -40,7 +40,7 @@ export class TaskService {
 }
 PutExpServi(entrada:EXPE):Observable<EXPE>{
   const url= `${this.APIuriPut}/${entrada.id}`
-  
+  console.log("entramos en el servcio PutExpServi");
  return this.http.put<EXPE>(url,entrada);
 
 }

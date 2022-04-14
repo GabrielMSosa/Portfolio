@@ -1,4 +1,232 @@
 
+
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+<form [formGroup]="form">
+  <legend class="d-flex justify-content-center">Login</legend>
+        
+    
+
+    <div class="form-group">
+    <label *ngIf="flagedit===false" for="imageFile">Token de la imagen donde estudia o estudio:</label>
+    <label *ngIf="flagedit===true" for="imageFile">Token de la imagen {{datoedit.uriImg}} de la institucion donde estudia o estudio:</label>
+    <input
+
+     type="text"
+     formControlName="uriImg"
+    [ngClass]="{'is-invalid': UriImg?.errors && (UriImg?.touched), 'is-valid':!UriImg?.errors && UriImg?.touched}"
+     class="form-control"
+     id="Institucion"
+     name="token drive"
+     placeholder="Ingrese el token del archivo"
+     
+     >
+            
+     <div *ngIf="UriImg?.errors && UriImg?.touched">
+
+      <p *ngIf="UriImg?.hasError('required')" class="text-danger">
+        La contraseña es requerida.
+
+      </p>
+      <p *ngIf="UriImg?.errors?.['minlength']" class="text-danger">
+        Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+
+      </p>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Institución</label>
+        <input type="text"
+      formControlName="institucion"
+      [ngClass]="{'is-invalid': Institucion?.errors && (Institucion?.touched), 'is-valid':!Institucion?.errors && Institucion?.touched}"
+      class="form-control" name="message" placeholder="Ingrese el nombre de la institución" rows="4">
+      
+      
+      <div *ngIf="Institucion?.errors && Institucion?.touched">
+
+        <p *ngIf="Institucion?.hasError('required')" class="text-danger">
+          La contraseña es requerida.
+  
+        </p>
+        <p *ngIf="Institucion?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+  
+        </p>
+
+      </div>
+    
+      </div>
+
+
+      <div class="form-group">
+      <label for="exampleInputPassword1">Fecha de Ingreso   </label >
+        <input type="date" 
+         placeholder="dd-mm-yyyy" value=""
+         min="1940-01-01" max="2030-12-31"
+         formControlName="fechastr"
+         [ngClass]="{'is-invalid': Fechastr?.errors && (Fechastr?.touched), 'is-valid':!Fechastr?.errors && Fechastr?.touched}"
+         
+         >              
+         <div *ngIf="Fechastr?.errors && Fechastr?.touched">
+
+          <p *ngIf="Fechastr?.hasError('required')" class="text-danger">
+            La contraseña es requerida.
+    
+          </p>
+          <p *ngIf="Fechastr?.errors?.['minlength']" class="text-danger">
+            Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+    
+          </p>
+  
+        </div>
+      </div> 
+
+      <div class="form-group">
+      <label *ngIf="flagedit===false" for="exampleInputPassword1">Fecha de Fin</label>
+      <label *ngIf="flagedit===true" for="exampleInputPassword1">Fecha de Fin {{datoedit.fechaFin}}
+        </label >
+      <input type="date" name="begin" 
+       placeholder="dd-mm-yyyy" value=""
+       formControlName="fechastr1"
+       [ngClass]="{'is-invalid': Fechastr1?.errors && (Fechastr1?.touched), 'is-valid':!Fechastr1?.errors && Fechastr1?.touched}"
+       min="1991-01-01" max="2030-12-31"
+    >
+       <p> {{fechastr1}}</p> 
+       <div *ngIf="Fechastr1?.errors && Fechastr1?.touched">
+
+        <p *ngIf="Fechastr1?.hasError('required')" class="text-danger">
+          La contraseña es requerida.
+  
+        </p>
+        <p *ngIf="Fechastr1?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+        
+        </p>
+
+      </div>
+
+
+      </div>
+      <div class="form-group">
+      <label *ngIf="flagedit===false">Ingrese el nombre del titulo </label>
+      <label *ngIf="flagedit===true">Ingrese el nombre del titulo{{datoedit.titulo}}</label>
+     <input
+     
+     formControlName="titulo"
+     [ngClass]="{'is-invalid': Titulo?.errors && (Titulo?.touched), 'is-valid':!Titulo?.errors && Titulo?.touched}"
+      
+     type="text"
+     class="form-control"
+     placeholder="Nombre de Titulo"
+    
+     >
+     <div *ngIf="Titulo?.errors && Titulo?.touched">
+
+      <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+        La contraseña es requerida.
+
+      </p>
+      <p *ngIf="Titulo?.errors?.['minlength']" class="text-danger">
+        Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+      
+      </p>
+
+    </div>
+
+
+
+
+    </div>
+
+
+
+
+      <div class="form-group">
+
+        <label *ngIf="flagedit===false">Estado de su estudio</label>
+        <label *ngIf="flagedit===true">Estado de su estudio {{datoedit.estado}}</ label>
+      <select 
+      formControlName="estado"
+      [ngClass]="{'is-invalid': Estado?.errors && (Estado?.touched), 'is-valid':!Estado?.errors && Estado?.touched}"
+                     (change)="onChange()"
+                     [(ngModel)]="seleccion"
+                      class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                      
+                      <option
+
+                     *ngFor="let recorre of estadox"
+                     [value]="recorre"
+                         >{{recorre}} </option>
+                    </select> 
+                    <div *ngIf="Estado?.errors && Estado?.touched">
+
+                      <p *ngIf="Estado?.hasError('required')" class="text-danger">
+                        La contraseña es requerida.
+                
+                      </p>
+                      <p *ngIf="Estado?.errors?.['minlength']" class="text-danger">
+                        Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+                      
+                      </p>
+              
+                    </div>
+              
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="bodyNewExp">
     <h2 class="Titnuevaexp">Nueva experiencia</h2>
     <br />

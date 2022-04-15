@@ -60,7 +60,10 @@ export class EducacionComponent implements OnInit {
     
     if(this.flageditItem==false){
       console.log("nuevo Skill");
-      this.tareas.serviAddEdu(entrada).subscribe((entrada)=>{this.EDUBD.push(entrada)});    
+      this.tareas.serviAddEdu(entrada).subscribe((entrada)=>{this.EDUBD.push(entrada)
+        this.tareas.getServiceEdus().subscribe((EDUBD)=>{this.EDUBD=EDUBD});
+      });    
+      
     this.AddItem=!this.AddItem;  
   }
     else{

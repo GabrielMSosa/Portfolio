@@ -6,14 +6,14 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
 
-<form [formGroup]="form">
+<form [formGroup]="form"  (ngSubmit)=" enviaEdu()">
   <legend class="d-flex justify-content-center">Login</legend>
         
     
 
     <div class="form-group">
-    <label *ngIf="flagedit===false" for="imageFile">Token de la imagen donde estudia o estudio:</label>
-    <label *ngIf="flagedit===true" for="imageFile">Token de la imagen {{datoedit.uriImg}} de la institucion donde estudia o estudio:</label>
+    <label *ngIf="flagedit===false" for="imageFile">Ling de la imagen donde estudia o estudio:</label>
+    <label *ngIf="flagedit===true" for="imageFile">Ling de la imagen {{datoedit.uriImg}} de la institucion donde estudia o estudio:</label>
     <input
 
      type="text"
@@ -29,11 +29,11 @@
      <div *ngIf="UriImg?.errors && UriImg?.touched">
 
       <p *ngIf="UriImg?.hasError('required')" class="text-danger">
-        La contraseña es requerida.
+        Ingrese el link de la imagen compartida publicamente de su drive.
 
       </p>
       <p *ngIf="UriImg?.errors?.['minlength']" class="text-danger">
-        Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+        el tamaño no corresponde a un link .
 
       </p>
 
@@ -58,7 +58,7 @@
       <div *ngIf="Institucion?.errors && Institucion?.touched">
 
         <p *ngIf="Institucion?.hasError('required')" class="text-danger">
-          La contraseña es requerida.
+          Debe Ingresar la insititución.
   
         </p>
         <p *ngIf="Institucion?.errors?.['minlength']" class="text-danger">
@@ -83,11 +83,11 @@
          <div *ngIf="Fechastr?.errors && Fechastr?.touched">
 
           <p *ngIf="Fechastr?.hasError('required')" class="text-danger">
-            La contraseña es requerida.
+            Debe cargar el campo de la fecha.
     
           </p>
           <p *ngIf="Fechastr?.errors?.['minlength']" class="text-danger">
-            Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+            Debe cargar todos los campos de la fecha. 
     
           </p>
   
@@ -108,11 +108,11 @@
        <div *ngIf="Fechastr1?.errors && Fechastr1?.touched">
 
         <p *ngIf="Fechastr1?.hasError('required')" class="text-danger">
-          La contraseña es requerida.
+          Debe cargar el campo de la fecha.
   
         </p>
         <p *ngIf="Fechastr1?.errors?.['minlength']" class="text-danger">
-          Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+          Debe cargar todos los campos de la fecha. 
         
         </p>
 
@@ -136,11 +136,11 @@
      <div *ngIf="Titulo?.errors && Titulo?.touched">
 
       <p *ngIf="Titulo?.hasError('required')" class="text-danger">
-        La contraseña es requerida.
+        El campo del titulo es requerida.
 
       </p>
       <p *ngIf="Titulo?.errors?.['minlength']" class="text-danger">
-        Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+        Debe ingresar el campo de titulo , debe tener minimo 8 caracteres.
       
       </p>
 
@@ -150,10 +150,7 @@
 
 
     </div>
-
-
-
-
+  
       <div class="form-group">
 
         <label *ngIf="flagedit===false">Estado de su estudio</label>
@@ -174,29 +171,18 @@
                     <div *ngIf="Estado?.errors && Estado?.touched">
 
                       <p *ngIf="Estado?.hasError('required')" class="text-danger">
-                        La contraseña es requerida.
+                        Debe ingresar el estado.
                 
                       </p>
                       <p *ngIf="Estado?.errors?.['minlength']" class="text-danger">
-                        Debe ingresar el nombre de la insititución , debe tener minimo 8 caracteres.
+                        Debe ingresar el estado.
                       
                       </p>
               
                     </div>
-              
-
-
-
 
 
       </div>
-
-
-
-
-
-
-
 
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
@@ -222,8 +208,7 @@
 
 
 
-
-
+<!--
 
 
 
@@ -311,19 +296,26 @@
                      [(ngModel)]="fechastr1">
                      <p> {{fechastr1}}</p> 
                     </div>
+          
                 
                 </div>
             <div class="row blockinput">
                 <div class="col-sm-4" >
                     <label *ngIf="flagedit===false">Estado de su estudio</label>
                     <label *ngIf="flagedit===true">Estado de su estudio {{datoedit.estado}}</ label>
-                    <!--<input
+            
+            -->
+            
+                      <!--<input
                     style="height: 1rem; font-size:0.5rem" 
                      type="text"
                      class="form-control"
                      placeholder="ingrese Provincia o Estado"
                      [(ngModel)]="Estado"
+                     esto ya no estaban
                      > -->
+
+                      <!--
                      <select 
                      (change)="onChange()"
                      [(ngModel)]="seleccion"
@@ -359,7 +351,24 @@
                 </div>
               </div>
             </div>
-    <!--
+    
+    
+    
+          
+
+    
+    
+    
+    -->
+    
+    
+    
+    
+    
+    
+    
+    
+            <!--
     
     <h1>Ingrese los campos de su nueva experiencia</h1>
     

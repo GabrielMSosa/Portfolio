@@ -42,7 +42,8 @@ export class AddEduComponent implements OnInit {
     linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
     @Output() newEditItem:EventEmitter<boolean> = new EventEmitter(false);
     @Input() newitem:boolean = false;
-     
+    patron:string="/view";
+    uritotal:string=""; 
     @Input() datoedit:EDU ={
       institucion:"", 
       titulo:"",
@@ -55,14 +56,12 @@ export class AddEduComponent implements OnInit {
 
     constructor( private formBuilder: FormBuilder) 
     {this.form=this.formBuilder.group({
-      email:['',[Validators.required,Validators.email]],   
-      password:['',[Validators.required,Validators.minLength(8)]],
       institucion:['',[Validators.required,Validators.minLength(9)]],
-      titulo:['',[Validators.required,Validators.minLength(10)]],
+      titulo:['',[Validators.required,Validators.minLength(9)]],
       fechastr1:['',[Validators.required,Validators.minLength(4)]],
       fechastr :['',[Validators.required,Validators.minLength(4)]],
       estado:['',Validators.required],
-      uriImg:['',[Validators.required,Validators.minLength(9)]]  
+      uriImg:['',[Validators.required,Validators.minLength(32)]]  
     })
       
       /* deviceInfo: this.formBuilder.group({
@@ -87,11 +86,21 @@ export class AddEduComponent implements OnInit {
     console.log(this.estado)
   }
 
+  token1:string="";
+  iniciot:number=0;
+  fint:number=0;
 
-  enviaEdu(){
-    this.uriImg=this.linkaux[0]+this.uriImge+this.linkaux[1]
-    this.valor = this.fechastr.split('-');
-    this.valor1 = this.fechastr1.split('-');
+    enviaEdu(){
+    this.uritotal=this.form.value.uriImg;
+
+    this.fint=this.uritotal.indexOf(this.patron);
+    this.iniciot=this.fint-33;
+    this.token1=this.uritotal.substring(this.iniciot, this.fint);
+    console.log(this.token1);
+    console.log(this.form.value.institucion);
+    this.uriImg=this.linkaux[0]+this.token1+this.linkaux[1];
+    this.valor = this.form.value.fechastr.split('-');
+    this.valor1 = this.form.value.fechastr1.split('-');
     this.fechaIni= Number(this.valor[0]); //casting de string a number
     this.fechaFin = Number(this.valor1[0]);
     
@@ -109,6 +118,7 @@ export class AddEduComponent implements OnInit {
     console.log(this.valor1[0])
     console.log(this.anio1- this.anio);
     // vamos a validar que ningun campo estee vacio
+    /*
   if(this.institucion.length===0){
     this.error=true;
     this.mensaje+= "-Ingrese el campo de Institucion \n";  }
@@ -135,25 +145,32 @@ export class AddEduComponent implements OnInit {
               this.mensaje="";
             } 
               
-
+*/
+            this.error=false;
             
             if (this.error==false){
               if(this.flagedit==true){
-                this.datoedit.institucion=this.institucion;
-                this.datoedit.titulo=this.titulo;
+                this.datoedit.institucion=this.form.value.institucion;
+                this.datoedit.titulo=this.form.value.titulo;
                 this.datoedit.fechaIni=this.fechaIni;
                 this.datoedit.fechaFin=this.fechaFin;
-                this.datoedit.estado=this.estado;
+                this.datoedit.estado=this.form.value.estado;
                 this.datoedit.uriImg=this.uriImg;
                 this.newEditItem.emit(true);
                 this.InExp.emit(this.datoedit);  
               }
       
           else{
-          const {institucion,titulo,fechaIni,fechaFin,estado,uriImg}=this;
-          const NewEXPE= {institucion,titulo,fechaIni,fechaFin,estado,uriImg};
-          console.log(NewEXPE);
-          this.InExp.emit(NewEXPE);
+          //const {institucion,titulo,fechaIni,fechaFin,estado,uriImg}=this;
+          //const NewEXPE= {institucion,titulo,fechaIni,fechaFin,estado,uriImg};
+          this.datoedit.institucion=this.form.value.institucion;
+                this.datoedit.titulo=this.form.value.titulo;
+                this.datoedit.fechaIni=this.fechaIni;
+                this.datoedit.fechaFin=this.fechaFin;
+                this.datoedit.estado=this.form.value.estado;
+                this.datoedit.uriImg=this.uriImg;
+          console.log(this.datoedit);
+          this.InExp.emit(this.datoedit);
           this.newitem=true;
               }
             }

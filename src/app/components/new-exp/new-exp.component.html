@@ -1,4 +1,280 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+<form [formGroup]="form"  (ngSubmit)=" enviaExp()">
+  <legend class="d-flex justify-content-center">Experiencias</legend>
+        
     
+
+    <div class="form-group">
+    <label *ngIf="flagedit===false" for="imageFile">Link de la imagen donde trabaja o trabajó:</label>
+    <label *ngIf="flagedit===true" for="imageFile">Link de la imagen {{datoedit.uriImg}} de la empresa donde trabaja o trabajó:</label>
+    <input
+
+     type="text"
+     formControlName="uriImg"
+    [ngClass]="{'is-invalid': UriImg?.errors && (UriImg?.touched), 'is-valid':!UriImg?.errors && UriImg?.touched}"
+     class="form-control"
+     id="Institucion"
+     name="token drive"
+     placeholder="Ingrese el Link de la imagen del drive"
+     
+     >
+            
+     <div *ngIf="UriImg?.errors && UriImg?.touched">
+
+      <p *ngIf="UriImg?.hasError('required')" class="text-danger">
+        Ingrese el link de la imagen compartida publicamente de su drive.
+
+      </p>
+      <p *ngIf="UriImg?.errors?.['minlength']" class="text-danger">
+        el tamaño no corresponde a un link .
+
+      </p>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+      <div class="form-group">
+        <label *ngIf="flagedit===false" for="imageFile">nombre del puesto de trabajo:</label>
+        <label *ngIf="flagedit===true" for="imageFile">nombre del puesto de  trabajo actual:{{datoedit.trabajo}}</label>
+
+
+        <input type="text"
+      formControlName="trabajo"
+      [ngClass]="{'is-invalid': Trabajo?.errors && (Trabajo?.touched), 'is-valid':!Trabajo?.errors && Trabajo?.touched}"
+      class="form-control" name="message" placeholder="Ingrese el nombre del trabajo" rows="4">
+      
+      
+      <div *ngIf="Trabajo?.errors && Trabajo?.touched">
+
+        <p *ngIf="Trabajo?.hasError('required')" class="text-danger">
+          Debe Ingresar el campo de Trabajo.
+  
+        </p>
+        <p *ngIf="Trabajo?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre del trabajo , debe tener minimo 4 caracteres.
+  
+        </p>
+
+      </div>
+    
+      </div>
+
+
+      <div class="form-group">
+        <label *ngIf="flagedit===false">Ingrese el nombre de la empresa </label>
+        <label *ngIf="flagedit===true">Ingrese el  nombre de la empresa, empresaa actual: {{datoedit.empresa}}</label>
+       <input
+       
+       formControlName="empresa"
+       [ngClass]="{'is-invalid': Empresa?.errors && (Empresa?.touched), 'is-valid':!Empresa?.errors && Empresa?.touched}"
+       type="text"
+       class="form-control"
+       placeholder="Nombre de Empresa"
+      
+       >
+       <div *ngIf="Empresa?.errors && Empresa?.touched">
+  
+        <p *ngIf="Empresa?.hasError('required')" class="text-danger">
+          El campo del nombre de la Empresa.
+  
+        </p>
+        <p *ngIf="Empresa?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el campo del nombre de la Empresa , debe tener minimo 4 caracteres.
+        
+        </p>
+  
+      </div>
+  
+      </div>
+    
+  
+
+
+
+
+
+      <div class="form-group">
+      <label for="exampleInputPassword1">Fecha de Ingreso   </label >
+        <input type="date" 
+         placeholder="dd-mm-yyyy" value=""
+         min="1940-01-01" max="2030-12-31"
+         formControlName="fechastr"
+         [ngClass]="{'is-invalid': Fechastr?.errors && (Fechastr?.touched), 'is-valid':!Fechastr?.errors && Fechastr?.touched}"
+         
+         >              
+         <div *ngIf="Fechastr?.errors && Fechastr?.touched">
+
+          <p *ngIf="Fechastr?.hasError('required')" class="text-danger">
+            Debe cargar el campo de la fecha.
+    
+          </p>
+          <p *ngIf="Fechastr?.errors?.['minlength']" class="text-danger">
+            Debe cargar todos los campos de la fecha. 
+    
+          </p>
+  
+        </div>
+      </div> 
+
+      <div class="form-group">
+      <label *ngIf="flagedit===false" for="exampleInputPassword1">Fecha de Fin</label>
+      <label *ngIf="flagedit===true" for="exampleInputPassword1">Fecha de Fin {{datoedit.fechaFin}}
+        </label >
+      <input type="date" name="begin" 
+       placeholder="dd-mm-yyyy" value=""
+       formControlName="fechastr1"
+       [ngClass]="{'is-invalid': Fechastr1?.errors && (Fechastr1?.touched), 'is-valid':!Fechastr1?.errors && Fechastr1?.touched}"
+       min="1991-01-01" max="2030-12-31"
+    >
+       <p> {{fechastr1}}</p> 
+       <div *ngIf="Fechastr1?.errors && Fechastr1?.touched">
+
+        <p *ngIf="Fechastr1?.hasError('required')" class="text-danger">
+          Debe cargar el campo de la fecha.
+  
+        </p>
+        <p *ngIf="Fechastr1?.errors?.['minlength']" class="text-danger">
+          Debe cargar todos los campos de la fecha. 
+        
+        </p>
+
+      </div>
+
+
+      </div>
+
+    <div class="form-group">
+      <label *ngIf="flagedit===false">Ingrese la provincia de la empresa donde trabaja o trabajó:  </label>
+      <label *ngIf="flagedit===true">Ingrese el nombrede la provincia, provincia actual:{{datoedit.provincias}}</label>
+     <input
+     
+     formControlName="provincias"
+     [ngClass]="{'is-invalid': Provincias?.errors && (Provincias?.touched), 'is-valid':!Provincias?.errors && Provincias?.touched}"
+     type="text"
+     class="form-control"
+     placeholder="Nombre de la Provincia"
+    
+     >
+     <div *ngIf="Provincias?.errors && Provincias?.touched">
+
+      <p *ngIf="Provincias?.hasError('required')" class="text-danger">
+        El campo del nombre de la Provincia.
+
+      </p>
+      <p *ngIf="Provincias?.errors?.['minlength']" class="text-danger">
+        Debe ingresar el campo del nombre de la Provincia , debe tener minimo 4 caracteres.
+      
+      </p>
+
+    </div>
+
+    </div>
+
+
+    <div class="form-group">
+      <label *ngIf="flagedit===false">Ingrese el país de la empresa donde trabaja o trabajó:</label>
+      <label *ngIf="flagedit===true">Ingrese el país de la empresa donde trabaja o trabajó, país actual:{{datoedit.pais}}</label>
+     <input
+     
+     formControlName="pais"
+     [ngClass]="{'is-invalid': Pais?.errors && (Pais?.touched), 'is-valid':!Pais?.errors && Pais?.touched}"
+     type="text"
+     class="form-control"
+     placeholder="Nombre del Pais"
+    
+     >
+     <div *ngIf="Pais?.errors && Pais?.touched">
+
+      <p *ngIf="Pais?.hasError('required')" class="text-danger">
+        El campo del nombre del Pais.
+
+      </p>
+      <p *ngIf="Pais?.errors?.['minlength']" class="text-danger">
+        Debe ingresar el campo del nombre del Pais , debe tener minimo 4 caracteres.
+      
+      </p>
+
+    </div>
+
+    </div>
+
+    <div class="form-group">
+      <label *ngIf="flagedit===false">Ingrese la localidad de la empresa donde trabaja o trabajó: </label>
+      <label *ngIf="flagedit===true">Ingrese la localidad de la empresa donde trabaja o trabajó, localidad actual de la empresa:{{datoedit.localidad}}</label>
+     <input
+     
+     formControlName="localidad"
+     [ngClass]="{'is-invalid': Localidad?.errors && (Localidad?.touched), 'is-valid':!Localidad?.errors && Localidad?.touched}"
+     type="text"
+     class="form-control" 
+     placeholder="Nombre de la Localidad"
+    
+     >
+     <div *ngIf="Localidad?.errors && Localidad?.touched">
+
+      <p *ngIf="Localidad?.hasError('required')" class="text-danger">
+        El campo del nombre de la Localidad.
+
+      </p>
+      <p *ngIf="Localidad?.errors?.['minlength']" class="text-danger">
+        Debe ingresar el campo del nombre de la Localidad , debe tener minimo 4 caracteres.
+      
+      </p>
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
 <div class="bodyNewExp">
 <h2 class="Titnuevaexp">Nueva experiencia</h2>
 <br />

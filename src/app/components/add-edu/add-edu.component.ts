@@ -42,8 +42,6 @@ export class AddEduComponent implements OnInit {
     linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
     @Output() newEditItem:EventEmitter<boolean> = new EventEmitter(false);
     @Input() newitem:boolean = false;
-    patron:string="/view";
-    uritotal:string=""; 
     @Input() datoedit:EDU ={
       institucion:"", 
       titulo:"",
@@ -90,6 +88,9 @@ export class AddEduComponent implements OnInit {
   iniciot:number=0;
   fint:number=0;
 
+  patron:string="/view";
+  uritotal:string=""; 
+  urlT:string="";
     enviaEdu(){
     this.uritotal=this.form.value.uriImg;
 
@@ -97,8 +98,10 @@ export class AddEduComponent implements OnInit {
     this.iniciot=this.fint-33;
     this.token1=this.uritotal.substring(this.iniciot, this.fint);
     console.log(this.token1);
-    console.log(this.form.value.institucion);
+    
     this.uriImg=this.linkaux[0]+this.token1+this.linkaux[1];
+    console.log(this.uriImg);
+
     this.valor = this.form.value.fechastr.split('-');
     this.valor1 = this.form.value.fechastr1.split('-');
     this.fechaIni= Number(this.valor[0]); //casting de string a number

@@ -75,7 +75,10 @@ export class ExperienciaComponent implements OnInit {
   AddExp(entrada:EXPE){
       if(this.flageditItem==false){
         console.log("nuevo Skill");
-      this.tareas.serviAddExp(entrada).subscribe((entrada)=>{this.EXPBD.push(entrada)});    
+      this.tareas.serviAddExp(entrada).subscribe((entrada)=>{this.EXPBD.push(entrada)
+      
+        this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD=EXPBD});
+      });    
       this.AddItem=!this.AddItem;  
     }
       else{

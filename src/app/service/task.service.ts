@@ -46,7 +46,7 @@ PutExpServi(entrada:EXPE):Observable<EXPE>{
 }
 
 serviAddExp(ENTRADA:EXPE):Observable<EXPE>{
-  return this.http.post<EXPE>(this.APIuriDelete,ENTRADA,httpOptions);
+  return this.http.post<EXPE>(this.APIuriPost,ENTRADA,httpOptions);
 }
 
 DeleteServiceExp(entrada:EXPE):Observable<EXPE>{

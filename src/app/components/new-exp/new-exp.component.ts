@@ -2,17 +2,19 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
 import { TaskService } from 'src/app/service/task.service';
-
+import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-new-exp',
   templateUrl: './new-exp.component.html',
   styleUrls: ['./new-exp.component.css']
 })
+
 export class NewExpComponent implements OnInit {
    @Output() InExp:EventEmitter<EXPE>=new EventEmitter(); 
    id?:number=0;
     trabajo:string="";
+    form:FormGroup;
     empresa:string="";
     fechaIni:number=0;
     fechaFin:number=0;
@@ -55,17 +57,52 @@ export class NewExpComponent implements OnInit {
 
 
 
-    constructor() { }
+    constructor(private formBuilder: FormBuilder) 
+      {this.form=this.formBuilder.group({
+      trabajo:['',[Validators.required,Validators.minLength(4)]],
+      empresa:['',[Validators.required,Validators.minLength(4)]],
+        
+      fechastr1:['',[Validators.required,Validators.minLength(4)]],
+      fechastr :['',[Validators.required,Validators.minLength(4)]],
+      provincias:['',[Validators.required,Validators.minLength(4)]],
+      pais:['',[Validators.required,Validators.minLength(4)]],
+      localidad:['',[Validators.required,Validators.minLength(4)]],
+      uriImg:['',[Validators.required,Validators.minLength(32)]]  
+    })
+     }
+     
+
+
 
   ngOnInit(): void {
     
   }
 
-  enviaExp(){
 
-    this.uriImg=this.linkaux[0]+this.uriImge+this.linkaux[1]
-    this.valor = this.fechastr.split('-');
-    this.valor1 = this.fechastr1.split('-');
+  token1:string="";
+  iniciot:number=0;
+  fint:number=0;
+
+  patron:string="/view";
+  uritotal:string=""; 
+
+
+
+
+  enviaExp(){
+    this.uritotal=this.form.value.uriImg;
+
+    this.fint=this.uritotal.indexOf(this.patron);
+    this.iniciot=this.fint-33;
+    this.token1=this.uritotal.substring(this.iniciot, this.fint);
+    console.log(this.token1);
+    this.uritotal="";
+    this.uritotal=this.linkaux[0]+this.token1+this.linkaux[1];
+    console.log(this.uritotal);
+
+ 
+    this.valor = this.form.value.fechastr.split('-');
+    this.valor1 = this.form.value.fechastr1.split('-');
     this.fechaIni= Number(this.valor[0]); //casting de string a number
     this.fechaFin = Number(this.valor1[0]);
     
@@ -83,7 +120,8 @@ export class NewExpComponent implements OnInit {
     console.log(this.valor1[0])
     console.log(this.anio1- this.anio);
     // vamos a validar que ningun campo estee vacio
-  if(this.trabajo.length===0){
+/*
+    if(this.trabajo.length===0){
     this.error=true;
     this.mensaje+= "-Ingrese el campo de trabajo \n";  }
   if(this.empresa.length===0){
@@ -115,20 +153,21 @@ export class NewExpComponent implements OnInit {
         }
 
         if (this.error==false){
-          
+  */        
+          this.error=false;
   if(this.flagedit==true){
     this.deltaanio=(this.fechaFin - this.fechaIni).toString();
-          const {trabajo,empresa,fechaIni,fechaFin,deltaanio,localidad,provincias,pais,uriImg}=this;
+   //       const {trabajo,empresa,fechaIni,fechaFin,deltaanio,localidad,provincias,pais,uriImg}=this;
       
-    this.datoedit.trabajo=this.trabajo;
-    this.datoedit.empresa=this.empresa;
+    this.datoedit.trabajo=this.form.value.trabajo;
+    this.datoedit.empresa=this.form.value.empresa;
     this.datoedit.fechaIni=this.fechaIni;
     this.datoedit.fechaFin=this.fechaFin;
     this.datoedit.deltaanio=this.deltaanio;
-    this.datoedit.localidad=this.localidad;
-    this.datoedit.provincias=this.provincias;
-    this.datoedit.pais=this.pais;
-    this.datoedit.uriImg=this.uriImg;
+    this.datoedit.localidad=this.form.value.localidad;
+    this.datoedit.provincias=this.form.value.provincias;
+    this.datoedit.pais=this.form.value.pais;
+    this.datoedit.uriImg=this.uritotal
     this.newEditItem.emit(true);
     this.InExp.emit(this.datoedit);  
   
@@ -136,26 +175,67 @@ export class NewExpComponent implements OnInit {
   
   else{  
     this.deltaanio=(this.fechaFin - this.fechaIni).toString();
-    const {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin}=this;
-    const NewEXPE= {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin};
-    console.log(NewEXPE);
-    this.InExp.emit(NewEXPE);
+    //const {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin}=this;
+    //const NewEXPE= {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin};
+    //console.log(NewEXPE);
+    this.datoedit.trabajo=this.form.value.trabajo;
+    this.datoedit.empresa=this.form.value.empresa;
+    this.datoedit.fechaIni=this.fechaIni;
+    this.datoedit.fechaFin=this.fechaFin;
+    this.datoedit.deltaanio=this.deltaanio;
+    this.datoedit.localidad=this.form.value.localidad;
+    this.datoedit.provincias=this.form.value.provincias;
+    this.datoedit.pais=this.form.value.pais;
+    this.datoedit.uriImg=this.uritotal;
+    this.InExp.emit(this.datoedit);
   this.newitem=true;
    }
+
+        }
+
+
   
 
 
 
 
 
-        
-
-        }
-
-
+  get Trabajo(){
+    return this.form.get('trabajo');
+  }
+  get Empresa(){
+    return this.form.get('empresa');
+  }
+  get Fechastr(){
+    return this.form.get('fechastr');
   }
 
+  get Fechastr1(){
+    return this.form.get('fechastr1');
+  }
+  get Provincias(){
+    return this.form.get('provincias');
+  }
+  get Pais(){
+    return this.form.get('pais');
+  }
+
+  get Localidad(){
+    return this.form.get('Localidad');
+  }
+
+  get UriImg(){
+    return this.form.get('uriImg');
+  }
+
+
+
+
+
+
+
 }
+
 
 /**
  *         id?:number,

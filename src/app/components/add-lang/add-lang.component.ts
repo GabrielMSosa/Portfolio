@@ -2,9 +2,9 @@ import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 import {Idiomas} from "src/app/mock-idioma";
 import {SkillServiceService} from "../../service/skill-service.service";
 import {IDIO} from "src/app/IDIO";
-import { FormsModule } from '@angular/forms';
 import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
+import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-add-lang',
   templateUrl: './add-lang.component.html',
@@ -15,6 +15,7 @@ export class AddLangComponent implements OnInit {
   @Output() newEdit:EventEmitter<boolean> = new EventEmitter(false);
   @Input() newitem:boolean = false;
   @Input() flagedit:boolean = false;
+  form:FormGroup;
   @Input() datoedit:IDIO={
     idioma:"",
     
@@ -39,14 +40,22 @@ export class AddLangComponent implements OnInit {
      nivel_escritura: string
     */
 
-   constructor() { }
+     constructor( private formBuilder: FormBuilder) 
+     {this.form=this.formBuilder.group({
+       idioma :['',[Validators.required,]],
+       nivel_escritura:['',Validators.required],
+       nivel_lectura:['',[Validators.required,]]  
+     })
+     }
+
+
 
  ngOnInit(): void {
    
  }
 
  enviaExp(){
-
+/*
   if(this.idioma.length===0){
     this.error=true;
     this.mensaje+= "-Ingrese el campo de Idiomoa \n";  }
@@ -63,24 +72,27 @@ if(this.error==true&&this.flagedit==false){
 alert(this.mensaje)
 this.mensaje="";
 }
+*/
+this.error=false;
 
 if (this.error==false){
 
 if(this.flagedit==true){
-  this.datoedit.idioma=this.idioma;
-  this.datoedit.nivel_escritura=this.nivel_escritura;
-  this.datoedit.nivel_lectura=this.nivel_lectura;
+  this.datoedit.idioma=this.form.value.idioma;
+  this.datoedit.nivel_escritura=this.form.value.nivel_escritura;
+  this.datoedit.nivel_lectura=this.form.value.nivel_lectura;
   this.newEdit.emit(true);
   this.InIdio.emit(this.datoedit);  
 
 }
 
 else{  
-const {idioma,nivel_lectura,nivel_escritura}=this;
-const NewSKILL= {idioma,nivel_lectura,nivel_escritura};
-console.log(NewSKILL);
-this.InIdio.emit(NewSKILL);
-this.newitem=true;
+  this.datoedit.idioma=this.form.value.idioma;
+  this.datoedit.nivel_escritura=this.form.value.nivel_escritura;
+  this.datoedit.nivel_lectura=this.form.value.nivel_lectura;
+
+  this.InIdio.emit(this.datoedit);
+  this.newitem=true;
  }
 
 
@@ -88,4 +100,20 @@ this.newitem=true;
 
 
 }
- }}
+ }
+ get Idioma(){
+  return this.form.get('idioma');
+}
+
+ get Nivel_lectura(){
+  return this.form.get('nivel_lectura');
+}
+
+ get Nivel_escritura(){
+  return this.form.get('nivel_escritura');
+}
+
+
+
+
+}

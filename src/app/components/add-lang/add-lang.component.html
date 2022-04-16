@@ -1,4 +1,138 @@
 
+
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+<form [formGroup]="form"  (ngSubmit)=" enviaExp()">
+  <legend class="d-flex justify-content-center">Educación</legend>
+  
+
+
+  <div class="form-group">
+
+        <label *ngIf="flagedit===false">Ingrese el idioma</label>
+        <label *ngIf="flagedit===true">Ingrese el idioma,idioma  actual: {{datoedit.idioma}}</ label>
+      <select 
+      formControlName="idioma"
+      [ngClass]="{'is-invalid': Idioma?.errors && (Idioma?.touched), 'is-valid':!Idioma?.errors && Idioma?.touched}"
+                                      
+                      class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                      
+                      <option
+
+                     *ngFor="let recorre of IdioOpc"
+                     [value]="recorre"
+                         >{{recorre}} </option>
+                    </select> 
+                    <div *ngIf="Idioma?.errors && Idioma?.touched">
+
+                      <p *ngIf="Idioma?.hasError('required')" class="text-danger">
+                        Debe ingresar el idioma.
+                
+                      </p>
+                      <p *ngIf="Idioma?.errors?.['minlength']" class="text-danger">
+                        Debe ingresar el idioma.
+                      
+                      </p>
+              
+                    </div>
+
+
+      </div>
+
+      <div class="form-group">
+
+        <label *ngIf="flagedit===false">Ingrese el nivel de lectura del idioma</label>
+        <label *ngIf="flagedit===true">Ingrese el nivel de lectura del idioma,nivel  actual: {{datoedit.nivel_lectura}}</ label>
+      <select 
+      formControlName="nivel_lectura"
+      [ngClass]="{'is-invalid': Nivel_lectura?.errors && (Nivel_lectura?.touched), 'is-valid':!Nivel_lectura?.errors && Nivel_lectura?.touched}"
+                                      
+                      class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                      
+                      <option
+
+                     *ngFor="let recorre of Opciones"
+                     [value]="recorre"
+                         >{{recorre}} </option>
+                    </select> 
+                    <div *ngIf="Nivel_lectura?.errors && Nivel_lectura?.touched">
+
+                      <p *ngIf="Nivel_lectura?.hasError('required')" class="text-danger">
+                        Debe ingresar el nivel de lecutra del idioma.
+                
+                      </p>
+                      <p *ngIf="Nivel_lectura?.errors?.['minlength']" class="text-danger">
+                        Debe ingresar el nivel de lecutra del idioma.
+                      
+                      </p>
+              
+                    </div>
+
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label *ngIf="flagedit===false">Ingrese el nivel de escritura del idioma</label>
+        <label *ngIf="flagedit===true">Ingrese el nivel de escritura del idioma,nivel  actual: {{datoedit.nivel_lectura}}</ label>
+      <select 
+      formControlName="nivel_escritura"
+      [ngClass]="{'is-invalid': Nivel_escritura?.errors && (Nivel_escritura?.touched), 'is-valid':!Nivel_escritura?.errors && Nivel_escritura?.touched}"
+                                      
+                      class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                      
+                      <option
+
+                     *ngFor="let recorre of Opciones"
+                     [value]="recorre"
+                         >{{recorre}} </option>
+                    </select> 
+                    <div *ngIf="Nivel_escritura?.errors && Nivel_escritura?.touched">
+
+                      <p *ngIf="Nivel_escritura?.hasError('required')" class="text-danger">
+                        Debe ingresar el nivel de escritura del idioma.
+                
+                      </p>
+                      <p *ngIf="Nivel_escritura?.errors?.['minlength']" class="text-danger">
+                        Debe ingresar el nivel de escritura del idioma.
+                      
+                      </p>
+              
+                    </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
  
 
 
@@ -41,3 +175,4 @@
     >Confirmar</button>
 
 </div>
+-->

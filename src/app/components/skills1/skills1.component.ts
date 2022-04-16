@@ -121,7 +121,9 @@ if(this.cookies.get("token")===""){
 Addprog(entrada:SKILL){
   if(this.flageditskill==false){
     console.log("nuevo Skill");
-  this.servi.serviAddSkill(entrada).subscribe((entrada)=>{this.skillBD.push(entrada)});    
+  this.servi.serviAddSkill(entrada).subscribe((entrada)=>{this.skillBD.push(entrada)
+    
+  });    
   this.AddItem1=!this.AddItem1;  
 }
   else{
@@ -144,7 +146,9 @@ Addprog(entrada:SKILL){
 addLang(entrada:IDIO){
   if(this.flageditidio==false){
     console.log("nuevo idioma");
-  this.servi.serviAddIdioma(entrada).subscribe((entrada)=>{this.IdiomaBD.push(entrada)});    
+  this.servi.serviAddIdioma(entrada).subscribe((entrada)=>{this.IdiomaBD.push(entrada)
+    this.servi.GetIdiomaService().subscribe((IdiomaBD)=>{this.IdiomaBD = IdiomaBD});
+  });    
   this.AddItem=!this.AddItem;  
 }
   else{

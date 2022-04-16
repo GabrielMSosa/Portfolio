@@ -90,7 +90,7 @@ export class AddEduComponent implements OnInit {
 
   patron:string="/view";
   uritotal:string=""; 
-  urlT:string="";
+  
     enviaEdu(){
     this.uritotal=this.form.value.uriImg;
 

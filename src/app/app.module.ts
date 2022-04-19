@@ -9,7 +9,7 @@ import { BtnLapizComponent } from './components/btn-lapiz/btn-lapiz.component';
 import { AddTextComponent } from './components/add-text/add-text.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ItemExpComponent } from './components/item-exp/item-exp.component';
-import {HttpClientModule}from "@angular/common/http";
+import {HttpClientModule, HTTP_INTERCEPTORS}from "@angular/common/http";
 import { NewExpComponent } from './components/new-exp/new-exp.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EducacionComponent } from './components/educacion/educacion.component';
@@ -30,6 +30,8 @@ import { AddLangComponent } from './components/add-lang/add-lang.component';
 import { AddProgComponent } from './components/add-prog/add-prog.component';
 import { BtnEditLapizComponent } from './components/btn-edit-lapiz/btn-edit-lapiz.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { InterceptorService } from './service/interceptor.service';
+import { AutenticacionService } from './service/autenticacion.service';
 //##
  
 @NgModule({
@@ -67,7 +69,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ReactiveFormsModule
     
   ],
-  providers: [CookieService],
+  providers: [CookieService,{provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true,deps:[AutenticacionService]}],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

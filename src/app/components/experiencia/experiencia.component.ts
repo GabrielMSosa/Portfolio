@@ -33,22 +33,15 @@ export class ExperienciaComponent implements OnInit {
   constructor(private tareas:TaskService,private cookies:CookieService,private Auth: LoginserviceService) { }
 
   ngOnInit(): void {
+    console.log("componenete experiencia");
     this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD=EXPBD
-      console.log("Datos de la api"+this.EXPBD[1].empresa);
-
-      console.log("Datos de la api"+this.EXPBD[0].empresa)
-    
+      console.log("entramosa component EXPBD");
+      
     });
+   // console.log(JSON.stringify(this.EXPBD[0]));
+
     
-
-    if(this.cookies.get("token")===""){
-      this.flag=true;
-
-    }
-    else{
-      this.flag=false;
-    }
-
+    this.flag=false;
   }
   addNewTask(){
     console.log("NuevaTarea!");

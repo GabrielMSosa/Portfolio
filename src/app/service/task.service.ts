@@ -21,6 +21,7 @@ export class TaskService {
   private APIuriPost='http://localhost:8080/experiencias';
   private APIuriDelete='http://localhost:8080/experiencias/borrar';
   private APIuriPut='http://localhost:8080/experiencias/editar';
+  EXPBD:EXPE[]=[];
   constructor( private http: HttpClient) { } 
 
 
@@ -31,6 +32,7 @@ export class TaskService {
 
   getExps():Observable<EXPE[]>{
   console.log("entramos en el servcio getExps");
+   
 
    return  this.http.get<EXPE[]>(this.APIuriget);
 

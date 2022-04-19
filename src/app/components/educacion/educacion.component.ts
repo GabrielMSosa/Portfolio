@@ -37,17 +37,18 @@ export class EducacionComponent implements OnInit {
       this.flag=false;
     }
 
-  
+    this.flag=false;
   }
   addNewTask(){
     console.log("NuevaTarea!");
     this.AddItem=!this.AddItem;
     console.log(this.AddItem);
-    this.flag=false;
+    
     if(this.cookies.get("token")===""){
       this.flag=true;
 
     }
+    
   }
   
   DeleteEdu(entrada:EDU){

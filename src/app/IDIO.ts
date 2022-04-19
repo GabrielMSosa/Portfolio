@@ -4,3 +4,5 @@ export interface IDIO {
      nivel_lectura: string,
      nivel_escritura: string
 }
+
+

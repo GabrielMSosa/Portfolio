@@ -8,3 +8,12 @@ export interface USER{
     acercademi:string;
     urlImg:string;
     }
+
+
+
+
+
+
+
+
+

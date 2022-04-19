@@ -65,6 +65,8 @@ export class Skills1Component implements OnInit {
     }
 
     console.log("bandera de habilitacion"+this.AddItem);
+  
+    this.flag=false;
   }
 
   BorrarSkill(ENTRADA:SKILL){

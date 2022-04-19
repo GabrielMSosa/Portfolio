@@ -6,4 +6,3 @@ info:string;
 nivel:string;
 urlImg:string;
 }
-

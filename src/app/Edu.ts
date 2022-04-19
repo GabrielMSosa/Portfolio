@@ -8,3 +8,10 @@ export interface EDU {
     uriImg:string
     }
 
+
+
+
+
+
+
+

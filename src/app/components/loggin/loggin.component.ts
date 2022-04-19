@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginserviceService } from 'src/app/service/loginservice.service';
 import {Router} from "@angular/router";
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { AutenticacionService } from 'src/app/service/autenticacion.service';
 @Component({
   
   selector: 'app-loggin',
@@ -13,10 +14,11 @@ export class LogginComponent implements OnInit {
   email: string="";
   password: string="";
   deviceInfo:any;
-  constructor(private formBuilder: FormBuilder,private UserSer:LoginserviceService, public MiRouter : Router) {
+  constructor(private autenticacion:AutenticacionService,private formBuilder: FormBuilder,private UserSer:LoginserviceService, public MiRouter : Router) {
     this.form=this.formBuilder.group({
-        email:['',[Validators.required,Validators.email]],   
-        password:['',[Validators.required,Validators.minLength(8)]] 
+        username:['',[Validators.required,Validators.minLength(3)]],   
+        password:['',[Validators.required,Validators.minLength(3)]] 
+        
         /* deviceInfo: this.formBuilder.group({
             deviceId:["123412341234"],
           deviceType:["DEVICE_TYPE_ANDROID"],
@@ -55,9 +57,20 @@ export class LogginComponent implements OnInit {
   }
 
 
-get Email(){
+onEnviar(event:Event){
+  event.preventDefault; //es canceclar el curso normal del submit
+  this.autenticacion.IniciarSesion(this.form.value).subscribe(data=>{
+    console.log("Data"+ JSON.stringify(data));
+    this.MiRouter.navigateByUrl("portfolio");
 
-  return this.form.get('email');
+  });
+}
+
+
+
+get Username(){
+
+  return this.form.get('username');
 }
 
 

@@ -124,6 +124,7 @@ Addprog(entrada:SKILL){
   if(this.flageditskill==false){
     console.log("nuevo Skill");
   this.servi.serviAddSkill(entrada).subscribe((entrada)=>{this.skillBD.push(entrada)
+    this.servi.GetSkillService().subscribe((skillBD)=>{this.skillBD = skillBD});
     
   });    
   this.AddItem1=!this.AddItem1;  

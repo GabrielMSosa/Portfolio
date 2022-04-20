@@ -1,3 +1,131 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+<form [formGroup]="form"  (ngSubmit)=" enviaSkill()">
+  <legend class="d-flex justify-content-center">Lenguajes de programación</legend>
+        
+    
+
+    <div class="form-group">
+    <label *ngIf="flagedit1===false" for="imageFile">Link de la imagen donde estudia o estudio:</label>
+    <label *ngIf="flagedit1===true" for="imageFile">Link de la imagen {{datoedit1.urlImg}} de la institucion donde estudia o estudio:</label>
+    <input
+
+     type="text"
+     formControlName="urlImg"
+    [ngClass]="{'is-invalid': UrlImg?.errors && (UrlImg?.touched), 'is-valid':!UrlImg?.errors && UrlImg?.touched}"
+     class="form-control"
+     id="urlImg"
+     name="token drive"
+     placeholder="Ingrese el token del archivo"
+     
+     >
+     
+     <div *ngIf="UrlImg?.errors && UrlImg?.touched">
+
+      <p *ngIf="UrlImg?.hasError('required')" class="text-danger">
+        Ingrese el link de la imagen compartida publicamente de su drive.
+
+      </p>
+      <p *ngIf="UrlImg?.errors?.['minlength']" class="text-danger">
+        el tamaño no corresponde a un link .
+
+      </p>
+
+    </div>
+    </div>
+
+    
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Lenguaje</label>
+      <input type="text"
+    formControlName="lenguaje"
+    [ngClass]="{'is-invalid': Lenguaje?.errors && (Lenguaje?.touched), 'is-valid':!Lenguaje?.errors && Lenguaje?.touched}"
+    class="form-control" name="message" placeholder="Ingrese el nombre del Lenguaje o software" rows="4">
+    
+    
+    <div *ngIf="Lenguaje?.errors && Lenguaje?.touched">
+
+      <p *ngIf="Lenguaje?.hasError('required')" class="text-danger">
+        Debe Ingresar el campo de Lenguaje.
+
+      </p>
+      <p *ngIf="Lenguaje?.errors?.['minlength']" class="text-danger">
+        Debe ingresar el nombre del lenguaje, debe tener minimo 9 caracteres.
+
+      </p>
+
+    </div>
+  
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nivel</label>
+      <input type="text"
+    formControlName="nivel"
+    [ngClass]="{'is-invalid': Nivel?.errors && (Nivel?.touched), 'is-valid':!Nivel?.errors && Nivel?.touched}"
+    class="form-control" name="message" placeholder="Ingrese el nivel en % ej. 10% " rows="4">
+    
+    
+    <div *ngIf="Nivel?.errors && Nivel?.touched">
+
+      <p *ngIf="Nivel?.hasError('required')" class="text-danger">
+        Debe Ingresar el campo de Nivel, recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+
+      </p>
+      <p *ngIf="Lenguaje?.errors?.['minlength']" class="text-danger">
+        Debe ingresar el nombre del lenguaje, debe tener minimo 2 caracteres. Recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+
+      </p>
+
+    </div>
+  
+    </div>
+
+
+
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Institución</label>
+      <textarea  type="text"
+       formControlName="info"
+       [ngClass]="{'is-invalid': Info?.errors && (Info?.touched), 'is-valid':!Info?.errors && Info?.touched}"
+       class="form-control" name="message" placeholder="Ingrese la informacion con respecto al lenguaje." rows="4"></textarea>
+    
+    
+    <div *ngIf="Info?.errors && Info?.touched">
+
+      <p *ngIf="Info?.hasError('required')" class="text-danger">
+        Debe ingresar la informacion con respecto al conocimiento que tiene respecto al lenguaje.
+
+      </p>
+      <p *ngIf="Info?.errors?.['minlength']" class="text-danger">
+        Debe ingresar la informacion con respecto al conocimiento que tiene respecto al lenguaje.
+
+      </p>
+
+    </div>
+  
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+
+</div>
+
+
+
+
+
+
+<!--
+
 <div class="bodyNewExp"
 *ngIf="newitem===false">
     <h2 *ngIf="flagedit1==false" class="Titnuevaexp"  >Nuevo  Lenguaje de programacion{{flagedit1}}</h2>
@@ -6,7 +134,7 @@
     <div class="row blockinput">
       <div class="col-sm-2" ></div>
       <div class="col-sm-10" >
-          <label for="imageFile">Escriba el token del link de su imagen en drive publicado publicamente.</label>
+          <label for="imageFile">Escriba el link de su imagen en drive publicado publicamente.</label>
           <input
           style="height: 1rem; font-size:0.5rem" 
            type="text"
@@ -104,3 +232,4 @@
 
 </div>
 </div>
+-->

@@ -36,7 +36,7 @@
 
         </div>
     </div>
-*ngIf="newitem===false"
+
     -->
     <!-- *ngIf="newitem===false"   con esto vamos a hacer que desaparezca las experiencia
     y aparezca el menu de agregar experiencias-->
@@ -44,7 +44,7 @@
 
 
 
-    <section   class="container custom-section">
+    <section *ngIf="newitem===false"   class="container custom-section">
         <div class="row">
           <div
           style="border: none"

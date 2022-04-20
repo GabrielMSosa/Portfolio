@@ -2,9 +2,8 @@ import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 import {Idiomas} from "src/app/mock-idioma";
 import {SkillServiceService} from "../../service/skill-service.service";
 import {SKILL} from "src/app/SKILL";
-import { FormsModule } from '@angular/forms';
 import { skills } from 'src/app/mock-Skill';
-
+import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-prog',
@@ -40,14 +39,50 @@ export class AddProgComponent implements OnInit {
   id?:number=0;
   error: boolean=false;
   mensaje: string="";
-  constructor() { }
+
+  form:FormGroup;
+  constructor(private formBuilder: FormBuilder) {
+    this.form=this.formBuilder.group({
+      lenguaje:['',[Validators.required,Validators.minLength(9)]],
+      info:['',[Validators.required,Validators.minLength(9)]],
+      nivel:['',[Validators.required,Validators.minLength(1)]],
+      urlImg :['',[Validators.required,Validators.minLength(32)]]
+      
+    })
+
+
+   }
+
+
+  
+   
 
   ngOnInit(): void {
   }
 
-  enviaSkill(){
-this.urlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
 
+
+
+
+  token1:string="";
+  iniciot:number=0;
+  fint:number=0;
+
+  patron:string="/view";
+  uritotal:string="";
+
+
+  enviaSkill(){
+    this.uritotal=this.form.value.urlImg;
+
+    this.fint=this.uritotal.indexOf(this.patron);
+    this.iniciot=this.fint-33;
+    this.token1=this.uritotal.substring(this.iniciot, this.fint);
+    console.log(this.token1);
+    
+this.urlImg=this.linkaux[0]+this.token1+this.linkaux[1]
+
+/*
     if(this.lenguaje.length===0){
       this.error=true;
       this.mensaje+= "-Ingrese el campo de lenguaje \n";  }
@@ -64,13 +99,14 @@ this.urlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
   alert(this.mensaje)
   this.mensaje="";
   }
-  
+  */
+ this.error=false;
   if (this.error==false){
   
   if(this.flagedit1==true){
-    this.nivel=this.nivel+"%";
-    this.datoedit1.lenguaje=this.lenguaje;
-    this.datoedit1.info=this.info;
+    this.nivel=this.form.value.nivel;
+    this.datoedit1.lenguaje=this.form.value.lenguaje;
+    this.datoedit1.info=this.form.value.info;
     this.datoedit1.urlImg=this.urlImg;
     this.datoedit1.nivel=this.nivel;
     this.newEditSkill.emit(true);
@@ -78,11 +114,14 @@ this.urlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
   
   }
   
-  else{  this.nivel=this.nivel+"%";
-  const {lenguaje,info,nivel,urlImg}=this;
-  const NewSKILL= {lenguaje,info,nivel,urlImg};
-  console.log(NewSKILL);
-  this.inSkill.emit(NewSKILL);
+  else{  
+    
+    this.nivel=this.form.value.nivel;
+    this.datoedit1.lenguaje=this.form.value.lenguaje;
+    this.datoedit1.info=this.form.value.info;
+    this.datoedit1.urlImg=this.urlImg;
+    this.datoedit1.nivel=this.nivel;
+  this.inSkill.emit(this.datoedit1);
   this.newitem=true;
    }
   
@@ -92,6 +131,17 @@ this.urlImg=this.linkaux[0]+this.tokenGo+this.linkaux[1]
   
   }
    }
+
+
+   get Lenguaje(){
+    return this.form.get('lenguaje');}
+    get Info(){
+    return this.form.get('info');}
+    get Nivel(){
+    return this.form.get('nivel');}
+    get UrlImg(){
+    return this.form.get('urlImg');}
+ 
 
 
 

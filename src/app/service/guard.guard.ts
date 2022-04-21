@@ -1,15 +1,31 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { AutenticacionService } from 'src/app/service/autenticacion.service';
 @Injectable({
   providedIn: 'root'
 })
 export class GuardGuard implements CanActivate {
+  constructor(private autoe:AutenticacionService, private router:Router){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+      /*
+      //esto ponemos cuando este ok el jwt
+      let currentUser=this.autoe.UsuarioAutenticado;
+      if(currentUser&&currentUser.token){
+
+        return true;
+      }
+      else{
+        this.router.navigate(['/login']);
+        return false;
+      }   
+      
+      */
+
+   
+      return true;
   }
   
 }

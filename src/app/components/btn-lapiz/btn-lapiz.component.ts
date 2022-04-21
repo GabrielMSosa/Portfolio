@@ -38,9 +38,7 @@ id:0,
 
   ngOnInit(): void {
   this.serviUser.GetUserService().subscribe((Users) => {
-      if(Users[0].email==undefined) {Users[0].email="";
-
-      }
+      console.log(JSON.stringify(Users));
     this.Users=Users
   
   });

@@ -60,11 +60,11 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a
-            *ngIf="User==false"
+            *ngIf="User==true"
              routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a
-            *ngIf="User==true" 
-            routerLink="/"
+            *ngIf="User==false" 
+            routerLink="/login"
             (click)="CerrarSesion()"
             >
             <span class="glyphicon glyphicon-log-out">

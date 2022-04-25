@@ -1,1 +1,291 @@
-<p>btn-edit-lapiz works!</p>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+  
+  <form [formGroup]="form" (ngSubmit)=" enviaUser()" >
+    <legend class="d-flex justify-content-center">Datos Personales</legend>
+          
+      
+  
+      <div class="form-group">
+      <label *ngIf="flagedit1===false" for="imageFile">Link de la imagen de perfil:</label>
+      <label *ngIf="flagedit1===true" for="imageFile">Link de la imagen de perfil:</label>
+      <input
+  
+       type="text"
+       formControlName="urlImg"
+      [ngClass]="{'is-invalid': UrlImg?.errors && (UrlImg?.touched), 'is-valid':!UrlImg?.errors && UrlImg?.touched}"
+       class="form-control"
+       id="urlImg"
+       name="token drive"
+       placeholder="Ingrese el link de su imagen de perfil"
+        >
+       
+       <div *ngIf="UrlImg?.errors && UrlImg?.touched">
+  
+        <p *ngIf="UrlImg?.hasError('required')" class="text-danger">
+          Ingrese el link de la imagen compartida publicamente de su drive.
+  
+        </p>
+        <p *ngIf="UrlImg?.errors?.['minlength']" class="text-danger">
+          el tamaño no corresponde a un link .
+  
+        </p>
+  
+      </div>
+      </div>
+  
+      
+  
+  
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingrese su nombre:</label>
+        <input type="text"
+      formControlName="nombre" 
+      [ngClass]="{'is-invalid': Nombre?.errors && (Nombre?.touched), 'is-valid':!Nombre?.errors && Nombre?.touched}"
+      class="form-control" name="message" placeholder="Ingrese el nombre " rows="4">
+      
+      <div *ngIf="Nombre?.errors && Nombre?.touched">
+  
+        <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+          Debe Ingresar el campo de Nombre.
+  
+        </p>
+        <p *ngIf="Nombre?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre , debe tener minimo 9 caracteres.
+  
+        </p>
+  
+      </div>
+    
+      </div>
+  
+  
+      <div class="form-group">
+        <label for="exampleInputPassword1">Apellido</label>
+        <input type="text"
+      formControlName="apellido"
+      [ngClass]="{'is-invalid': Apellido?.errors && (Apellido?.touched), 'is-valid':!Apellido?.errors && Apellido?.touched}"
+      class="form-control" name="message" placeholder="Ingrese el Apellido en % ej. 10% " rows="4">
+      
+      
+      <div *ngIf="Apellido?.errors && Apellido?.touched">
+  
+        <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+          Debe Ingresar el campo de Apellido, recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+        <p *ngIf="Nombre?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre del Nombre, debe tener minimo 2 caracteres. Recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+  
+      </div>
+    
+      </div>
+  
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Telefono</label>
+        <input type="text"
+      formControlName="telefono"
+      [ngClass]="{'is-invalid': Telefono?.errors && (Telefono?.touched), 'is-valid':!Telefono?.errors && Telefono?.touched}"
+      class="form-control" name="message" placeholder="Ingrese el Telefono en % ej. 10% " rows="4">
+      
+      
+      <div *ngIf="Telefono?.errors && Telefono?.touched">
+  
+        <p *ngIf="Telefono?.hasError('required')" class="text-danger">
+          Debe Ingresar el campo de Telefono, recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+        <p *ngIf="Nombre?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre del Nombre, debe tener minimo 2 caracteres. Recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+  
+      </div>
+    
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input type="text"
+      formControlName="email" 
+      [ngClass]="{'is-invalid': Email?.errors && (Email?.touched), 'is-valid':!Email?.errors && Email?.touched}"
+      class="form-control" name="message" placeholder="Ingrese el Email en % ej. 10% " rows="4">
+      
+      
+      <div *ngIf="Email?.errors && Email?.touched">
+  
+        <p *ngIf="Email?.hasError('required')" class="text-danger">
+          Debe Ingresar el campo de Email, recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+        <p *ngIf="Nombre?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre del Nombre, debe tener minimo 2 caracteres. Recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+  
+      </div>
+    
+      </div>
+
+      
+      <div class="form-group">
+        <label for="exampleInputPassword1">Edad</label>
+        <input type="text"
+      formControlName="edad"
+      [ngClass]="{'is-invalid': Edad?.errors && (Edad?.touched), 'is-valid':!Edad?.errors && Edad?.touched}"
+      class="form-control" name="message" placeholder="Ingrese el Edad en % ej. 10% " rows="4">
+      
+      
+      <div *ngIf="Edad?.errors && Edad?.touched">
+  
+        <p *ngIf="Edad?.hasError('required')" class="text-danger">
+          Debe Ingresar el campo de Edad, recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+        <p *ngIf="Nombre?.errors?.['minlength']" class="text-danger">
+          Debe ingresar el nombre del Nombre, debe tener minimo 2 caracteres. Recuerde de ingresar sin espacios entre el numero y el simbolo de porcentaje, ej si quiere ingresar 27 % debe ingresar sin espacios todo junto el valor "27%" .
+  
+        </p>
+  
+      </div>
+    
+      </div>
+
+      
+    <div class="form-group">
+      <label for="exampleInputPassword1">Ingrese el link de Github.</label>
+      <input type="text"
+    formControlName="linkGit"
+    [ngClass]="{'is-invalid': LinkGit?.errors && (LinkGit?.touched), 'is-valid':!LinkGit?.errors && LinkGit?.touched}"
+    class="form-control" name="message" placeholder="Ingrese el link de Github" rows="4">
+    
+    
+    <div *ngIf="LinkGit?.errors && LinkGit?.touched">
+
+      <p *ngIf="LinkGit?.hasError('required')" class="text-danger">
+        Ingrese el link de Github,en caso de no tener ingrese none
+
+      </p>
+      <p *ngIf="LinkGit?.errors?.['minlength']" class="text-danger">
+        Ingrese el link de Github, no coresponde al tamaño de un link.En caso de no tener ingrese none
+
+      </p>
+
+    </div>
+  
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Ingrese el link  de LinkedIn LinkLn</label>
+      <input type="text"
+    formControlName="linkLn"
+    [ngClass]="{'is-invalid': LinkLn?.errors && (LinkLn?.touched), 'is-valid':!LinkLn?.errors && LinkLn?.touched}"
+    class="form-control" name="message" placeholder="Debe Ingresar el link  de su Linkedln." rows="4">
+    
+    
+    <div *ngIf="LinkLn?.errors && LinkLn?.touched">
+
+      <p *ngIf="LinkLn?.hasError('required')" class="text-danger">
+        Debe Ingresar el link  de su Linkedln,en caso de no tener ingrese none.
+
+      </p>
+      <p *ngIf="LinkLn?.errors?.['minlength']" class="text-danger">
+        Debe Ingresar el link  de su Linkedln,en caso de no tener ingrese none.
+
+      </p>
+
+    </div>
+  
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Ingrese el link de Facebook</label>
+      <input type="text"LinkFace
+    formControlName="linkFace"
+    [ngClass]="{'is-invalid': LinkFace?.errors && (LinkFace?.touched), 'is-valid':!LinkFace?.errors && LinkFace?.touched}"
+    class="form-control" name="message" placeholder="Ingrese el link de Facebook" rows="4">
+    
+    
+    <div *ngIf="LinkFace?.errors && LinkFace?.touched">
+
+      <p *ngIf="LinkFace?.hasError('required')" class="text-danger">
+        Ingrese el link de Facebook, en caso de no tener ingrese none.
+
+      </p>
+      <p *ngIf="LinkFace?.errors?.['minlength']" class="text-danger">
+        Ingrese el link de Facebook, en caso de no tener ingrese none.
+
+      </p>
+
+    </div>
+  
+    </div>
+
+    
+    <div class="form-group">
+      <label for="exampleInputPassword1">Ingrese el su link de twitter</label>
+      <input type="text"
+    formControlName="linkTwit"
+    [ngClass]="{'is-invalid': LinkTwit?.errors && (LinkTwit?.touched), 'is-valid':!LinkTwit?.errors && LinkTwit?.touched}"
+    class="form-control" name="message" placeholder="Ingrese el su link de twitter" rows="4">
+    
+    
+    <div *ngIf="LinkTwit?.errors && LinkTwit?.touched">
+
+      <p *ngIf="LinkTwit?.hasError('required')" class="text-danger">
+        Ingrese el su link de twitter, en caso de no tener ingrese none.
+
+      </p>
+      <p *ngIf="LinkTwit?.errors?.['minlength']" class="text-danger">
+        Ingrese el su link de twitter, en caso de no tener ingrese none.
+
+      </p>
+
+    </div>
+  
+    </div>
+
+
+
+      
+
+  
+  
+  
+  
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingrese una breve presentación de usted</label>
+        <textarea  type="text"
+         formControlName="acercademi"
+         [ngClass]="{'is-invalid': Acercademi?.errors && (Acercademi?.touched), 'is-valid':!Acercademi?.errors && Acercademi?.touched}"
+         class="form-control" name="message" placeholder="Ingrese una breve presentación de usted." rows="4"></textarea>
+         
+      
+      <div *ngIf="Acercademi?.errors && Acercademi?.touched">
+  
+        <p *ngIf="Acercademi?.hasError('required')" class="text-danger">
+          Debe ingresar la Acercademirmacion con respecto al conocimiento que tiene respecto al Nombre.
+  
+        </p>
+        <p *ngIf="Acercademi?.errors?.['minlength']" class="text-danger">
+          Debe ingresar la Acercademirmacion con respecto al conocimiento que tiene respecto al Nombre.
+  
+        </p>
+  
+      </div>
+    
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  
+  </div>
+  

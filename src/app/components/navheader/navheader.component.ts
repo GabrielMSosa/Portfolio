@@ -23,6 +23,7 @@ public User: boolean=  false;
     this.User=false;
 
   }
+  this.User=true;
   console.log(this.cookies.get("token"));
 console.log(this.User);
   }

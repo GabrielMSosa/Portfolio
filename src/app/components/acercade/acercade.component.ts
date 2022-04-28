@@ -16,6 +16,15 @@ export class AcercadeComponent implements OnInit {
   flag:boolean = false;
   flageditItem:boolean =false;
   editar:boolean = false;
+  ParaEnviar:USER ={
+        nombre:"",
+        apellido:"",
+        telefono:"",
+        email:"",
+        edad:"",
+        acercademi:"",
+        urlImg:""
+  };
   
 
   constructor(private servicio:UserServiceService) { }
@@ -25,6 +34,15 @@ export class AcercadeComponent implements OnInit {
     this.servicio.GetUserService().subscribe((USERBD)=>{this.USERBD=USERBD});
 
   }
+  SendEdit(recorre:USER) {
+    console.log(JSON.stringify(recorre));
+    console.log("FUNCION SEND EDIT")
+    this.ParaEnviar=recorre;
+    this.editar=true;
+    this.AddItem=!this.AddItem;
+
+  }
+
 
   IraEdit(){
   

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+
 import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
 import { USER } from 'src/app/USER';
+import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 
 /*export interface USER{
     id?:number;
@@ -21,6 +22,17 @@ import { USER } from 'src/app/USER';
 })
 export class BtnEditLapizComponent implements OnInit {
   flagedit1:boolean = false;
+  @Output() InExp:EventEmitter<USER>=new EventEmitter(); 
+  @Input() flagedit:boolean = false;
+  @Input() datoedit:USER ={
+        nombre:"",
+        apellido:"",
+        telefono:"",
+        email:"",
+        edad:"",
+        acercademi:"",
+        urlImg:""
+  };
 
   form:FormGroup;
   constructor(private formBuilder: FormBuilder) {
@@ -74,6 +86,7 @@ export class BtnEditLapizComponent implements OnInit {
   get LinkTwit(){
     return this.form.value('linkTwit');
   }
+  
   
 
   enviaUser(){}

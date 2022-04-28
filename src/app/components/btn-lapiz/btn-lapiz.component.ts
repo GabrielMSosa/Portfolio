@@ -12,6 +12,7 @@ import { UserServiceService } from 'src/app/service/user-service.service';
 })
 export class BtnLapizComponent implements OnInit {
  Users:USER[] =[];
+ usuarios:USER=Users[0];
   @Input() newitem:boolean = false;
   @Output() DeleteExp: EventEmitter<USER>=new EventEmitter;
   Imagen:string ="";
@@ -22,8 +23,11 @@ export class BtnLapizComponent implements OnInit {
   @Output() EditItem:EventEmitter<USER>=new EventEmitter;
   BtnClick:boolean = false;
   info:string = "Aca va informacion personal mia";
+
   constructor(private cookies:CookieService,private serviUser:UserServiceService) { }
-/*
+
+
+  /*
 id:0,
         Nombre:"Gabriel Matias",
         Apellido:"Sosa",
@@ -65,6 +69,12 @@ updateInfo( entrada:string){
 this.info=entrada;
 
 }
+EditarUsuario(input1:USER){
 
+  this.flaglocal=!this.flaglocal;
+  console.log(JSON.stringify(this.usuarios))  
+  console.log("funcion editar");
+  this.EditItem.emit(input1); 
+}
 
 }

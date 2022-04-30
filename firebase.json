@@ -1,16 +1,23 @@
 {
   "hosting": {
+<<<<<<< HEAD
     "public": "dist/port-folio",
+=======
+    "public": "dist",
+>>>>>>> usuario
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+<<<<<<< HEAD
     ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
+=======
+>>>>>>> usuario
     ]
   }
 }

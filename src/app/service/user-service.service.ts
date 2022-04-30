@@ -16,7 +16,8 @@ const httpOptions={
   providedIn: 'root'
 })
 export class UserServiceService {
-  private uriApi="http://localhost:8080/userp/traertodo"
+  private uriApi="http://localhost:8080/userp/traertodo";
+  private APIuriPut="http://localhost:8080/userp/editar";
   constructor(private http:HttpClient) { }
 
   GetUserService():Observable<USER[]> {
@@ -34,6 +35,18 @@ export class UserServiceService {
     
     })); }
     
+    PutUserServi(entrada:USER):Observable<USER> {
+      console.log("entramos en el servcio PutExpServi y el  id es: ");
+        console.log(entrada.id)
+      const url= `${this.APIuriPut}/${entrada.id}`
+      
+     return this.http.put<USER>(url,entrada);
     
+
+    }
+    
+
+
+
 
 }

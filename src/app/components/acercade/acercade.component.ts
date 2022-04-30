@@ -43,6 +43,30 @@ export class AcercadeComponent implements OnInit {
 
   }
 
+  AddUser(entrada:USER) {
+    console.log("estamos en la funcion add user que recibe el JSON de USER y vale:")
+    console.log(JSON.stringify(entrada));
+    console.log("entramos al id del get de la base de datos y vale:");
+    console.log(this.USERBD[0].id);
+    entrada.id=this.USERBD[0].id;
+
+    this.servicio.PutUserServi(entrada).subscribe(()=>{
+      this.USERBD=this.USERBD.filter(t=>t.id!==entrada.id);
+      this.servicio.GetUserService().subscribe((USERBD)=>{this.USERBD=USERBD});
+    //resulta que si no pongo el get aca cuando hago el put no me aparece en el template
+    // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
+    
+    })
+    
+    console.log("Para editar nuevo componente");
+    this.AddItem=!this.AddItem;  
+    
+
+
+
+
+
+  }
 
   IraEdit(){
   

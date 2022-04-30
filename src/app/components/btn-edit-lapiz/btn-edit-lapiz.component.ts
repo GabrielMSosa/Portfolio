@@ -23,7 +23,8 @@ import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 export class BtnEditLapizComponent implements OnInit {
   flagedit1:boolean = false;
   @Output() InExp:EventEmitter<USER>=new EventEmitter(); 
-  @Input() flagedit:boolean = false;
+   @Input() flagedit:boolean = false;
+  @Output() newEditItem:EventEmitter<boolean> = new EventEmitter(false);
   @Input() datoedit:USER ={
         nombre:"",
         apellido:"",
@@ -37,60 +38,84 @@ export class BtnEditLapizComponent implements OnInit {
   form:FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.form=this.formBuilder.group({
-      nombre:['',[Validators.required,Validators.minLength(6)]],
-      apellido:['',[Validators.required,Validators.minLength(6)]],
+      nombre:['',[Validators.required,Validators.minLength(5)]],
+      apellido:['',[Validators.required,Validators.minLength(5)]],
       telefono:['',[Validators.required,Validators.minLength(9)]],
       email:['',[Validators.required,Validators.minLength(9)]],
       edad:['',[Validators.required,Validators.minLength(2)]],
       acercademi:['',[Validators.required,Validators.minLength(30)]],
-      urlImg:['',[Validators.required,Validators.minLength(9)]],
-      linkGit:['',[Validators.required,Validators.minLength(10)]],
-      linkLn:['',[Validators.required,Validators.minLength(10)]],
-      linkFace:['',[Validators.required,Validators.minLength(10)]],
-      linkTwit:['',[Validators.required,Validators.minLength(10)]]
+      urlImg:['',[Validators.required,Validators.minLength(13)]],
+      linkGit:['',[Validators.required,Validators.minLength(4)]],
+      linkLn:['',[Validators.required,Validators.minLength(4)]],
+      linkFace:['',[Validators.required,Validators.minLength(4)]],
+      linkTwit:['',[Validators.required,Validators.minLength(4)]]
     })}
 
 
   ngOnInit(): void {
   }
   get Nombre(){
-    return this.form.value('nombre');
+    return this.form.get('nombre');
   }
   get Apellido(){
-    return this.form.value('apellido');
+    return this.form.get('apellido');
   }
   get Telefono(){
-    return this.form.value('telefono');
+    return this.form.get('telefono');
   }
   get Email(){
-    return this.form.value('email');
+    return this.form.get('email');
   }
   get Edad(){
-    return this.form.value('edad');
+    return this.form.get('edad');
   }
   get Acercademi(){
-    return this.form.value('acercademi');
+    return this.form.get('acercademi');
   }
   get UrlImg(){
-    return this.form.value('urlImg');
+    return this.form.get('urlImg');
   }
   get LinkGit(){
-    return this.form.value('linkGit');
+    return this.form.get('linkGit');
   }
   get LinkLn(){
-    return this.form.value('linkLn');
+    return this.form.get('linkLn');
   }
   get LinkFace(){
-    return this.form.value('linkFace');
+    return this.form.get('linkFace');
   }
   get LinkTwit(){
-    return this.form.value('linkTwit');
+    return this.form.get('linkTwit');
   }
   
+  linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
+  token1:string="";
+  iniciot:number=0;
+  fint:number=0;
+
+  patron:string="/view";
+  uritotal:string=""; 
   
 
-  enviaUser(){}
+  enviaUser(){
+  this.uritotal=this.form.value.urlImg;
 
+  this.fint=this.uritotal.indexOf(this.patron);
+  this.iniciot=this.fint-33;
+  this.token1=this.uritotal.substring(this.iniciot, this.fint);
+  console.log(this.token1);
+  this.datoedit.telefono=this.form.value.telefono;
+  this.datoedit.urlImg=this.linkaux[0]+this.token1+this.linkaux[1];
+  this.datoedit.nombre=this.form.value.nombre;
+  this.datoedit.apellido=this.form.value.apellido;
+  this.datoedit.edad=this.form.value.edad;
+  this.datoedit.email=this.form.value.email;
+  this.datoedit.acercademi=this.form.value.acercademi;
+  //aca tenemos que agregar despues las redes sociales.
+  console.log("Inexp de user vale: ");
+ console.log(JSON.stringify(this.datoedit));  
+  this.newEditItem.emit(true);
+  this.InExp.emit(this.datoedit);  
 
-
+  }
 }

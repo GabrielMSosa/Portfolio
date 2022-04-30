@@ -1,10 +1,12 @@
 <app-btn-lapiz
 (newitem2)="IraEdit()"
+[newitem]="AddItem"
 (EditItem)="SendEdit(USERBD[0])"
 ></app-btn-lapiz> 
 
 
 <app-btn-edit-lapiz
+(InExp)="AddUser($event)"
 *ngIf="AddItem"
 [datoedit]="ParaEnviar"
 [flagedit]="editar"

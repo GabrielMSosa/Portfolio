@@ -2,7 +2,8 @@
 import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
 import { USER } from 'src/app/USER';
 import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
-
+import { RSOCi } from 'src/app/RSOCI';
+import { UserServiceService } from 'src/app/service/user-service.service';
 /*export interface USER{
     id?:number;
     nombre:['',[Validators.required,Validators.minLength(9)]],
@@ -35,8 +36,16 @@ export class BtnEditLapizComponent implements OnInit {
         urlImg:""
   };
 
+  SOCIBD:RSOCi[]=[];
+ datoRsoci:RSOCi={
+  linkGit:"",
+  linkLn:"",
+  linkFace:"",
+  linkTwit:""
+ }
+
   form:FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,private servi:UserServiceService) {
     this.form=this.formBuilder.group({
       nombre:['',[Validators.required,Validators.minLength(3)]],
       apellido:['',[Validators.required,Validators.minLength(3)]],
@@ -104,6 +113,26 @@ export class BtnEditLapizComponent implements OnInit {
   this.iniciot=this.fint-33;
   this.token1=this.uritotal.substring(this.iniciot, this.fint);
   console.log(this.token1);
+
+  this.datoRsoci.linkFace=this.form.value.linkFace;
+  this.datoRsoci.linkGit=this.form.value.linkGit;
+  this.datoRsoci.linkLn=this.form.value.linkLn;
+  this.datoRsoci.linkTwit=this.form.value.linkTw
+  console.log("nuestro json de redes sociales vale:")
+  
+  
+  this.servi.PutRsociServi(this.datoRsoci).subscribe(()=>{
+    this.SOCIBD=this.SOCIBD.filter(t=>t.id!==this.datoRsoci.id);
+    console.log("entramos alput despues de =>");
+    console.log(JSON.stringify(this.datoRsoci))    
+  
+  });
+
+
+
+
+  
+  //================================================
   this.datoedit.telefono=this.form.value.telefono;
   this.datoedit.urlImg=this.linkaux[0]+this.token1+this.linkaux[1];
   this.datoedit.nombre=this.form.value.nombre;

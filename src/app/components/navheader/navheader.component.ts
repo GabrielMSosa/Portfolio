@@ -1,6 +1,9 @@
 import { Component,Output,Input,EventEmitter ,OnInit } from '@angular/core';
 import { LoginserviceService } from 'src/app/service/loginservice.service';
 import{ CookieService } from "ngx-cookie-service";
+import { UserServiceService } from 'src/app/service/user-service.service';
+import { RSOCi } from 'src/app/RSOCI';
+
 @Component({
   selector: 'app-navheader',
   templateUrl: './navheader.component.html',
@@ -8,10 +11,14 @@ import{ CookieService } from "ngx-cookie-service";
 })
 export class NavheaderComponent implements OnInit {
 public User: boolean=  false;
-
-  constructor(private Auth:LoginserviceService,private cookies:CookieService) { }
+SOCIBD:RSOCi[]=[];
+  constructor(private Auth:LoginserviceService,private servi:UserServiceService,private cookies:CookieService) { }
 
   ngOnInit(): void {
+    
+    this.servi.GetRsociService().subscribe((SOCIBD)=>{this.SOCIBD=SOCIBD
+    }
+    );
 
   if (this.cookies.get("token") !== "")
   {

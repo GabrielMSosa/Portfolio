@@ -16,10 +16,10 @@ const httpOptions={
   providedIn: 'root'
 })
 export class UserServiceService {
-  private uriApi="http://localhost:8080/userp/traertodo";
-  private APIuriPut="http://localhost:8080/userp/editar";
-  private APIRSOCIput="http://localhost:8080/redsoc/editar";
-  private APIRSOCget="http://localhost:8080/redsoc/traertodo";
+  private uriApi="https://dry-escarpment-76622.herokuapp.com/userp/traertodo";
+  private APIuriPut="https://dry-escarpment-76622.herokuapp.com/userp/editar";
+  private APIRSOCIput="https://dry-escarpment-76622.herokuapp.com/redsoc/editar";
+  private APIRSOCget="https://dry-escarpment-76622.herokuapp.com/redsoc/traertodo";
 //vamos a crear una nueva tabla de redes sociales y por  lo tanto nuevos endpoint paara implementarlos com, se sale de la estructura planteada
 //pero es la forma mas facil de implementarlo a estas alturas.
   constructor(private http:HttpClient) { }

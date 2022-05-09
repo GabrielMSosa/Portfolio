@@ -15,10 +15,10 @@ const httpOptions={
 export class EducacionService {
   private showAddTask:boolean=false;
   private subject=new Subject<any>(); //para escuchar evento del template 
-  private APIuriget ='http://localhost:8080/educacion/traertodo'
-  private APIuripost='http://localhost:8080/educacion';
-  private APIuriput ='http://localhost:8080/educacion/editar/';
-  private APIuridelete='http://localhost:8080/educacion/borrar';
+  private APIuriget ='https://dry-escarpment-76622.herokuapp.com/educacion/traertodo'
+  private APIuripost='https://dry-escarpment-76622.herokuapp.com/educacion';
+  private APIuriput ='https://dry-escarpment-76622.herokuapp.com/educacion/editar/';
+  private APIuridelete='https://dry-escarpment-76622.herokuapp.com/educacion/borrar';
   constructor( private http: HttpClient) { }
 
 

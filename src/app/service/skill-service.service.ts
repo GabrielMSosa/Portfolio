@@ -14,16 +14,16 @@ const httpOptions={
 })
 export class SkillServiceService {
 private subje=new Subject<any>();
-private APIurlget="http://localhost:8080/skill/traertodo";
-private APIurlpost="http://localhost:8080/skill";
-private APIurldelete="http://localhost:8080/skill/borrar";
-private APIurlput="http://localhost:8080/skill/editar";
+private APIurlget="https://dry-escarpment-76622.herokuapp.com/skill/traertodo";
+private APIurlpost="https://dry-escarpment-76622.herokuapp.com/skill";
+private APIurldelete="https://dry-escarpment-76622.herokuapp.com/skill/borrar";
+private APIurlput="https://dry-escarpment-76622.herokuapp.com/skill/editar";
 
 
-private APIurl1post="http://localhost:8080/idioma";
-private APIurl1get="http://localhost:8080/idioma/traertodo";
-private APIurl1delete="http://localhost:8080/idioma/borrar";
-private APIurl1put="http://localhost:8080/idioma/editar"
+private APIurl1post="https://dry-escarpment-76622.herokuapp.com/idioma";
+private APIurl1get="https://dry-escarpment-76622.herokuapp.com/idioma/traertodo";
+private APIurl1delete="https://dry-escarpment-76622.herokuapp.com/idioma/borrar";
+private APIurl1put="https://dry-escarpment-76622.herokuapp.com/idioma/editar"
   constructor(private http:HttpClient) { }
 
 GetSkillService():Observable<SKILL[]> {

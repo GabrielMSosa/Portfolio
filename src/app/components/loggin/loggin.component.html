@@ -106,15 +106,29 @@
 
       </p>
       <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
-        La contraseña debe ser de 8 o mas caracteres.
+        La contraseña es requerida.
 
       </p>
   
     </div>
     </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-primary">Iniciar</button>
+      <br>
+      <button 
+      (click)="muestraHelp()"
+      type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark">Problemas en login</button>
+      
     </form>
 
   </div>
 </div>
+ 
 
+<div 
+*ngIf="help===true"
+class="alert alert-primary" role="alert">
+  En caso de no acceder esperá 4 a 6 min y volve a reintentar, no es necesario que cierres la pestaña. 
+  Si seguis sin poder acceder anda a la wiki del front en el repositorio de github end para ver las credenciales validas. 
+  Si despues de seguir estas dos posibilidades contactame.
+
+</div>

@@ -10,6 +10,7 @@ import { AutenticacionService } from 'src/app/service/autenticacion.service';
   styleUrls: ['./loggin.component.css']
 })
 export class LogginComponent implements OnInit {
+  help:boolean = false;
   form:FormGroup;
   email: string="";
   password: string="";
@@ -80,5 +81,8 @@ get Password(){
   return this.form.get('password');
 }
 
-
+muestraHelp(){
+this.help=!this.help;
+console.log("variable help"+this.help);
+}
 }

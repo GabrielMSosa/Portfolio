@@ -30,15 +30,11 @@ export class EducacionService {
 
 onToggle():Observable<any> {
   return this.subject.asObservable();
-
 }
 
 getServiceEdus():Observable<EDU[]>{
 console.log("entramos en el servcio getExps");
-
 return this.http.get<EDU[]>(this.APIuriget)
-  
-
 }
 serviAddEdu(ENTRADA:EDU):Observable<EDU>{
 return this.http.post<EDU>(this.APIuripost,ENTRADA,httpOptions);
@@ -50,9 +46,7 @@ return this.http.delete<EDU>(url);}
 
 PutEduServi(entrada:EDU):Observable<EDU>{
   const url= `${this.APIuriput}/${entrada.id}`;
-  return this.http.put<EDU>(url,entrada);
-
-}
+  return this.http.put<EDU>(url,entrada);}
 
 
 

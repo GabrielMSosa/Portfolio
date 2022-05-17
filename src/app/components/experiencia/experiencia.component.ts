@@ -48,10 +48,7 @@ export class ExperienciaComponent implements OnInit {
     this.AddItem=!this.AddItem;
     console.log(this.AddItem);
     this.flag=false;
-    if(this.cookies.get("token")===""){
-      this.flag=true;
-
-    }
+ 
   }
 
   SendEdit(recorre:EXPE){

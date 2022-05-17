@@ -20,7 +20,12 @@ export class EducacionService {
   private APIuriput ='https://dry-escarpment-76622.herokuapp.com/educacion/editar/';
   private APIuridelete='https://dry-escarpment-76622.herokuapp.com/educacion/borrar';
   constructor( private http: HttpClient) { }
-
+  
+  
+  
+  
+  
+  
 
 
 onToggle():Observable<any> {

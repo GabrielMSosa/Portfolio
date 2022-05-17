@@ -29,13 +29,7 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.tareas.getServiceEdus().subscribe((EDUBD)=>{this.EDUBD=EDUBD});
-    if(this.cookies.get("token")===""){
-      this.flag=true;
-
-    }
-    else{
-      this.flag=false;
-    }
+  
 
     this.flag=false;
   }
@@ -43,12 +37,8 @@ export class EducacionComponent implements OnInit {
     console.log("NuevaTarea!");
     this.AddItem=!this.AddItem;
     console.log(this.AddItem);
-    
-    if(this.cookies.get("token")===""){
-      this.flag=true;
+    this.flag=false;
 
-    }
-    
   }
   
   DeleteEdu(entrada:EDU){

@@ -23,14 +23,10 @@ export class ItemEduComponent implements OnInit {
   constructor(private cookies:CookieService) { }
 
   ngOnInit(): void {
-    if(this.cookies.get("token")===""){
-      this.flag=true;
 
-    }
-    else{
+  
       this.flag=false;
-    }
-
+  
 
   }
   EditarExperiencia(input1:EDU){

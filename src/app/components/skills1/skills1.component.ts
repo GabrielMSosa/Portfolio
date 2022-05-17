@@ -56,14 +56,7 @@ export class Skills1Component implements OnInit {
     this.servi.GetSkillService().subscribe((skillBD)=>{this.skillBD = skillBD});
     this.servi.GetIdiomaService().subscribe((IdiomaBD)=>{this.IdiomaBD = IdiomaBD});
     
-    if(this.cookies.get("token")===""){
-      this.flag=true;
-
-    }
-    else{
-      this.flag=false;
-    }
-
+ 
     console.log("bandera de habilitacion"+this.AddItem);
   
     this.flag=false;
@@ -104,9 +97,7 @@ this.AddItem1=!this.AddItem1;
 console.log("bandera de habilitacion"+this.AddItem);
 this.flag=false;
 this.editar=false;
-if(this.cookies.get("token")===""){
-  this.flag=true;
-}
+
 } 
 
 addNewLang(){
@@ -115,9 +106,7 @@ this.AddItem=!this.AddItem;
 console.log("bandera de habilitacion"+this.AddItem);
 this.flag=false;
 this.editar=false;
-if(this.cookies.get("token")===""){
-  this.flag=true;
-}
+
 }
 
 Addprog(entrada:SKILL){

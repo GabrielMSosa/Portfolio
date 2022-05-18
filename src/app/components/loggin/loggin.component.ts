@@ -37,7 +37,7 @@ export class LogginComponent implements OnInit {
   }
 
   
-
+  //este metodo se usaba cunado el login usaba cookies pero ahora que es jwt ignorar este metodo.
   login() {
     const user={email:this.email,password:this.password};
     console.log(this.email);

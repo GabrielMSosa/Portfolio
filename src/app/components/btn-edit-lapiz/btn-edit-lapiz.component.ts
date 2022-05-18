@@ -1,5 +1,5 @@
 
-import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
+import { FormsModule,Validators,FormGroup,FormBuilder, AbstractControl } from '@angular/forms';
 import { USER } from 'src/app/USER';
 import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 import { RSOCi } from 'src/app/RSOCI';
@@ -54,7 +54,7 @@ export class BtnEditLapizComponent implements OnInit {
       edad:['',[Validators.required,Validators.minLength(2)]],
       acercademi:['',[Validators.required,Validators.minLength(30)]],
       urlImg:['',[Validators.required,Validators.minLength(13)]],
-      linkGit:['',[Validators.required,Validators.minLength(4)]],
+      linkGit:['',[Validators.required,Validators.minLength(14),ValidateLinkGit]],
       linkLn:['',[Validators.required,Validators.minLength(4)]],
       linkFace:['',[Validators.required,Validators.minLength(4)]],
       linkTwit:['',[Validators.required,Validators.minLength(4)]]
@@ -147,4 +147,11 @@ export class BtnEditLapizComponent implements OnInit {
   this.InExp.emit(this.datoedit);  
 
   }
+}
+
+function ValidateLinkGit(control: AbstractControl): {[key: string]: any} | null  {
+  if (control.value && control.value.length != 10) {
+    return { 'LinkgitInvalid': true };
+  }
+  return null;
 }

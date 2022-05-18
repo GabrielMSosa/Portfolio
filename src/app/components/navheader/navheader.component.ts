@@ -3,6 +3,8 @@ import { LoginserviceService } from 'src/app/service/loginservice.service';
 import{ CookieService } from "ngx-cookie-service";
 import { UserServiceService } from 'src/app/service/user-service.service';
 import { RSOCi } from 'src/app/RSOCI';
+import { AutenticacionService } from 'src/app/service/autenticacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navheader',
@@ -12,7 +14,7 @@ import { RSOCi } from 'src/app/RSOCI';
 export class NavheaderComponent implements OnInit {
 public User: boolean=  false;
 SOCIBD:RSOCi[]=[];
-  constructor(private Auth:LoginserviceService,private servi:UserServiceService,private cookies:CookieService) { }
+  constructor(private autent:AutenticacionService ,private Auth:LoginserviceService,private servi:UserServiceService,private MiRouter: Router ,private cookies:CookieService) { }
 
   ngOnInit(): void {
     
@@ -36,6 +38,8 @@ console.log(this.User);
   }
   CerrarSesion() {
     this.User=false;
+    this.autent.cerrarCesion();
+    this.MiRouter.navigateByUrl("login");
   this.Auth.setTokenService("");
   console.log(this.cookies.get("token"));
   console.log(this.User);

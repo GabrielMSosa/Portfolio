@@ -174,9 +174,12 @@
       </p>
       <p *ngIf="LinkGit?.errors?.['minlength']" class="text-danger">
         Ingrese el link de Github,en caso de no tener ingrese none
-
       </p>
 
+      <p *ngIf="LinkGit?.errors?.['LinkgitInvalid']" class="text-danger">
+        Ingrese el link de Github,en caso de no tener ingrese none
+      </p>
+      
     </div>
   
     </div>

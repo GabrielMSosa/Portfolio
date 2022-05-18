@@ -32,6 +32,7 @@ import { BtnEditLapizComponent } from './components/btn-edit-lapiz/btn-edit-lapi
 import { FooterComponent } from './components/footer/footer.component';
 import { InterceptorService } from './service/interceptor.service';
 import { AutenticacionService } from './service/autenticacion.service';
+
 //##
  
 @NgModule({

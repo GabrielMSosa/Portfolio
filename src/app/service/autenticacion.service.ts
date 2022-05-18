@@ -11,6 +11,8 @@ export class AutenticacionService {
 url="https://dry-escarpment-76622.herokuapp.com/user/loginUser"
 currentUserObject:BehaviorSubject<any>;
 
+
+
   constructor(private http: HttpClient,private httpBackend: HttpBackend) { 
     console.log("serviauto");
     this.currentUserObject= new BehaviorSubject<any>(
@@ -19,6 +21,9 @@ currentUserObject:BehaviorSubject<any>;
     );
 
   }
+
+
+
 
   IniciarSesion(credenciales:any):Observable<any> {
     console.log(JSON.stringify(credenciales));
@@ -32,6 +37,12 @@ currentUserObject:BehaviorSubject<any>;
 
 
   }
+
+  cerrarCesion(){
+    sessionStorage.clear();
+    
+  }
+
 
 get UsuarioAutenticado(){
   return this.currentUserObject.value;

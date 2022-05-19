@@ -173,20 +173,24 @@
 
       </p>
       <p *ngIf="LinkGit?.errors?.['minlength']" class="text-danger">
-        Ingrese el link de Github,en caso de no tener ingrese none
+        Debe tener formato https://github.com/usuarioGit en caso de no poseer ingrese none.
       </p>
 
       <p *ngIf="LinkGit?.errors?.['LinkgitInvalid']" class="text-danger">
-        Ingrese el link de Github,en caso de no tener ingrese none
+        Debe tener formato https://github.com/usuarioGit en caso de no poseer ingrese none.
       </p>
+
       
+
+
+
     </div>
   
     </div>
 
 
     <div class="form-group">
-      <label for="exampleInputPassword1">Ingrese el link  de LinkedIn LinkLn</label>
+      <label for="exampleInputPassword1">Ingrese el link  de Linkedin </label>
       <input type="text"
     formControlName="linkLn"
     [ngClass]="{'is-invalid': LinkLn?.errors && (LinkLn?.touched), 'is-valid':!LinkLn?.errors && LinkLn?.touched}"
@@ -200,9 +204,15 @@
 
       </p>
       <p *ngIf="LinkLn?.errors?.['minlength']" class="text-danger">
-        Debe Ingresar el link  de su Linkedln,en caso de no tener ingrese none.
+        Debe tener formato https://www.linkedin.com/usuarioLinkdin en caso de no poseer ingrese none.
 
       </p>
+
+      <p *ngIf="LinkLn?.errors?.['LinkLinkedinInvalid']" class="text-danger">
+        Debe tener formato https://www.linkedin.com/usuarioLinkdin en caso de no poseer ingrese none.
+      </p>
+
+
 
     </div>
   
@@ -224,10 +234,15 @@
 
       </p>
       <p *ngIf="LinkFace?.errors?.['minlength']" class="text-danger">
-        Ingrese el link de Facebook, en caso de no tener ingrese none.
+        Debe tener formato https://www.facebook.com/usuarioFacebook en caso de no poseer ingrese none.
 
       </p>
+      <p *ngIf="LinkFace?.errors?.['LinkFaceInvalid']" class="text-danger">
+        Debe tener formato https://www.facebook.com/usuarioFacebook en caso de no poseer ingrese none.
+      </p>
+      
 
+      
     </div>
   
     </div>
@@ -251,6 +266,12 @@
         Ingrese el su link de twitter, en caso de no tener ingrese none.
 
       </p>
+      <p *ngIf="LinkTwit?.errors?.['LinkTwitterInvalid']" class="text-danger">
+        Debe tener formatohttps://www.twitter.com/usuariotwiter en caso de no poseer ingrese none.
+      </p>
+
+      
+
 
     </div>
   

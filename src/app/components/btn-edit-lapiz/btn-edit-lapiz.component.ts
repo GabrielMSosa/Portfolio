@@ -54,10 +54,10 @@ export class BtnEditLapizComponent implements OnInit {
       edad:['',[Validators.required,Validators.minLength(2)]],
       acercademi:['',[Validators.required,Validators.minLength(30)]],
       urlImg:['',[Validators.required,Validators.minLength(13)]],
-      linkGit:['',[Validators.required,Validators.minLength(14),ValidateLinkGit]],
-      linkLn:['',[Validators.required,Validators.minLength(4)]],
-      linkFace:['',[Validators.required,Validators.minLength(4)]],
-      linkTwit:['',[Validators.required,Validators.minLength(4)]]
+      linkGit:['',[Validators.required,Validators.minLength(4),ValidateLinkGit]],
+      linkLn:['',[Validators.required,Validators.minLength(4),ValidateLinkLinkedin]],
+      linkFace:['',[Validators.required,Validators.minLength(4),ValidateLinkface]],
+      linkTwit:['',[Validators.required,Validators.minLength(4),ValidateLinkTwiter]]
     })}
 
 
@@ -96,7 +96,7 @@ export class BtnEditLapizComponent implements OnInit {
   get LinkTwit(){
     return this.form.get('linkTwit');
   }
-  
+  gituberror:boolean = false;
   linkaux:string []=[ "https://drive.google.com/uc?id=","&export=download"];
   token1:string="";
   iniciot:number=0;
@@ -117,7 +117,24 @@ export class BtnEditLapizComponent implements OnInit {
   this.datoRsoci.linkFace=this.form.value.linkFace;
   this.datoRsoci.linkGit=this.form.value.linkGit;
   this.datoRsoci.linkLn=this.form.value.linkLn;
-  this.datoRsoci.linkTwit=this.form.value.linkTw
+  this.datoRsoci.linkTwit=this.form.value.linkTw;
+  
+if(this.datoRsoci.linkFace=="none"){
+this.datoRsoci.linkFace="https://portfolio2-a6e86.web.app/portfolio";
+console.log("el valor del link de linkFace vale :"+this.datoRsoci.linkFace);
+} 
+if(this.datoRsoci.linkGit=="none"){
+this.datoRsoci.linkGit="https://portfolio2-a6e86.web.app/portfolio";
+console.log("el valor del link de linkGit vale :"+this.datoRsoci.linkGit);
+}
+if(this.datoRsoci.linkLn=="none"){
+this.datoRsoci.linkLn="https://portfolio2-a6e86.web.app/portfolio";
+console.log("el valor del link de linkLn vale :"+this.datoRsoci.linkLn);
+}
+if(this.datoRsoci.linkTwit=="none"){
+this.datoRsoci.linkTwit="https://portfolio2-a6e86.web.app/portfolio";
+console.log("el valor del link de linkTwit vale :"+this.datoRsoci.linkTwit);
+}
   console.log("nuestro json de redes sociales vale:")
   
   
@@ -149,9 +166,47 @@ export class BtnEditLapizComponent implements OnInit {
   }
 }
 
+//AGREGAMOS VALIDATORS PERSONALIZADOS PARA DETECTAR LOS INPUTS QUE NO SEAN LINKS DE REDES SOCIALES.
+
 function ValidateLinkGit(control: AbstractControl): {[key: string]: any} | null  {
-  if (control.value && control.value.length != 10) {
-    return { 'LinkgitInvalid': true };
+  
+  if (control.value && !control.value.includes("https://github.com")) {
+      if (!control.value.includes("none")){
+        return { 'LinkgitInvalid': true };}
+    
   }
   return null;
+  
+}
+
+function ValidateLinkface(control: AbstractControl): {[key: string]: any} | null  {
+  
+  if (control.value && !control.value.includes("https://www.facebook.com")) {
+      if (!control.value.includes("none")){
+        return { 'LinkFaceInvalid': true };}
+    
+  }
+  return null;
+  
+}
+function ValidateLinkLinkedin(control: AbstractControl): {[key: string]: any} | null  {
+  
+  if (control.value && !control.value.includes("https://www.linkedin.com")) {
+      if (!control.value.includes("none")){
+        return { 'LinkLinkedinInvalid': true };}
+    
+  }
+  return null;
+  
+}
+
+function ValidateLinkTwiter(control: AbstractControl): {[key: string]: any} | null  {
+  
+  if (control.value && !control.value.includes("https://www.twitter.com")) {
+      if (!control.value.includes("none")){
+        return { 'LinkTwitterInvalid': true };}
+    
+  }
+  return null;
+  
 }

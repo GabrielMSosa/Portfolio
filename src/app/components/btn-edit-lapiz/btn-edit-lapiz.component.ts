@@ -117,8 +117,11 @@ export class BtnEditLapizComponent implements OnInit {
   this.datoRsoci.linkFace=this.form.value.linkFace;
   this.datoRsoci.linkGit=this.form.value.linkGit;
   this.datoRsoci.linkLn=this.form.value.linkLn;
-  this.datoRsoci.linkTwit=this.form.value.linkTw;
+  this.datoRsoci.linkTwit=this.form.value.linkTwit;
   
+console.log("el valor es twit:"+this.datoRsoci.linkTwit);
+
+
 if(this.datoRsoci.linkFace=="none"){
 this.datoRsoci.linkFace="https://portfolio2-a6e86.web.app/portfolio";
 console.log("el valor del link de linkFace vale :"+this.datoRsoci.linkFace);

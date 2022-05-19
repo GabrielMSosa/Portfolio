@@ -29,8 +29,10 @@ export class UserServiceService {
     return this.http.get<RSOCi[]>(this.APIRSOCget);}
   
     PutRsociServi(entrada:RSOCi):Observable<RSOCi> {
-      console.log("entramos en el servcio PutExpServi y el  id es: ");
-        console.log(entrada.id)
+      console.log("entramos en el servcio PutRed social y el  id es: ");
+      console.log(JSON.stringify(entrada));
+    
+      console.log(entrada.id)
       const url= `${this.APIRSOCIput}/${1}`
       
      return this.http.put<RSOCi>(url,entrada);

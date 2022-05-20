@@ -17,7 +17,7 @@ export class EducacionService {
   private subject=new Subject<any>(); //para escuchar evento del template 
   private APIuriget ='https://dry-escarpment-76622.herokuapp.com/educacion/traertodo'
   private APIuripost='https://dry-escarpment-76622.herokuapp.com/educacion';
-  private APIuriput ='https://dry-escarpment-76622.herokuapp.com/educacion/editar/';
+  private APIuriput ='https://dry-escarpment-76622.herokuapp.com/educacion/editar';
   private APIuridelete='https://dry-escarpment-76622.herokuapp.com/educacion/borrar';
   constructor( private http: HttpClient) { }
   

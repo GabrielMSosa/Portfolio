@@ -75,6 +75,7 @@ export class EducacionComponent implements OnInit {
 }
 SendEdit(recorre:EDU){
   console.log("FUNCION SEND EDIT")
+  console.log("el id de del item educacion vale"+recorre.id)
   this.ParaEnviar=recorre;
   this.editar=true;
   this.AddItem=!this.AddItem;

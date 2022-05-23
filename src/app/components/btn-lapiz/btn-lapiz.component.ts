@@ -42,12 +42,12 @@ id:0,
 
   ngOnInit(): void {
   this.serviUser.GetUserService().subscribe((Users) => {
-      console.log(JSON.stringify(Users));
+      //console.log(JSON.stringify(Users));
     this.Users=Users
   
   });
 
-    console.log(this.Users[0].email);
+    //console.log(this.Users[0].email);
     if(this.cookies.get("token")===""){
       this.flag=true;
 
@@ -55,8 +55,8 @@ id:0,
     else{
       this.flag=false;
     }
-    console.log("valor  de flag"+this.flag);
-    console.log("valor de cookies:"+this.cookies.get("token"));
+    //console.log("valor  de flag"+this.flag);
+    //console.log("valor de cookies:"+this.cookies.get("token"));
 
 
   }
@@ -72,8 +72,8 @@ this.info=entrada;
 EditarUsuario(input1:USER){
 
   this.flaglocal=!this.flaglocal;
-  console.log(JSON.stringify(this.usuarios))  
-  console.log("funcion editar");
+  //console.log(JSON.stringify(this.usuarios))  
+  //console.log("funcion editar");
   this.EditItem.emit(input1); 
 }
 

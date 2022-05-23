@@ -87,7 +87,7 @@ export class AddEduComponent implements OnInit {
   onChange(){
     //console.log(this.seleccion)
     this.estado=this.seleccion.toString();
-    console.log(this.estado)
+    //console.log(this.estado)
   }
 
   token1:string="";
@@ -103,10 +103,10 @@ export class AddEduComponent implements OnInit {
     this.fint=this.uritotal.indexOf(this.patron);
     this.iniciot=this.fint-33;
     this.token1=this.uritotal.substring(this.iniciot, this.fint);
-    console.log(this.token1);
+    //console.log(this.token1);
     
     this.uriImg=this.linkaux[0]+this.token1+this.linkaux[1];
-    console.log(this.uriImg);
+    //console.log(this.uriImg);
 
     this.valor = this.form.value.fechastr.split('-');
     this.valor1 = this.form.value.fechastr1.split('-');
@@ -122,10 +122,10 @@ export class AddEduComponent implements OnInit {
 
 
 
-    console.log(this.anio.toString());//casting de number a string 
-    console.log(this.valor[0])
-    console.log(this.valor1[0])
-    console.log(this.anio1- this.anio);
+    //console.log(this.anio.toString());//casting de number a string 
+    //console.log(this.valor[0])
+    //console.log(this.valor1[0])
+    //console.log(this.anio1- this.anio);
     // vamos a validar que ningun campo estee vacio
     /*
   if(this.institucion.length===0){
@@ -178,7 +178,7 @@ export class AddEduComponent implements OnInit {
                 this.datoedit.fechaFin=this.fechaFin;
                 this.datoedit.estado=this.form.value.estado;
                 this.datoedit.uriImg=this.uriImg;
-          console.log(this.datoedit);
+          //console.log(this.datoedit);
           this.InExp.emit(this.datoedit);
           this.newitem=true;
               }

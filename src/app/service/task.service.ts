@@ -31,7 +31,7 @@ export class TaskService {
   }
 
   getExps():Observable<EXPE[]>{
-  console.log("entramos en el servcio getExps");
+  //console.log("entramos en el servcio getExps");
    
 
    return  this.http.get<EXPE[]>(this.APIuriget);
@@ -42,7 +42,7 @@ export class TaskService {
 }
 PutExpServi(entrada:EXPE):Observable<EXPE>{
   const url= `${this.APIuriPut}/${entrada.id}`
-  console.log("entramos en el servcio PutExpServi");
+  //console.log("entramos en el servcio PutExpServi");
  return this.http.put<EXPE>(url,entrada);
 
 }

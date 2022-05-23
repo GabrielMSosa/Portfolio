@@ -25,7 +25,7 @@ export class AddTextComponent implements OnInit {
       
       this.texto.emit(entrada);
  
-      console.log(entrada);
+//      console.log(entrada);
     }
   ngOnInit(): void {
   

@@ -33,7 +33,7 @@ onToggle():Observable<any> {
 }
 
 getServiceEdus():Observable<EDU[]>{
-console.log("entramos en el servcio getExps");
+//console.log("entramos en el servcio getExps");
 return this.http.get<EDU[]>(this.APIuriget)
 }
 serviAddEdu(ENTRADA:EDU):Observable<EDU>{

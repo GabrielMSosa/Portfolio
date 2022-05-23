@@ -26,8 +26,8 @@ export class ItemExpComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("Componente item exp");
-    console.log(this.experiencias.empresa)
+    //console.log("Componente item exp");
+    //console.log(this.experiencias.empresa)
 
    if(this.cookies.get("token")!=="") {
       this.flag=true;
@@ -41,7 +41,7 @@ export class ItemExpComponent implements OnInit {
 
 
   BorrarExperiencia(entrada:EXPE){
-    console.log(this.experiencias.id);
+    //console.log(this.experiencias.id);
     this.DeleteExp.emit(entrada);
 
   }
@@ -50,7 +50,7 @@ export class ItemExpComponent implements OnInit {
      
   this.flaglocal=!this.flaglocal;
   
-  console.log("funcion editar");
+  //console.log("funcion editar");
   this.EditItem.emit(entrada); 
   }
 

@@ -27,7 +27,7 @@ private APIurl1put="https://dry-escarpment-76622.herokuapp.com/idioma/editar"
   constructor(private http:HttpClient) { }
 
 GetSkillService():Observable<SKILL[]> {
-console.log("Se ejecuta GetSkillService():Observable<Skill>");
+//console.log("Se ejecuta GetSkillService():Observable<Skill>");
 return this.http.get<SKILL[]>(this.APIurlget);
 
 }
@@ -48,7 +48,7 @@ DeleteIdioServi(entrada:IDIO):Observable<IDIO> {
   return this.http.delete<IDIO>(url);
 }
 GetIdiomaService():Observable<IDIO[]>{
-  console.log("Se ejecuta GetIdiomaService():Observable<IDIO[]>{");
+  //console.log("Se ejecuta GetIdiomaService():Observable<IDIO[]>{");
 return this.http.get<IDIO[]>(this.APIurl1get);
 
 

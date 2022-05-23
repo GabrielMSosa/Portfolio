@@ -33,23 +33,23 @@ export class LogginComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log("TOKEN OBTENIDO DE SERVICIO"+this.UserSer.getTokenService());
+    //console.log("TOKEN OBTENIDO DE SERVICIO"+this.UserSer.getTokenService());
   }
 
   
   //este metodo se usaba cunado el login usaba cookies pero ahora que es jwt ignorar este metodo.
   login() {
     const user={email:this.email,password:this.password};
-    console.log(this.email);
-    console.log(this.password);
+    //console.log(this.email);
+    //console.log(this.password);
     this.UserSer.LoginServi(user).subscribe(
     data=>{
-    console.log(data);
+    //console.log(data);
     this.UserSer.setTokenService(data.token); //seteo el token.
     this.MiRouter.navigateByUrl("portfolio");
     },
     error => {
-      console.log(error); //conesto vemos los errores
+      //console.log(error); //conesto vemos los errores
     }); //obtenemos el token que nos da el servicicio
     //que apunta a la api.
     /*******************************
@@ -61,7 +61,7 @@ export class LogginComponent implements OnInit {
 onEnviar(event:Event){
   event.preventDefault; //es canceclar el curso normal del submit
   this.autenticacion.IniciarSesion(this.form.value).subscribe(data=>{
-    console.log("Data"+ JSON.stringify(data));
+    //console.log("Data"+ JSON.stringify(data));
     this.MiRouter.navigateByUrl("portfolio");
 
   });
@@ -83,6 +83,6 @@ get Password(){
 
 muestraHelp(){
 this.help=!this.help;
-console.log("variable help"+this.help);
+//console.log("variable help"+this.help);
 }
 }

@@ -25,14 +25,14 @@ export class UserServiceService {
   constructor(private http:HttpClient) { }
 
   GetRsociService():Observable<RSOCi[]> {
-    console.log("Se ejecuta GetUserService():Observable<USER[]>");
+    //console.log("Se ejecuta GetUserService():Observable<USER[]>");
     return this.http.get<RSOCi[]>(this.APIRSOCget);}
   
     PutRsociServi(entrada:RSOCi):Observable<RSOCi> {
-      console.log("entramos en el servcio PutRed social y el  id es: ");
-      console.log(JSON.stringify(entrada));
+      //console.log("entramos en el servcio PutRed social y el  id es: ");
+      //console.log(JSON.stringify(entrada));
     
-      console.log(entrada.id)
+      //console.log(entrada.id)
       const url= `${this.APIRSOCIput}/${1}`
       
      return this.http.put<RSOCi>(url,entrada);
@@ -44,7 +44,7 @@ export class UserServiceService {
 
 
   GetUserService():Observable<USER[]> {
-    console.log("Se ejecuta GetUserService():Observable<USER[]>");
+    //console.log("Se ejecuta GetUserService():Observable<USER[]>");
     return this.http.get<USER[]>(this.uriApi).pipe(map(user => {
         
       user.forEach(element => {
@@ -59,8 +59,8 @@ export class UserServiceService {
     })); }
     
     PutUserServi(entrada:USER):Observable<USER> {
-      console.log("entramos en el servcio PutExpServi y el  id es: ");
-        console.log(entrada.id)
+      //console.log("entramos en el servcio PutExpServi y el  id es: ");
+        //console.log(entrada.id)
       const url= `${this.APIuriPut}/${entrada.id}`
       
      return this.http.put<USER>(url,entrada);

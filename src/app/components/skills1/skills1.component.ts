@@ -57,7 +57,7 @@ export class Skills1Component implements OnInit {
     this.servi.GetIdiomaService().subscribe((IdiomaBD)=>{this.IdiomaBD = IdiomaBD});
     
  
-    console.log("bandera de habilitacion"+this.AddItem);
+    //console.log("bandera de habilitacion"+this.AddItem);
   
     this.flag=false;
   }
@@ -76,7 +76,7 @@ BorrarIdio(entrada:IDIO){
 }
 SendEdit1(entrada:SKILL){
 
-  console.log("FUNCION SEND EDIT")
+  //console.log("FUNCION SEND EDIT")
   this.ParaEnviar1=entrada;
   this.editar1=true;
   this.AddItem1=!this.AddItem1;
@@ -84,7 +84,7 @@ SendEdit1(entrada:SKILL){
 }
 
 SendEdit(entrada:IDIO){
-  console.log("FUNCION SEND EDIT")
+  //console.log("FUNCION SEND EDIT")
   this.ParaEnviar=entrada;
   this.editar=true;
   this.AddItem=!this.AddItem;
@@ -92,18 +92,18 @@ SendEdit(entrada:IDIO){
 }
 
 addNewTSkill(){
-  console.log("NuevaTarea!");
+  //console.log("NuevaTarea!");
 this.AddItem1=!this.AddItem1;
-console.log("bandera de habilitacion"+this.AddItem);
+//console.log("bandera de habilitacion"+this.AddItem);
 this.flag=false;
 this.editar=false;
 
 } 
 
 addNewLang(){
-console.log("NuevaTarea!");
+//console.log("NuevaTarea!");
 this.AddItem=!this.AddItem;
-console.log("bandera de habilitacion"+this.AddItem);
+//console.log("bandera de habilitacion"+this.AddItem);
 this.flag=false;
 this.editar=false;
 
@@ -111,7 +111,7 @@ this.editar=false;
 
 Addprog(entrada:SKILL){
   if(this.flageditskill==false){
-    console.log("nuevo Skill");
+    //console.log("nuevo Skill");
   this.servi.serviAddSkill(entrada).subscribe((entrada)=>{this.skillBD.push(entrada)
     this.servi.GetSkillService().subscribe((skillBD)=>{this.skillBD = skillBD});
     
@@ -127,7 +127,7 @@ Addprog(entrada:SKILL){
     // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
     
     })
-    console.log("Para editar nuevo componente");
+    //console.log("Para editar nuevo componente");
     this.AddItem1=!this.AddItem1;  
     
   }
@@ -136,15 +136,15 @@ Addprog(entrada:SKILL){
 
 
 addLang(entrada:IDIO){
-  console.log("id en el componente papa"+entrada.id);
-  console.log("Idioma componente papa"+entrada.idioma);
-  console.log("nivel de escritura en el componente papa"+entrada.nivel_escritura);
-  console.log("nivel de lectura en el componente papa"+entrada.nivel_lectura);
+  //console.log("id en el componente papa"+entrada.id);
+  //console.log("Idioma componente papa"+entrada.idioma);
+  //console.log("nivel de escritura en el componente papa"+entrada.nivel_escritura);
+  //console.log("nivel de lectura en el componente papa"+entrada.nivel_lectura);
 
 
 
   if(this.flageditidio==false){
-    console.log("nuevo idioma");
+    //console.log("nuevo idioma");
   this.servi.serviAddIdioma(entrada).subscribe((entrada)=>{this.IdiomaBD.push(entrada)
     this.servi.GetIdiomaService().subscribe((IdiomaBD)=>{this.IdiomaBD = IdiomaBD});
   });    
@@ -159,7 +159,7 @@ addLang(entrada:IDIO){
     // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
     
     })
-    console.log("Para editar nuevo componente");
+    //console.log("Para editar nuevo componente");
     this.AddItem=!this.AddItem;  
     
   }

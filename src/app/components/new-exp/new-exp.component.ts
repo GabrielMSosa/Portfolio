@@ -95,10 +95,10 @@ export class NewExpComponent implements OnInit {
     this.fint=this.uritotal.indexOf(this.patron);
     this.iniciot=this.fint-33;
     this.token1=this.uritotal.substring(this.iniciot, this.fint);
-    console.log(this.token1);
+    //console.log(this.token1);
     this.uritotal="";
     this.uritotal=this.linkaux[0]+this.token1+this.linkaux[1];
-    console.log(this.uritotal);
+    //console.log(this.uritotal);
 
  
     this.valor = this.form.value.fechastr.split('-');
@@ -115,10 +115,10 @@ export class NewExpComponent implements OnInit {
 
 
 
-    console.log(this.anio.toString());//casting de number a string 
-    console.log(this.valor[0])
-    console.log(this.valor1[0])
-    console.log(this.anio1- this.anio);
+    //console.log(this.anio.toString());//casting de number a string 
+    //console.log(this.valor[0])
+    //console.log(this.valor1[0])
+    //console.log(this.anio1- this.anio);
     // vamos a validar que ningun campo estee vacio
 /*
     if(this.trabajo.length===0){
@@ -177,7 +177,7 @@ export class NewExpComponent implements OnInit {
     this.deltaanio=(this.fechaFin - this.fechaIni).toString();
     //const {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin}=this;
     //const NewEXPE= {trabajo,empresa,deltaanio,fechaIni,uriImg,pais,localidad,provincias,fechaFin};
-    //console.log(NewEXPE);
+    ////console.log(NewEXPE);
     this.datoedit.trabajo=this.form.value.trabajo;
     this.datoedit.empresa=this.form.value.empresa;
     this.datoedit.fechaIni=this.fechaIni;

@@ -78,7 +78,7 @@ export class AddProgComponent implements OnInit {
     this.fint=this.uritotal.indexOf(this.patron);
     this.iniciot=this.fint-33;
     this.token1=this.uritotal.substring(this.iniciot, this.fint);
-    console.log(this.token1);
+  //  console.log(this.token1);
     
 this.urlImg=this.linkaux[0]+this.token1+this.linkaux[1]
 

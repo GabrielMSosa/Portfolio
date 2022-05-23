@@ -33,26 +33,26 @@ export class ExperienciaComponent implements OnInit {
   constructor(private tareas:TaskService,private cookies:CookieService,private Auth: LoginserviceService) { }
 
   ngOnInit(): void {
-    console.log("componenete experiencia");
+    //console.log("componenete experiencia");
     this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD=EXPBD
-      console.log("entramosa component EXPBD");
+      //console.log("entramosa component EXPBD");
       
     });
-   // console.log(JSON.stringify(this.EXPBD[0]));
+   //// console.log(JSON.stringify(this.EXPBD[0]));
 
     
     this.flag=false;
   }
   addNewTask(){
-    console.log("NuevaTarea!");
+    //console.log("NuevaTarea!");
     this.AddItem=!this.AddItem;
-    console.log(this.AddItem);
+    //console.log(this.AddItem);
     this.flag=false;
  
   }
 
   SendEdit(recorre:EXPE){
-    console.log("FUNCION SEND EDIT")
+    //console.log("FUNCION SEND EDIT")
     this.ParaEnviar=recorre;
     this.editar=true;
     this.AddItem=!this.AddItem;
@@ -64,7 +64,7 @@ export class ExperienciaComponent implements OnInit {
   
   AddExp(entrada:EXPE){
       if(this.flageditItem==false){
-        console.log("nuevo Skill");
+        //console.log("nuevo Skill");
       this.tareas.serviAddExp(entrada).subscribe((entrada)=>{this.EXPBD.push(entrada)
       
         this.tareas.getExps().subscribe((EXPBD)=>{this.EXPBD=EXPBD});
@@ -80,7 +80,7 @@ export class ExperienciaComponent implements OnInit {
         // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
         
         })
-        console.log("Para editar nuevo componente");
+        //console.log("Para editar nuevo componente");
         this.AddItem=!this.AddItem;  
         
       }

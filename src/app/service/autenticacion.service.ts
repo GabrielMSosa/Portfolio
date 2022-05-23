@@ -14,7 +14,7 @@ currentUserObject:BehaviorSubject<any>;
 
 
   constructor(private http: HttpClient,private httpBackend: HttpBackend) { 
-    console.log("serviauto");
+    //console.log("serviauto");
     this.currentUserObject= new BehaviorSubject<any>(
         JSON.parse(sessionStorage.getItem('currentUser')||'{}')
 
@@ -26,7 +26,7 @@ currentUserObject:BehaviorSubject<any>;
 
 
   IniciarSesion(credenciales:any):Observable<any> {
-    console.log(JSON.stringify(credenciales));
+    //console.log(JSON.stringify(credenciales));
     const newhttp= new HttpClient(this.httpBackend);
     return newhttp.post(this.url,credenciales).pipe(map(data=>{
           sessionStorage.setItem('currentUser',JSON.stringify( data))

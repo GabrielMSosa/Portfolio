@@ -34,9 +34,9 @@ export class EducacionComponent implements OnInit {
     this.flag=false;
   }
   addNewTask(){
-    console.log("NuevaTarea!");
+    //console.log("NuevaTarea!");
     this.AddItem=!this.AddItem;
-    console.log(this.AddItem);
+    //console.log(this.AddItem);
     this.flag=false;
 
   }
@@ -50,7 +50,7 @@ export class EducacionComponent implements OnInit {
   AddEdu(entrada:EDU){
     
     if(this.flageditItem==false){
-      console.log("nuevo Skill");
+      //console.log("nuevo Skill");
       this.tareas.serviAddEdu(entrada).subscribe((entrada)=>{this.EDUBD.push(entrada)
         this.tareas.getServiceEdus().subscribe((EDUBD)=>{this.EDUBD=EDUBD});
       });    
@@ -66,7 +66,7 @@ export class EducacionComponent implements OnInit {
       // el cambio y si no aparece tengo que apretar F5 y la idea es que sea dinamico y autonomo.
       
       })
-      console.log("Para editar nuevo componente");
+      //console.log("Para editar nuevo componente");
       this.AddItem=!this.AddItem;  
       
     }
@@ -74,8 +74,8 @@ export class EducacionComponent implements OnInit {
 
 }
 SendEdit(recorre:EDU){
-  console.log("FUNCION SEND EDIT")
-  console.log("el id de del item educacion vale"+recorre.id)
+  //console.log("FUNCION SEND EDIT")
+  //console.log("el id de del item educacion vale"+recorre.id)
   this.ParaEnviar=recorre;
   this.editar=true;
   this.AddItem=!this.AddItem;

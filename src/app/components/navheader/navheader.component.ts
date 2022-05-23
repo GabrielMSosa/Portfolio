@@ -33,15 +33,15 @@ SOCIBD:RSOCi[]=[];
 
   }
   this.User=true;
-  console.log(this.cookies.get("token"));
-console.log(this.User);
+  //console.log(this.cookies.get("token"));
+//console.log(this.User);
   }
   CerrarSesion() {
     this.User=false;
     this.autent.cerrarCesion();
     this.MiRouter.navigateByUrl("login");
   this.Auth.setTokenService("");
-  console.log(this.cookies.get("token"));
-  console.log(this.User);
+  //console.log(this.cookies.get("token"));
+  //console.log(this.User);
   }
 }

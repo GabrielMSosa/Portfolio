@@ -53,16 +53,16 @@ export class SkillsItemComponent implements OnInit {
      this.message = "Only images are supported.";
      return;
    }
-   console.log(files);
+   //console.log(files);
    var reader = new FileReader();
    this.imagePath = files;
    reader.readAsDataURL(files[0]); 
    reader.onload = (_event) => { 
    this.imgURL = reader.result; 
 
-    console.log(this.imgURL);
+    //console.log(this.imgURL);
       var json= JSON.stringify(this.imgURL);
-      console.log(json); 
+      //console.log(json); 
    }
    
  }
@@ -89,7 +89,7 @@ export class SkillsItemComponent implements OnInit {
         this.message = "Only images are supported.";
         return;
       }
-      console.log(files);
+      //console.log(files);
       var reader = new FileReader();
       this.imagePath = files;
       reader.readAsDataURL(files[0]); 
@@ -102,10 +102,10 @@ export class SkillsItemComponent implements OnInit {
       reader.onload = (_event) => { 
         this.imgURL = reader.result; 
         
-        console.log(this.imgURL);
+        //console.log(this.imgURL);
          var json= JSON.stringify(this.imgURL);
          this.ArchGuardar.imagen=this.imgURL; 
-         console.log(json); 
+         //console.log(json); 
 
 
 
@@ -138,7 +138,7 @@ export class SkillsItemComponent implements OnInit {
 
   updateGraph(){
     //this.estilo = "width: " +this.barra+"%";
-    console.log("width: " +this.barra+"%");
+    //console.log("width: " +this.barra+"%");
 
   }
 

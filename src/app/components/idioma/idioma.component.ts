@@ -23,7 +23,7 @@ export class IdiomaComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log("bandera"+ this.newitem1)
+    //console.log("bandera"+ this.newitem1)
 
     if(this.cookies.get("token")!=="") {
       this.flag=true;
@@ -36,12 +36,13 @@ export class IdiomaComponent implements OnInit {
   }
 
   BorrarIDIO(entrada:IDIO){
-    console.log("Funcion borrar");
+    //console.log("Funcion borrar");
     this.DeleteIDIO.emit(entrada);
 
   }
     EditarIDIO(entrada:IDIO){
       this.EditIDio.emit(entrada);
-      console.log("Funcion Editar"+entrada.id);    }
+      //console.log("Funcion Editar"+entrada.id);    
+    }
 
 }

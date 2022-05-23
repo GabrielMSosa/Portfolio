@@ -33,13 +33,13 @@ flag:boolean = false; // CON ESTE ES PARA VALIDAR EL TOKEN
 
 
   BorrarSKill(algo:SKILL){
-console.log("Funcion borrar");
+//console.log("Funcion borrar");
 this.DeleteSKILL.emit(algo);
   }
 
   EditarSkill(algo:SKILL){
     this.EditSkill.emit(algo);
-console.log("Funcion editar");
+//console.log("Funcion editar");
 
 
   } 

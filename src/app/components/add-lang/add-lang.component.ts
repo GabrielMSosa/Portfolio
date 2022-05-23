@@ -81,8 +81,8 @@ if(this.flagedit==true){
   this.datoedit.idioma=this.form.value.idioma;
   this.datoedit.nivel_escritura=this.form.value.nivel_escritura;
   this.datoedit.nivel_lectura=this.form.value.nivel_lectura;
-  console.log("valor de lectura seleccionado en el form"+this.datoedit.nivel_lectura);
-  console.log("valor de escritura seleccionado en el form"+this.datoedit.nivel_escritura);
+  //console.log("valor de lectura seleccionado en el form"+this.datoedit.nivel_lectura);
+//  console.log("valor de escritura seleccionado en el form"+this.datoedit.nivel_escritura);
   this.newEdit.emit(true);
   this.InIdio.emit(this.datoedit);  
 
@@ -92,8 +92,8 @@ else{
   this.datoedit.idioma=this.form.value.idioma;
   this.datoedit.nivel_escritura=this.form.value.nivel_escritura;
   this.datoedit.nivel_lectura=this.form.value.nivel_lectura;
-  console.log("valor de lectura seleccionado en el form"+this.datoedit.nivel_lectura);
-  console.log("valor de escritura seleccionado en el form"+this.datoedit.nivel_escritura);
+  //console.log("valor de lectura seleccionado en el form"+this.datoedit.nivel_lectura);
+  //console.log("valor de escritura seleccionado en el form"+this.datoedit.nivel_escritura);
   this.InIdio.emit(this.datoedit);
   this.newitem=true;
  }

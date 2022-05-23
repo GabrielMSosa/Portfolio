@@ -112,39 +112,39 @@ export class BtnEditLapizComponent implements OnInit {
   this.fint=this.uritotal.indexOf(this.patron);
   this.iniciot=this.fint-33;
   this.token1=this.uritotal.substring(this.iniciot, this.fint);
-  console.log(this.token1);
+  //console.log(this.token1);
 
   this.datoRsoci.linkFace=this.form.value.linkFace;
   this.datoRsoci.linkGit=this.form.value.linkGit;
   this.datoRsoci.linkLn=this.form.value.linkLn;
   this.datoRsoci.linkTwit=this.form.value.linkTwit;
   
-console.log("el valor es twit:"+this.datoRsoci.linkTwit);
+//console.log("el valor es twit:"+this.datoRsoci.linkTwit);
 
 
 if(this.datoRsoci.linkFace=="none"){
 this.datoRsoci.linkFace="https://portfolio2-a6e86.web.app/portfolio";
-console.log("el valor del link de linkFace vale :"+this.datoRsoci.linkFace);
+//console.log("el valor del link de linkFace vale :"+this.datoRsoci.linkFace);
 } 
 if(this.datoRsoci.linkGit=="none"){
 this.datoRsoci.linkGit="https://portfolio2-a6e86.web.app/portfolio";
-console.log("el valor del link de linkGit vale :"+this.datoRsoci.linkGit);
+//console.log("el valor del link de linkGit vale :"+this.datoRsoci.linkGit);
 }
 if(this.datoRsoci.linkLn=="none"){
 this.datoRsoci.linkLn="https://portfolio2-a6e86.web.app/portfolio";
-console.log("el valor del link de linkLn vale :"+this.datoRsoci.linkLn);
+//console.log("el valor del link de linkLn vale :"+this.datoRsoci.linkLn);
 }
 if(this.datoRsoci.linkTwit=="none"){
 this.datoRsoci.linkTwit="https://portfolio2-a6e86.web.app/portfolio";
-console.log("el valor del link de linkTwit vale :"+this.datoRsoci.linkTwit);
+//console.log("el valor del link de linkTwit vale :"+this.datoRsoci.linkTwit);
 }
-  console.log("nuestro json de redes sociales vale:")
+  //console.log("nuestro json de redes sociales vale:")
   
   
   this.servi.PutRsociServi(this.datoRsoci).subscribe(()=>{
     this.SOCIBD=this.SOCIBD.filter(t=>t.id!==this.datoRsoci.id);
-    console.log("entramos alput despues de =>");
-    console.log(JSON.stringify(this.datoRsoci))    
+   // console.log("entramos alput despues de =>");
+   // console.log(JSON.stringify(this.datoRsoci))    
   
   });
 
@@ -161,8 +161,8 @@ console.log("el valor del link de linkTwit vale :"+this.datoRsoci.linkTwit);
   this.datoedit.email=this.form.value.email;
   this.datoedit.acercademi=this.form.value.acercademi;
   //aca tenemos que agregar despues las redes sociales.
-  console.log("Inexp de user vale: ");
- console.log(JSON.stringify(this.datoedit));  
+ // console.log("Inexp de user vale: ");
+// console.log(JSON.stringify(this.datoedit));  
   this.newEditItem.emit(true);
   this.InExp.emit(this.datoedit);  
 

@@ -33,13 +33,13 @@ export class ItemEduComponent implements OnInit {
 
     this.flaglocal=!this.flaglocal;
   
-    console.log("funcion editar");
+    //console.log("funcion editar");
     this.EditItem.emit(input1); 
 
 
   }
   BorrarExperiencia(input1:EDU){
-    console.log(this.educacion.id);
+    //console.log(this.educacion.id);
     this.DeleteExp.emit(input1);
   }
 }

@@ -21,8 +21,8 @@
     [ngClass]="{'is-invalid': UriImg?.errors && (UriImg?.touched), 'is-valid':!UriImg?.errors && UriImg?.touched}"
      class="form-control"
      id="Institucion"
-     name="token drive"
-     placeholder="Ingrese el token del archivo"
+     name="Ingrese el link de su imagen de drive"
+     placeholder="Ingrese el link de su imagen de drive"
      
      >
             
@@ -36,6 +36,12 @@
         el tamaño no corresponde a un link .
 
       </p>
+
+      <p *ngIf="UriImg?.errors?.['LinkDriveInvalid']" class="text-danger">
+        Link invalido debe tener formato https://drive.google.com/xxx.
+      </p>
+
+
 
     </div>
     </div>

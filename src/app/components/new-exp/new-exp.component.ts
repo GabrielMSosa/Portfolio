@@ -2,7 +2,7 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
 import { TaskService } from 'src/app/service/task.service';
-import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
+import { FormsModule,Validators,FormGroup,FormBuilder, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-new-exp',
@@ -67,7 +67,7 @@ export class NewExpComponent implements OnInit {
       provincias:['',[Validators.required,Validators.minLength(4)]],
       pais:['',[Validators.required,Validators.minLength(4)]],
       localidad:['',[Validators.required,Validators.minLength(4)]],
-      uriImg:['',[Validators.required,Validators.minLength(32)]]  
+      uriImg:['',[Validators.required,Validators.minLength(32),ValidateLinkDrive]]  
     })
      }
      
@@ -253,3 +253,13 @@ export class NewExpComponent implements OnInit {
  * 
  */
 
+    function ValidateLinkDrive(control: AbstractControl): {[key: string]: any} | null  {
+  
+      if (control.value && !control.value.includes("https://drive.google.com/")) {
+          if (!control.value.includes("none")){
+            return { 'LinkDriveInvalid': true };}
+        
+      }
+      return null;
+      
+    }

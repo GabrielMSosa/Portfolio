@@ -32,6 +32,13 @@
           el tamaño no corresponde a un link .
   
         </p>
+        <p *ngIf="UrlImg?.errors?.['LinkDriveInvalid']" class="text-danger">
+          Link invalido debe tener formato https://drive.google.com/xxx.
+        </p>
+
+
+
+        
   
       </div>
       </div>

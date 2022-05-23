@@ -53,7 +53,7 @@ export class BtnEditLapizComponent implements OnInit {
       email:['',[Validators.required,Validators.minLength(9)]],
       edad:['',[Validators.required,Validators.minLength(2)]],
       acercademi:['',[Validators.required,Validators.minLength(30)]],
-      urlImg:['',[Validators.required,Validators.minLength(13)]],
+      urlImg:['',[Validators.required,Validators.minLength(13),ValidateLinkDrive]],
       linkGit:['',[Validators.required,Validators.minLength(4),ValidateLinkGit]],
       linkLn:['',[Validators.required,Validators.minLength(4),ValidateLinkLinkedin]],
       linkFace:['',[Validators.required,Validators.minLength(4),ValidateLinkface]],
@@ -213,3 +213,15 @@ function ValidateLinkTwiter(control: AbstractControl): {[key: string]: any} | nu
   return null;
   
 }
+function ValidateLinkDrive(control: AbstractControl): {[key: string]: any} | null  {
+  
+  if (control.value && !control.value.includes("https://drive.google.com/")) {
+      if (!control.value.includes("none")){
+        return { 'LinkDriveInvalid': true };}
+    
+  }
+  return null;
+  
+}
+
+

@@ -2,7 +2,7 @@ import { Component, OnInit,Output,EventEmitter,Input } from '@angular/core';
 import { Educacion } from 'src/app/mock-Educacion';
 import { EDU } from 'src/app/Edu';
 import { EducacionService } from 'src/app/service/educacion.service';
-import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
+import { FormsModule,Validators,FormGroup,FormBuilder, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-edu',
@@ -59,7 +59,7 @@ export class AddEduComponent implements OnInit {
       fechastr1:['',[Validators.required,Validators.minLength(4)]],
       fechastr :['',[Validators.required,Validators.minLength(4)]],
       estado:['',Validators.required],
-      uriImg:['',[Validators.required,Validators.minLength(32)]]  
+      uriImg:['',[Validators.required,Validators.minLength(32),ValidateLinkDrive]]  
     })
       
       /* deviceInfo: this.formBuilder.group({
@@ -72,6 +72,12 @@ export class AddEduComponent implements OnInit {
 
 
      }
+
+
+
+
+
+
 
   ngOnInit(): void {
     
@@ -217,5 +223,16 @@ get Password(){
 
 
 
+
 }
 
+function ValidateLinkDrive(control: AbstractControl): {[key: string]: any} | null  {
+  
+  if (control.value && !control.value.includes("https://drive.google.com/")) {
+      if (!control.value.includes("none")){
+        return { 'LinkDriveInvalid': true };}
+    
+  }
+  return null;
+  
+}

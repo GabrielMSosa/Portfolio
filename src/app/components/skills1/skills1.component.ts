@@ -136,6 +136,13 @@ Addprog(entrada:SKILL){
 
 
 addLang(entrada:IDIO){
+  console.log("id en el componente papa"+entrada.id);
+  console.log("Idioma componente papa"+entrada.idioma);
+  console.log("nivel de escritura en el componente papa"+entrada.nivel_escritura);
+  console.log("nivel de lectura en el componente papa"+entrada.nivel_lectura);
+
+
+
   if(this.flageditidio==false){
     console.log("nuevo idioma");
   this.servi.serviAddIdioma(entrada).subscribe((entrada)=>{this.IdiomaBD.push(entrada)

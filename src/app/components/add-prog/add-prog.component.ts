@@ -3,7 +3,7 @@ import {Idiomas} from "src/app/mock-idioma";
 import {SkillServiceService} from "../../service/skill-service.service";
 import {SKILL} from "src/app/SKILL";
 import { skills } from 'src/app/mock-Skill';
-import { FormsModule,Validators,FormGroup,FormBuilder } from '@angular/forms';
+import { FormsModule,Validators,FormGroup,FormBuilder, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-prog',
@@ -46,7 +46,7 @@ export class AddProgComponent implements OnInit {
       lenguaje:['',[Validators.required,Validators.minLength(9)]],
       info:['',[Validators.required,Validators.minLength(9)]],
       nivel:['',[Validators.required,Validators.minLength(1)]],
-      urlImg :['',[Validators.required,Validators.minLength(32)]]
+      urlImg :['',[Validators.required,Validators.minLength(32),ValidateLinkDrive]]
       
     })
 
@@ -148,3 +148,13 @@ this.urlImg=this.linkaux[0]+this.token1+this.linkaux[1]
   }
 
 
+  function ValidateLinkDrive(control: AbstractControl): {[key: string]: any} | null  {
+  
+    if (control.value && !control.value.includes("https://drive.google.com/")) {
+        if (!control.value.includes("none")){
+          return { 'LinkDriveInvalid': true };}
+      
+    }
+    return null;
+    
+  }

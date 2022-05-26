@@ -13,11 +13,12 @@ import { Router } from '@angular/router';
 })
 export class NavheaderComponent implements OnInit {
 public User: boolean=  false;
+simbolo:string="";
 SOCIBD:RSOCi[]=[];
   constructor(private autent:AutenticacionService ,private Auth:LoginserviceService,private servi:UserServiceService,private MiRouter: Router ,private cookies:CookieService) { }
 
   ngOnInit(): void {
-    
+    this.simbolo="< / >";
     this.servi.GetRsociService().subscribe((SOCIBD)=>{this.SOCIBD=SOCIBD
     }
     );

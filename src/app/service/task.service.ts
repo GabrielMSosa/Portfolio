@@ -18,9 +18,13 @@ export class TaskService {
   private showAddTask:boolean=false;
   private subject=new Subject<any>(); //para escuchar evento del template 
   private APIuriget ='https://dry-escarpment-76622.herokuapp.com/experiencias/traertodo';
+  //private APIuriget ='http://localhost:5000/experiencias/traertodo';
   private APIuriPost='https://dry-escarpment-76622.herokuapp.com/experiencias';
+  //private APIuriPost='http://localhost:5000/experiencias';
   private APIuriDelete='https://dry-escarpment-76622.herokuapp.com/experiencias/borrar';
+  //private APIuriDelete='http://localhost:5000/experiencias/borrar';
   private APIuriPut='https://dry-escarpment-76622.herokuapp.com/experiencias/editar';
+  //private APIuriPut='http://localhost:5000/experiencias/editar';
   EXPBD:EXPE[]=[];
   constructor( private http: HttpClient) { } 
 

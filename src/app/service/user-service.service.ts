@@ -17,9 +17,13 @@ const httpOptions={
 })
 export class UserServiceService {
   private uriApi="https://dry-escarpment-76622.herokuapp.com/userp/traertodo";
+  //private uriApi="http://localhost:5000/userp/traertodo";
   private APIuriPut="https://dry-escarpment-76622.herokuapp.com/userp/editar";
+  //private APIuriPut="http://localhost:5000/userp/editar";
   private APIRSOCIput="https://dry-escarpment-76622.herokuapp.com/redsoc/editar";
+  //private APIRSOCIput="http://localhost:5000/redsoc/editar";
   private APIRSOCget="https://dry-escarpment-76622.herokuapp.com/redsoc/traertodo";
+  //private APIRSOCget="http://localhost:5000/redsoc/traertodo";
 //vamos a crear una nueva tabla de redes sociales y por  lo tanto nuevos endpoint paara implementarlos com, se sale de la estructura planteada
 //pero es la forma mas facil de implementarlo a estas alturas.
   constructor(private http:HttpClient) { }
@@ -46,7 +50,7 @@ export class UserServiceService {
   GetUserService():Observable<USER[]> {
     //console.log("Se ejecuta GetUserService():Observable<USER[]>");
     return this.http.get<USER[]>(this.uriApi).pipe(map(user => {
-        
+        console.log( "valor de email"+user[0].email);
       user.forEach(element => {
         if (element.email==undefined) {element.email="";}  
         if (element.apellido==undefined) {element.apellido="";}  

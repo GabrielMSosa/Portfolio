@@ -42,8 +42,8 @@ export class AcercadeComponent implements OnInit {
 
   }
   SendEdit(recorre:USER) {
-    console.log(JSON.stringify(recorre));
-    console.log("FUNCION SEND EDIT")
+    //console.log(JSON.stringify(recorre));
+    //console.log("FUNCION SEND EDIT")
     this.ParaEnviar=recorre;
     this.editar=true;
     this.AddItem=!this.AddItem;
@@ -51,10 +51,10 @@ export class AcercadeComponent implements OnInit {
   }
 
   AddUser(entrada:USER) {
-    console.log("estamos en la funcion add user que recibe el JSON de USER y vale:")
-    console.log(JSON.stringify(entrada));
-    console.log("entramos al id del get de la base de datos y vale:");
-    console.log(this.USERBD[0].id);
+    //console.log("estamos en la funcion add user que recibe el JSON de USER y vale:")
+    //console.log(JSON.stringify(entrada));
+    //console.log("entramos al id del get de la base de datos y vale:");
+    //console.log(this.USERBD[0].id);
     entrada.id=this.USERBD[0].id;
 
     this.servicio.PutUserServi(entrada).subscribe(()=>{

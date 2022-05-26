@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class AutenticacionService {
 url="https://dry-escarpment-76622.herokuapp.com/user/loginUser"
+//url="http://localhost:5000/user/loginUser"
 currentUserObject:BehaviorSubject<any>;
 
 

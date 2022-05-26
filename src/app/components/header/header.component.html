@@ -7,8 +7,8 @@ asfasfdsa
 
 <div class="bg home"></div>
 <div class="bg-text container"> 
-<img class="perfil" [src]="USERBD[0].urlImg">
-<h1 *ngIf="USERBD[0].apellido!=undefined" class="dato">{{USERBD[0].apellido}}, {{USERBD[0].nombre}}</h1>
+<img *ngIf="USERBD[0]?.urlImg" class="perfil" [src]="USERBD[0].urlImg">
+<h1 *ngIf="USERBD[0]?.apellido&&USERBD[0]?.nombre" class="dato">{{USERBD[0].apellido}}, {{USERBD[0].nombre}}</h1>
 
 
 

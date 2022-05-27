@@ -48,17 +48,17 @@ id:0,
   });
 
     //console.log(this.Users[0].email);
-    if(this.cookies.get("token")===""){
-      this.flag=true;
+    //if(this.cookies.get("token")===""){
+     // this.flag=true;
 
-    }
-    else{
-      this.flag=false;
-    }
+    //}
+   // else{
+    //  this.flag=false;
+    //}
     //console.log("valor  de flag"+this.flag);
     //console.log("valor de cookies:"+this.cookies.get("token"));
 
-
+    this.flag=false;
   }
   On1Click(){
 this.BtnClick=!this.BtnClick;

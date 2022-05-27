@@ -22,7 +22,7 @@ SOCIBD:RSOCi[]=[];
     this.servi.GetRsociService().subscribe((SOCIBD)=>{this.SOCIBD=SOCIBD
     }
     );
-
+/*
   if (this.cookies.get("token") !== "")
   {
       this.User=true;
@@ -33,7 +33,7 @@ SOCIBD:RSOCi[]=[];
     this.User=false;
 
   }
-  this.User=true;
+  this.User=true;*/
   //console.log(this.cookies.get("token"));
 //console.log(this.User);
   }

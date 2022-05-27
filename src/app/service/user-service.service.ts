@@ -49,18 +49,7 @@ export class UserServiceService {
 
   GetUserService():Observable<USER[]> {
     //console.log("Se ejecuta GetUserService():Observable<USER[]>");
-    return this.http.get<USER[]>(this.uriApi).pipe(map(user => {
-        console.log( "valor de email"+user[0].email);
-      user.forEach(element => {
-        if (element.email==undefined) {element.email="";}  
-        if (element.apellido==undefined) {element.apellido="";}  
-      });
-      
-      
-      
-      return user;
-    
-    })); }
+    return this.http.get<USER[]>(this.uriApi); }
     
     PutUserServi(entrada:USER):Observable<USER> {
       //console.log("entramos en el servcio PutExpServi y el  id es: ");

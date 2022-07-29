@@ -4,6 +4,7 @@ import { Subject,Observable, of } from 'rxjs';// permite que sea un servicio asi
 //y la idea que el servicio funcione cuando sea necesario no que siempre se ejecute 
 import { Experiencias } from 'src/app/mock-experience';
 import { EXPE } from 'src/app/Experience';
+import { GlobalConstants } from '../GlobalConstants';
 
 const httpOptions={
   headers : new HttpHeaders({
@@ -17,13 +18,13 @@ const httpOptions={
 export class TaskService {
   private showAddTask:boolean=false;
   private subject=new Subject<any>(); //para escuchar evento del template 
-  private APIuriget ='https://dry-escarpment-76622.herokuapp.com/experiencias/traertodo';
+  private APIuriget = GlobalConstants.apiURL+'/experiencias/traertodo';
   //private APIuriget ='http://localhost:5000/experiencias/traertodo';
-  private APIuriPost='https://dry-escarpment-76622.herokuapp.com/experiencias';
+  private APIuriPost= GlobalConstants.apiURL+'/experiencias';
   //private APIuriPost='http://localhost:5000/experiencias';
-  private APIuriDelete='https://dry-escarpment-76622.herokuapp.com/experiencias/borrar';
+  private APIuriDelete= GlobalConstants.apiURL+'/experiencias/borrar';
   //private APIuriDelete='http://localhost:5000/experiencias/borrar';
-  private APIuriPut='https://dry-escarpment-76622.herokuapp.com/experiencias/editar';
+  private APIuriPut= GlobalConstants.apiURL+'/experiencias/editar';
   //private APIuriPut='http://localhost:5000/experiencias/editar';
   EXPBD:EXPE[]=[];
   constructor( private http: HttpClient) { } 

@@ -3,6 +3,7 @@ import {SKILL} from "src/app/SKILL";
 import {IDIO} from "src/app/IDIO";
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Subject,Observable } from 'rxjs';
+import { GlobalConstants } from '../GlobalConstants';
 const httpOptions={
   headers : new HttpHeaders({
     'Content-type': 'application/json'  })};
@@ -14,23 +15,23 @@ const httpOptions={
 })
 export class SkillServiceService {
 private subje=new Subject<any>();
-private APIurlget="https://dry-escarpment-76622.herokuapp.com/skill/traertodo";
+private APIurlget=GlobalConstants.apiURL+"/skill/traertodo";
 //private APIurlget="http://localhost:5000/skill/traertodo";
-private APIurlpost="https://dry-escarpment-76622.herokuapp.com/skill";
+private APIurlpost=GlobalConstants.apiURL+"/skill";
 //private APIurlpost="http://localhost:5000/skill";
-private APIurldelete="https://dry-escarpment-76622.herokuapp.com/skill/borrar";
+private APIurldelete=GlobalConstants.apiURL+"/skill/borrar";
 //private APIurldelete="http://localhost:5000/skill/borrar";
-private APIurlput="https://dry-escarpment-76622.herokuapp.com/skill/editar";
+private APIurlput=GlobalConstants.apiURL+"/skill/editar";
 //private APIurlput="http://localhost:5000/skill/editar";
 //
 //
-private APIurl1post="https://dry-escarpment-76622.herokuapp.com/idioma";
+private APIurl1post=GlobalConstants.apiURL+"/idioma";
 //private APIurl1post="http://localhost:5000/idioma";
-private APIurl1get="https://dry-escarpment-76622.herokuapp.com/idioma/traertodo";
+private APIurl1get=GlobalConstants.apiURL+"/idioma/traertodo";
 //private APIurl1get="http://localhost:5000/idioma/traertodo";
-private APIurl1delete="https://dry-escarpment-76622.herokuapp.com/idioma/borrar";
+private APIurl1delete=GlobalConstants.apiURL+"/idioma/borrar";
 //private APIurl1delete="http://localhost:5000/idioma/borrar";
-private APIurl1put="https://dry-escarpment-76622.herokuapp.com/idioma/editar"
+private APIurl1put=GlobalConstants.apiURL+"/idioma/editar"
 //private APIurl1put="http://localhost:5000/idioma/editar"
   constructor(private http:HttpClient) { }
 

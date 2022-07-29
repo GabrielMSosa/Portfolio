@@ -5,6 +5,7 @@ import{ CookieService } from "ngx-cookie-service";
 import { USER} from 'src/app/USER';
 import { Users } from 'src/app/mock-user';
 import { RSOCi } from '../RSOCI';
+import { GlobalConstants } from '../GlobalConstants';
 const httpOptions={
   headers : new HttpHeaders({
     'Content-type': 'application/json'  })};
@@ -16,13 +17,13 @@ const httpOptions={
   providedIn: 'root'
 })
 export class UserServiceService {
-  private uriApi="https://dry-escarpment-76622.herokuapp.com/userp/traertodo";
+  private uriApi=GlobalConstants.apiURL+"/userp/traertodo";
   //private uriApi="http://localhost:5000/userp/traertodo";
-  private APIuriPut="https://dry-escarpment-76622.herokuapp.com/userp/editar";
+  private APIuriPut=GlobalConstants.apiURL+"/userp/editar";
   //private APIuriPut="http://localhost:5000/userp/editar";
-  private APIRSOCIput="https://dry-escarpment-76622.herokuapp.com/redsoc/editar";
+  private APIRSOCIput=GlobalConstants.apiURL+"/redsoc/editar";
   //private APIRSOCIput="http://localhost:5000/redsoc/editar";
-  private APIRSOCget="https://dry-escarpment-76622.herokuapp.com/redsoc/traertodo";
+  private APIRSOCget=GlobalConstants.apiURL+"/redsoc/traertodo";
   //private APIRSOCget="http://localhost:5000/redsoc/traertodo";
 //vamos a crear una nueva tabla de redes sociales y por  lo tanto nuevos endpoint paara implementarlos com, se sale de la estructura planteada
 //pero es la forma mas facil de implementarlo a estas alturas.

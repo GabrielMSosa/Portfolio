@@ -20,6 +20,7 @@ SOCIBD:RSOCi[]=[];
   ngOnInit(): void {
     this.simbolo="< / >";
     this.servi.GetRsociService().subscribe((SOCIBD)=>{this.SOCIBD=SOCIBD
+      console.log(SOCIBD[0].linkGit);
     }
     );
 /*
